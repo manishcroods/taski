@@ -591,7 +591,83 @@
 			</div>
 			<!-- /page header -->
 
+<div class="card mb-6">
 
+					<div class="container">
+						<!-- ** product table ** -->
+						<div class="card-body">
+							<div class="table-responsive">
+								<h2>User List</h2>
+									<table class="table table-hover" id="dataTable" >
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Name</th>
+												<th>Assigned To</th>
+												<th>Created</th>
+												<th>Status</th>
+												<th>Actions</th>
+	
+											</tr>
+										</thead>
+
+									<tbody>
+										<c:forEach var="task" items="${completedtasklist}">
+											<tr id="list${user.userId}">
+												<td>${task.taskId}</td>
+												<td>${task.title}</td>
+												<td>${task.user.userName}</td>
+												<td>${task.created}</td>
+												<td>
+													<span class="label label-primary">Completed</span>
+												</td>
+												<td>
+												<td>
+													<span>
+													
+												
+													<%-- <a href="JavaScript:Void(0)" data-toggle="modal"
+															data-id="${task.taskId}"
+															onclick="updateUserfun(this,${task.taskId})"
+															data-target="#task_update_modal"
+															class="btn btn-primary btn-sm edit-task"
+															title="Edit"> <i class="fa fa-edit"></i>Edit
+															</a> --%>
+															
+															
+													 <a href = "------" 
+															class="btn btn-primary btn-sm view-task" 
+															data-id="${task.taskId}" title="view">
+															<i class="fa fa-view"></i>
+															View</a>
+													
+													
+													 <a href = "JavaScript:Void(0)" 
+															class="btn btn-warning btn-sm restore-user" 
+															data-id="${task.taskId}" title="restore">
+															<i class="fa fa-trash"></i>
+															Restore</a> 
+													
+													
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+															data-id="${task.taskId}"
+															class="btn btn-danger btn-sm delete-task"
+															title="Delete"> <i class="fa fa-trash"></i>Delete
+															</a>
+															
+															
+													<%----%>
+														
+													</span>
+												</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 
@@ -599,329 +675,7 @@
 			<!-- category data -->
 
 
-			<div class="card mb-6">
-
-				<div class="container">
-
-
-
-					<!-- ** product table ** -->
-					<div class="card-body">
-						<div class="table-responsive">
-							<h2>User List</h2>
-							<table class="table table-hover" id="dataTable">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>Name</th>
-										<th>Created</th>
-										<th>Status</th>
-										<th>Assigned to</th>
-										<th>Send Warning</th>
-										<th>Actions</th>
-
-									</tr>
-								</thead>
-
-								<tbody>
-									<c:forEach var="task" items="${runningtasklist}">
-										<tr id="list${task.taskId}">
-											<td id="taskid">${task.taskId }</td>
-											<td id="titleid">${task.title}</td>
-											<td id="createdid">${task.created }</td>
-											<td id="statusid">${task.status}</td>
-											<td id="userid">${task.user.userName}</td>
-											<td>
-												<button type="button" data-user=${task.taskId }
-													class="warning glyphicon glyphicon-bell btn btn-warning"
-													data-toggle="modal" data-target="#myModal">Warning
-												</button>
-
-											</td>
-											<td>
-											<td><span> <input type="button"
-													class="btn btn-primary btn-sm view-task"
-													data-item-id="${task.taskId}" id="view-task${task.taskId}"
-													value="view" /> <%-- <input type="text" name="edittaskName${task.taskId}" id="edittaskName${user.id}" 
-											             		value="${task.title}" /> --%> <%-- <input type="button" class="btn btn-primary btn-sm edit-task" data-item-id="${task.taskId}" 
-											             		id="edit-task${task.taskId}" name="editTask"  value="Edit" />  --%>
-
-													<a href="JavaScript:Void(0)" data-toggle="modal"
-													data-id="${task.taskId}"
-													class="btn btn-primary btn-sm edit-task" title="Edit">
-														<i class="fa fa-trash"> </i>Edit
-												</a> <input type="button"
-													class="btn btn-primary btn-sm done-task"
-													data-item-id="${task.taskId}" id="done-task${task.taskId}"
-													value="Done" /> <a href="JavaScript:Void(0)"
-													data-toggle="modal" data-id="${task.taskId}"
-													class="btn btn-primary btn-sm delete-task" title="Delete">
-														<i class="fa fa-trash"> </i>Delete
-												</a> <%-- <a href="JavaScript:Void(0)" data-toggle="modal" 
-																data-id="${user.userId}"
-																onclick="updateUserfun(this,${user.userId})"
-																data-target="#user_update_modal"
-																class="btn btn-primary btn-sm edit-user"
-																title="Edit"> <i class="fa fa-edit"></i>Edit
-																</a> --%> <%-- <a href="JavaScript:Void(0)" data-toggle="modal"
-																data-id="${user.userId}"
-																class="btn btn-primary btn-sm delete-user"
-																title="Delete"> <i class="fa fa-trash"></i>Done</a> --%>
-
-
-
-
-
-											</span></td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			<!-- update user  -->
-
-			<!-- <!--  edit model  -->
-
-			<div class="modal fade" id="task_update_modal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-
-						<!-- Modal Header -->
-						<div class="modal-header">
-							<h2>Update Task</h2>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-						</div>
-
-						<!-- Modal body -->
-						<div class="modal-body">
-							<form id="task-form" class="form" action="/savetask"
-								method="post">
-
-								<div class="form-group">
-
-
-									<input type="hidden" id="updatetaskid" name="taskId"
-										value=${task.taskId }>
-
-									<div class="form-group">
-										<div class="form-label-group">
-											<h4>Title</h4>
-											<input type="text" data-id="titleid" id="titleid"
-												name="title" class="form-control" value="${task.title}"
-												required="required" autofocus="autofocus">
-										</div>
-									</div>
-
-									<div class="form-group">
-										<h4>Category</h4>
-										<select class="form-control  chosen-select" name="categoryId"  id="categoryid" >
-											<c:forEach var="category" items="${categorylist}">
-												<option value="${category.categoryId}">${category.categoryName}</option>
-											</c:forEach>
-										</select>
-									</div>
-
-									<div class="form-group">
-										<h4>User</h4>
-										<select class="form-control  chosen-select" name="userId" id="userid">
-											<c:forEach var="user" items="${userlist}">
-												<option value="${user.userId}">${user.userName}</option>
-											</c:forEach>
-										</select>
-									</div>
-
-
-
-									<div class="form-group">
-										<div class="form-label-group">
-											<h4>Task Description</h4>
-											<input type="text" id="taskdesceiptionid"
-												name="taskDescription" class="form-control"
-												value="${task.taskDescription}" required="required"
-												autofocus="autofocus">
-										</div>
-									</div>
-									<button type="submit" class="btn btn-primary btn-block">Update
-									</button>
-								</div>
-
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-</body>
-
-
-<script>
-$(document).ready(function() {
-
-	
-	
-	$("#task-form").submit(function(e) {
-
-	    e.preventDefault(); // avoid to execute the actual submit of the form.
-		var form = $(this);
-	  
-
-	    $.ajax({
-		           type: "POST",
-		           url: "/savetask",
-		           data: form.serialize(), // serializes the form's elements.
-		           success: function(data)
-			           {
-			        	   var task = '<tr id="list' + data.taskId + '"><td>' + data.taskId + '</td><td>' + data.title + '</td><td>' + data.category + '</td><td>' + data.user + '</td>';
-			               user += '<td><a href="javascript:void(0)" id="edit-task" data-id="' + data.id + '" class="btn btn-info edit-user">Edit</a></td>';
-			               user += '<td><a href="javascript:void(0)" id="delete-task" data-id="' + data.id + '" class="btn btn-danger delete-user">Delete</a></td></tr>';
-			               console.log(data);
-		
-			               $("#list" + data.taskid).replaceWith(task);
-			               $('#task-form').trigger("reset");
-			               $('#task_update_modal').modal('hide');
-			               $('#list').modal('show');
-			              
-			               //alert(data); 
-			              // console.log(data);
-			             	 location.reload();
-			              
-			           }
-	         });
-	});
-
-});
-
-					
-				 function updateTaskfun(row, id) {
-					$("#updatetask").attr("disabled", false);
-				
-					var crow = $(row).closest('tr');
-					var id=$(crow).find('td:eq(0)').text();
-					var title = $(crow).find('td:eq(1)').text();
-					var category = $(crow).find('td:eq(2)').text();
-					var user = $(crow).find('td:eq(3)').text();
-					var taskDescripation = $(crow).find('td:eq(4)').text();
-				
-					console.log(id);
-					console.log(title);
-					console.log(category);
-					
-					$('#titleid').val(title);
-					$('#categoryid').val(category);
-					$('#userid').val(user);
-					$('#taskdesceiptionid').val(taskDescripation);
-				
-				}
-				</script>
-
-<script>
-				   
-		$('body').on('click', '.delete-task', function () 
-			{
-				var taskid = $(this).data("id");
-				alert(taskid);
-				confirm("Are You sure want to delete !");
-				
-				 $.ajax(
-					{
-					        	
-					    type: "GET",
-					    url: "/task/delete/"+taskid,
-					    success: function (data) {
-					            	
-					          $("#list" + taskid).remove();
-					          location.reload();
-						      $('#list').modal('show');
-					          $('.result').html(data);
-					  },
-					            
-					          error: function (data) 
-					          {
-					          	console.log('Error:', data);
-					          } 
-					      
-					        });
-					     
-					    });   
-					    
-					  </script>
-
-
-<!-- <script>
-		
-		
-    		$(document).ready(function()
-    			{
-    			
-    			$("#list").on('click','.edit-task',function(){
-    		          
-    	            var value = $(event.target).val();
-    	            var id = $(event.target).data('taskId');
-    	            var tdclassshow = ".edit"+id;
-    	            var tdclasshide = ".display"+id;
-    	            var edittaskid = "#editTask"+id;
-    	            var edittaskDescriptionid = "#editTaskDescription"+id;
-    	            var confirmbuttonshow = ".edit"+id;
-    	            
-    	            if(value==="Update")
-    	            {
-    	                $(tdclassshow).show();
-    	                $(tdclasshide).hide();
-    	                $(confirmbuttonshow).show();
-    	                
-    	            }else if(value==="Confirm")
-    	            {
-    	                var title = $(edittaskid).val();
-    	                var taskSescripation = $(edittaskDescriptionid).val();
-    	                
-    	                var data = JSON.stringify(
-    	                		{
-    	                			"id":id ,
-    	           					"title":title,
-    	                			"taskSescripation":taskSescripation
-    	                		});
-    	                
-    	                $.ajax({
-    	                   type : "PUT",
-    	                   url : "/task/edit/{id}",
-    	                   contentType: "application/json",
-    	                   data : data,
-    	                   success: function(data){
-    	                     $(tdclassshow).hide();
-    	                     $(tdclasshide).show();
-    	                     $(confirmbuttonshow).hide();
-    	                     
-    	                     var titleid = "#taskid"+id;
-    	                     var title = "#titleid "+id;
-    	                     //var taskdescripation= "#"+ id;
-    	                     
-    	                     $(titleid).text(title);
-    	                     $(taskSescripationid).text(taskSescripation);
-    	                     
-    	                  
-    	                   }
-    	                 });
-    	                 
-    	            }
-    	          
-    	        });
-    			});
-    			
-    
-    	</script> -->
-
-
-
-
-
-
-
+			
 
 
 

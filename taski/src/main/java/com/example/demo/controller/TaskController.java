@@ -110,4 +110,13 @@ public class TaskController {
 		return "redirect:/task";
 		
 	}
+	
+	@GetMapping("/task/{id}")
+	public ModelAndView viewTask(@PathVariable("id") long taskid)
+	{
+		System.out.println("showing task ");
+		ModelAndView mv=new ModelAndView("viewtask");
+		return mv.addObject("tasklist",taskservice.findById(taskid));
+		
+	}
 }

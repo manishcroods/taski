@@ -56,4 +56,11 @@ public class TaskServiceImpl implements TaskService {
 	public void updateTaskStatus(long taskid) {
 		taskrepo.updateTask(taskid);
 	}
+	
+	@Override
+	public Task findById(long taskid) 
+	{
+		return taskrepo.findById(taskid).orElse(null);
+		
+	}
 }
