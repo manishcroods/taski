@@ -496,10 +496,10 @@
 								<li class="nav-item"><a href="/dashboard"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_2/LTR/default/full/index.html"
+									href="/runningtask"
 									class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_3/LTR/default/full/index.html"
+									href="/completedtask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 						<li class="nav-item nav-item-submenu"><a href="#"

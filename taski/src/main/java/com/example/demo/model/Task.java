@@ -28,7 +28,7 @@ public class Task {
 	
 	private Date created;
 	
-	private String status;
+	private String status="running";
 	
 	private String taskType;
 	

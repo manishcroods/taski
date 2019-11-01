@@ -44,7 +44,7 @@ public class TaskController {
 	{
 		System.out.println("saving task");
 		taskservice.saveTask(task);
-		return "addtask";
+		return "redirect:/addtask";
 	}
 
 	
@@ -84,7 +84,7 @@ public class TaskController {
 	{
 		System.out.println("deleting task");
 		taskservice.deleteTask(taskid);
-		return "task";
+		return "redirect:runningtask";
 		
 	}
 	
@@ -97,6 +97,17 @@ public class TaskController {
 		ModelAndView mv=new ModelAndView();
 		mv.addObject("task", taskservice.findByTaskid(taskid));
 		return mv;
+		
+	}
+	
+	
+/* update task status */
+	@GetMapping("/task/updatestatus/{id}")
+	public String updateTaskStatus(@PathVariable("id") long taskid) 
+	{
+		System.out.println("edit status of task");
+		taskservice.updateTaskStatus(taskid);
+		return "redirect:/task";
 		
 	}
 }

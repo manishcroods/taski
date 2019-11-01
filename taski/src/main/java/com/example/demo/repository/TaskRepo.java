@@ -11,10 +11,13 @@ import com.example.demo.model.Task;
 @Repository
 public interface TaskRepo extends JpaRepository<Task,Long>{
 
-	@Query(value = "select* from tbl_task where status='running';" , nativeQuery = true)
+	@Query(value = "select* from tbl_task where status!='completed';" , nativeQuery = true)
 	public List<Task> findAllRunningTask();
 	
 	@Query(value = "select* from tbl_task where status='completed';" , nativeQuery = true)
 	public List<Task> findAllCompletedTask();
+	
+	@Query(value = "update tbl_task set status='running'  where task_id=16;" , nativeQuery = true)
+	public void updateTask(long taskid);
 	
 }

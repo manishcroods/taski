@@ -424,8 +424,8 @@
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_3/LTR/default/full/index.html" class="nav-link">Completed Task</a></li>
+								<li class="nav-item"><a href="/runningtask" class="nav-link">Running Task</a></li>
+								<li class="nav-item"><a href="/completedtask" class="nav-link">Completed Task</a></li>
 							</ul>
 						</li>
 						<li class="nav-item nav-item-submenu">

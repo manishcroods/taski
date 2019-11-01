@@ -18,4 +18,6 @@ public interface TaskService {
 	
 	public Task findByTaskid(long taskid);
 	
+	public void updateTaskStatus(long taskid) ;
+	
 }
