@@ -641,19 +641,21 @@
 											<td>
 											<td>
 												<span> 
-														<a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${task.taskId}"
-															class="btn btn-primary btn-sm edit-task" title="Edit">
-																<i class="fa fa-trash"> </i>View
-														</a> 
 													
-													
-													<a href="JavaScript:Void(0)" data-toggle="modal"
+													<a href="/task/view/{task.taskId}" data-toggle="modal"
 														data-id="${task.taskId}"
-														class="btn btn-primary btn-sm edit-task" title="Edit">
-														<i class="fa fa-trash"> </i>Edit
+														class="btn btn-primary btn-sm view-task" title="view">
+														<i class="fa fa-trash"> </i>View
 												
 													</a> 
+													
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+															data-id="${task.taskId}"
+															onclick="updateTaskfun(this,${task.taskId})"
+															data-target="#task_update_modal"
+															class="btn btn-primary btn-sm edit-user"
+															title="Edit"> <i class="fa fa-edit"></i>Edit
+															</a>
 													
 												
 												<input type="button"
@@ -803,12 +805,13 @@ $(document).ready(function() {
 					var id=$(crow).find('td:eq(0)').text();
 					var title = $(crow).find('td:eq(1)').text();
 					var category = $(crow).find('td:eq(2)').text();
-					var user = $(crow).find('td:eq(3)').text();
+					var user = $(crow).find('td:eq(4)').text();
 					var taskDescripation = $(crow).find('td:eq(4)').text();
 				
 					console.log(id);
 					console.log(title);
 					console.log(category);
+					console.log(user);
 					
 					$('#titleid').val(title);
 					$('#categoryid').val(category);
@@ -818,7 +821,7 @@ $(document).ready(function() {
 				}
 				</script>
 
-<script>
+	<script>
 				   
 		$('body').on('click', '.delete-task', function () 
 			{

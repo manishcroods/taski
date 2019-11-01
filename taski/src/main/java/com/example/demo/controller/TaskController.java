@@ -111,7 +111,7 @@ public class TaskController {
 		
 	}
 	
-	@GetMapping("/task/{id}")
+	@GetMapping("/task/view/{id}")
 	public ModelAndView viewTask(@PathVariable("id") long taskid)
 	{
 		System.out.println("showing task ");
