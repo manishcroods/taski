@@ -20,103 +20,112 @@ public class TaskController {
 
 	@Autowired
 	TaskService taskservice;
-	
+
 	@Autowired
-	CategoryService categoryService; 
-	
+	CategoryService categoryService;
+
 	@Autowired
 	UserService userservice;
 
-	
 	@GetMapping("/addtask")
-	public ModelAndView saveTask() 
-	{
+	public ModelAndView saveTask() {
 		System.out.println("showing task page");
-		ModelAndView mv=new ModelAndView("addtask");
+		ModelAndView mv = new ModelAndView("addtask");
 		mv.addObject("categorylist", categoryService.findAllCategory());
-		mv.addObject("userlist",userservice.findAllUser());
+		mv.addObject("userlist", userservice.findAllUser());
 		return mv;
 	}
-	
+
 	@PostMapping("/savetask")
-	@ResponseBody
-	public String saveTask(@ModelAttribute Task task) 
-	{
-		System.out.println("saving task");
+	public String saveTask(@ModelAttribute Task task) {
+		System.out.println("saving task:" + task);
 		taskservice.saveTask(task);
-		return "redirect:/addtask";
+		return "redirect:/runningtask";
 	}
 
-	
-/* task list */
+	/* task list */
 	@GetMapping("/task")
-	public String findAllTask(Model m) 
-	{
+	public String findAllTask(Model m) {
 		System.out.println("task page");
-		m.addAttribute("tasklist", taskservice.findAllTask());  
+		m.addAttribute("tasklist", taskservice.findAllTask());
 		return "task";
 	}
 
-	
-/* running task list */
+	/* running task list */
 	@GetMapping("/runningtask")
-	public String findRunningTask(Model m) 
-	{
+	public String findRunningTask(Model m) {
 		System.out.println("task page");
-		m.addAttribute("runningtasklist", taskservice.findAllRunningTask());  
+		m.addAttribute("runningtasklist", taskservice.findAllRunningTask());
+		m.addAttribute("categorylist", categoryService.findAllCategory());
+		m.addAttribute("userlist", userservice.findAllUser());
 		return "runningtask";
 	}
-	
-	
-/* completed task list */
+
+	/* completed task list */
 	@GetMapping("/completedtask")
-	public String findCompletedTask(Model m) 
-	{
+	public String findCompletedTask(Model m) {
 		System.out.println("fimding all completed task list");
-		m.addAttribute("completedtasklist",taskservice.findAllCompletedTask() );
+		m.addAttribute("completedtasklist", taskservice.findAllCompletedTask());
 		return "completedtask";
 	}
-	
-	
-/* delete task */
+
+	/* delete task */
 	@GetMapping("/task/delete/{id}")
-	public String deleteTask(@PathVariable("id") long taskid ) 
-	{
+	public String deleteTask(@PathVariable("id") long taskid) {
 		System.out.println("deleting task");
 		taskservice.deleteTask(taskid);
-		return "redirect:runningtask";
-		
+		return "redirect:/runningtask";
+
+	}
+
+	/* edit task */
+	@GetMapping("/task/edit/{id}")
+	public ModelAndView editTask(@PathVariable("id") long taskid) {
+		System.out.println("edit process started");
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("taskbyid", taskservice.findByTaskid(taskid));
+		return mv;
+
 	}
 	
+	/* update task status */
+	@GetMapping("/task/updatestatus/{id}")
+	@ResponseBody
+	public String updateTaskStatus(@PathVariable("id") long taskid) {
+		System.out.println("edit status of task");
+		taskservice.updateRuuningTask(taskid);
+		return "done";
+
+	}
+
+	/* view task */
+	@GetMapping("/task/view/{id}")
+	public ModelAndView viewTask(@PathVariable("id") long taskid) {
+		System.out.println("showing task ");
+		ModelAndView mv = new ModelAndView("viewtask");
+		return mv.addObject("tasklist", taskservice.findById(taskid));
+
+	}
 	
-/* edit task */
-	@GetMapping("/task/edit/{id}")
-	public ModelAndView editTask(@PathVariable("id") long taskid)
+	@GetMapping("/task/findbyid/{id}")
+	@ResponseBody
+	public Task findById(@PathVariable("id") long taskid) 
 	{
 		System.out.println("edit process started");
-		ModelAndView mv=new ModelAndView();
-		mv.addObject("task", taskservice.findByTaskid(taskid));
-		return mv;
+		System.out.println("taskservice.findByTaskid(taskid)"+taskservice.findByTaskid(taskid));
+		return taskservice.findByTaskid(taskid);
 		
 	}
 	
-	
-/* update task status */
-	@GetMapping("/task/updatestatus/{id}")
-	public String updateTaskStatus(@PathVariable("id") long taskid) 
+	/* update task status */
+	@GetMapping("/task/restore/{id}")
+	@ResponseBody
+	public String restoreTask(@PathVariable("id") long taskid) 
 	{
-		System.out.println("edit status of task");
-		taskservice.updateTaskStatus(taskid);
-		return "redirect:/task";
-		
+		System.out.println("restore  task");
+		taskservice.restoreTask(taskid);
+		return "done";
+
 	}
 	
-	@GetMapping("/task/view/{id}")
-	public ModelAndView viewTask(@PathVariable("id") long taskid)
-	{
-		System.out.println("showing task ");
-		ModelAndView mv=new ModelAndView("viewtask");
-		return mv.addObject("tasklist",taskservice.findById(taskid));
-		
-	}
 }

@@ -63,4 +63,25 @@ public class TaskServiceImpl implements TaskService {
 		return taskrepo.findById(taskid).orElse(null);
 		
 	}
+	
+	@Override
+	public void updateRuuningTask(long taskid) 
+	{
+		Task t=taskrepo.findById(taskid).orElse(null);
+		t.setStatus("completed");
+		taskrepo.save(t);
+		
+	}
+	
+	@Override
+	public void restoreTask(long taskid) 
+	{
+		Task t=taskrepo.findById(taskid).orElse(null);
+		t.setStatus("running");
+		taskrepo.save(t);
+		
+	}
+	
+	
+	
 }

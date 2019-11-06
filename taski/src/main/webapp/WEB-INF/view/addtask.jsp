@@ -509,13 +509,13 @@
 									Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_2/LTR/default/full/index.html"
+									href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_3/LTR/default/full/index.html"
+									href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
@@ -606,7 +606,7 @@
 									
 									<div class="form-group">
 				                        <h4>Category</h4>
-					                        <select class="form-control  chosen-select" name="categoryId">
+					                        <select class="form-control  chosen-select" name="category.categoryId">
 					                        	<c:forEach var="category" items="${categorylist}">
 																<option value="${category.categoryId}">${category.categoryName}</option>
 												</c:forEach>
@@ -615,7 +615,7 @@
 				                    
 				                    <div class="form-group">
 				                        <h4>User</h4>
-					                        <select class="form-control  chosen-select" name="userId">
+					                        <select class="form-control  chosen-select" name="user.userId">
 					                        	<c:forEach var="user" items="${userlist}">
 															<option value="${user.userId}">${user.userName}</option>
 														</c:forEach>
@@ -631,7 +631,7 @@
 									</div>
 								</div>
 							
-							<button type="submit" class="btn btn-primary btn-block">Add New User</button>
+							<button type="submit" class="btn btn-primary btn-block">Add New Task</button>
 						</form>
 
 					</div>

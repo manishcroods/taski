@@ -480,7 +480,7 @@
 							<a href="#" class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
+								<li class="nav-item"><a href="/addtask" class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a href="/runningtask" class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a href="/completedtask" class="nav-link">Completed Task</a></li>
 							</ul>
@@ -489,9 +489,9 @@
 							<a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Personal Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_3/LTR/default/full/index.html" class="nav-link">Completed Task</a></li>
+								<li class="nav-item"><a href="/addpersonaltask" class="nav-link active">Add new Task</a></li>
+								<li class="nav-item"><a href="/runningpersonaltask" class="nav-link">Running Task</a></li>
+								<li class="nav-item"><a href="/completedpersonaltask" class="nav-link">Completed Task</a></li>
 							</ul>
 						</li>
 						
@@ -622,18 +622,24 @@
 															</a> --%>
 															
 															
-													 <a href = "------" 
-															class="btn btn-primary btn-sm view-task" 
-															data-id="${task.taskId}" title="view">
-															<i class="fa fa-view"></i>
-															View</a>
+													 <a href="JavaScript:Void(0)"
+														data-toggle="modal" data-id="${task.taskId}"
+														class="btn btn-primary btn-sm view-task" title="View">
+														<i class="fa fa-trash"> </i>View
+													</a>
 													
 													
-													 <a href = "JavaScript:Void(0)" 
+													 <%-- <a href = "JavaScript:Void(0)" 
 															class="btn btn-warning btn-sm restore-user" 
 															data-id="${task.taskId}" title="restore">
 															<i class="fa fa-trash"></i>
-															Restore</a> 
+															Restore</a>  --%>
+															
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+														data-id="${task.taskId}"
+														class="btn btn-primary btn-sm restore-task" title="Done">
+														<i class="fa fa-view"> </i>Restore
+													</a> 
 													
 													
 													<a href="JavaScript:Void(0)" data-toggle="modal"
@@ -656,135 +662,66 @@
 					</div>
 				</div>
 						
-						
-						
-		<%-- <!-- update user  -->
-						
-				<!-- <!--  edit model  -->
 					
-					<div class="modal fade" id="user_update_modal">
-						<div class="modal-dialog">
-							<div class="modal-content">
+	<!-- view page code  -->
 
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h2>Update User</h2>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
 
-								<!-- Modal body -->
-								<div class="modal-body">
-									<form id="user-form" class="form" action="/saveuser"
-										method="post">
-										
-									<div class="form-group">
+			<div class="modal fade" id="task_view_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h2>View Task</h2>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+					
+						<div class="modal-body">
+							<form id="task-form" class="form" action="/task/edit/{id}"
+								method="post">
+
+								<div class="form-group">
+
+									<input type="hidden" id="updatetaskid" name="taskId"
+										value=${task.taskId }>
+									<div class="admin-content-con">
 									
-											
-											<input type="hidden" id="updateuserid"name="userId" value=${user.userId }>
-							
-												<div class="form-group">
-													<div class="form-label-group">
-														<h4>User Name </h4>
-														<input type="text" data-id="username" id="username" name="userName" class="form-control"
-															value="${user.userName}" required="required" autofocus="autofocus" >
-													</div>
-												</div>
-											
-											<div class="form-group">
-												<div class="form-label-group">
-												<h4>Email</h4>													
-												<input type="text" id="inputEmail" name="email" class="form-control"
-														value="${user.email}" required="required" autofocus="autofocus" >
-												</div>
-											</div>
-												<button type="submit" class="btn btn-primary btn-block">Update
-												</button>
-										</div>
-										
-									</form>
+									<header>
+					                    <h3 style="color: #101010;"> Network<span style="color: green; font-size: .5em"> ( Assign to :- "User")</span></h3>
+					
+					                </header>
+					
+					                <p>
+					                	<span style="color: #101010; font-size: 1.2em;">Description :- </span>
+					                    DO IT NOW
+					                </p>
+					                <%-- <hr>
+					 		           <a href="JavaScript:Void(0)" data-toggle="modal"
+															data-id="${task.taskId}"
+															onclick="updateTaskfun(this,${task.taskId})"
+															data-target="#task_update_modal"
+															class="btn btn-primary btn-sm edit-user"
+															title="Edit"> <i class="fa fa-edit"></i>Edit
+														</a> --%>
+					                            </div>
+
 								</div>
-							</div>
+
+							</form>
 						</div>
 					</div>
-				</div> --%>
-
-
-						
+				</div>
+			</div>	
+										
 </body>
 
 
 
-<!-- edit user   -->
-
-	<!-- <script>
-$(document).ready(function() {
-
-	
-	
-	$("#user-form").submit(function(e) {
-
-	    e.preventDefault(); // avoid to execute the actual submit of the form.
-		var form = $(this);
-	  
-
-	    $.ajax({
-		           type: "POST",
-		           url: "/saveuser",
-		           data: form.serialize(), // serializes the form's elements.
-		           success: function(data)
-			           {
-			        	   var user = '<tr id="list' + data.userId + '"><td>' + data.userId + '</td><td>' + data.usernameName + '</td><td>' + data.email + '</td>';
-			               user += '<td><a href="javascript:void(0)" id="edit-user" data-id="' + data.id + '" class="btn btn-info edit-user">Edit</a></td>';
-			               user += '<td><a href="javascript:void(0)" id="delete-user" data-id="' + data.id + '" class="btn btn-danger delete-user">Delete</a></td></tr>';
-			               console.log(data);
-		
-			               $("#list" + data.userid).replaceWith(user);
-			               $('#user-form').trigger("reset");
-			               $('#user_update_modal').modal('hide');
-			               $('#list').modal('show');
-			               
-			               
-			               $(document).ajaxStop(function(){
-			            	   //alert("page reloded");
-			            	    window.location.reload();
-			            	});
-			            
-			               //alert(data); 
-			              // console.log(data);
-			             	 location.reload();
-			              
-			           }
-	         });
-	});
-
-});
-
+	<!-- //delete user  -->
 					
-				 function updateUserfun(row, id) {
-					$("#updateuser").attr("disabled", false);
-				
-					var crow = $(row).closest('tr');
-					var id=$(crow).find('td:eq(0)').text();
-					var userName = $(crow).find('td:eq(1)').text();
-					var email = $(crow).find('td:eq(2)').text();
-				
-					console.log(id);
-					console.log(userName);
-					console.log(email);
-					
-					$('#username').val(userName);
-					$('#inputEmail').val(email);
-					$('#updateuserid').val(id);
-				
-				}
-				</script>  -->
-
-
-
-
-				<!-- //delete user  -->
-					
-					<script>
+				<script>
 					   
 					    $('body').on('click', '.delete-task', function () {
 					        var taskid = $(this).data("id");
@@ -812,14 +749,43 @@ $(document).ready(function() {
 					     
 					    });   
 					    
-					  </script>
+					</script>
 					
-					
-		<!-- restore task -->
 		
-		<!-- //delete user  -->
-					
-					<script>
+	<!-- view task  -->
+				<script>
+						   
+					$('body').on('click', '.view-task', function () 
+						{
+							var taskid = $(this).data("id");
+							//alert(taskid);
+							//confirm("Are You sure want to view this page !");
+							
+							 $.ajax(
+								{
+								        	
+								    type: "GET",
+								    url: "/task/view/"+taskid,
+								    success: function (data) 
+								    {
+								    	$('#task_view_modal').modal('show');
+								          $('.result').html(data);
+								          //location.reload();
+								  	},
+								            
+								          error: function (data) 
+								          {
+								          	console.log('Error:', data);
+								          } 
+								      
+								 });
+								     
+						});   
+								    
+			</script>
+		
+	<!-- //delete user  -->
+				<script>
 					   
 					    $('body').on('click', '.restore-task', function () {
 					        var taskid = $(this).data("id");
@@ -830,13 +796,14 @@ $(document).ready(function() {
 					     $.ajax({
 					        	
 					            type: "GET",
-					            url: "/task/updatestatus/"+taskid,
-					            success: function (data) {
-					            	
+					            url: "/task/restore	/"+taskid,
+					            success: function (data) 
+					            {
+					            	console.log(data);
 					                $("#list" + taskid).remove();
-					                //location.reload();
 						            $('#list').modal('show');
 					                $('.result').html(data);
+					                location.reload();
 					            },
 					            
 					            error: function (data) {
@@ -848,5 +815,8 @@ $(document).ready(function() {
 					    });   
 					    
 					  </script>
+					  
+					  
+	<!-- restore task -->
 
 </html>

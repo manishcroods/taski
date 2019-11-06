@@ -432,9 +432,9 @@
 							<a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Personal Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_3/LTR/default/full/index.html" class="nav-link">Completed Task</a></li>
+								<li class="nav-item"><a href="/addpersonaltask" class="nav-link active">Add new Task</a></li>
+								<li class="nav-item"><a href="/runningpersonaltask" class="nav-link">Running Task</a></li>
+								<li class="nav-item"><a href="/completedpersonaltask" class="nav-link">Completed Task</a></li>
 							</ul>
 						</li>
 						

@@ -13,16 +13,16 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
 	rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/global_assets/css/icons/icomoon/styles.min.css"
+<link href="../../../../global_assets/css/icons/icomoon/styles.min.css"
 	rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/assets/css/bootstrap.min.css" rel="stylesheet"
+<link href="assets/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css">
-<link href="<%=request.getContextPath()%>/assets/css/bootstrap_limitless.min.css" rel="stylesheet"
+<link href="assets/css/bootstrap_limitless.min.css" rel="stylesheet"
 	type="text/css">
-<link href="<%=request.getContextPath()%>/assets/css/layout.min.css" rel="stylesheet" type="text/css">
-<link href="<%=request.getContextPath()%>/assets/css/components.min.css" rel="stylesheet"
+<link href="assets/css/layout.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/components.min.css" rel="stylesheet"
 	type="text/css">
-<link href="<%=request.getContextPath()%>/assets/css/colors.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
 
 <!-- Core JS files -->
@@ -62,7 +62,7 @@
 	<div class="navbar navbar-expand-md navbar-dark">
 
 		<div class="navbar-brand">
-			<a href="/category" class="d-inline-block"> <img
+			<a href="/addcontacts" class="d-inline-block"> <img
 				src="<%=request.getContextPath()%>/global_assets/images/logo_light.png"
 				alt="">
 			</a>
@@ -479,7 +479,7 @@
 				<!-- /user menu -->
 
 
-				<!-- Main left side navigation -->
+				<!-- Main navigation -->
 				<div class="card card-sidebar-mobile">
 					<ul class="nav nav-sidebar" data-nav-type="accordion">
 
@@ -495,7 +495,7 @@
 							class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addtask"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
 									href="/runningtask"
@@ -523,9 +523,9 @@
 						<!-- categories bars -->
 
 
-						<li class="nav-item"><a href="/category" class="nav-link">
+						<li class="nav-item"><a href="/Contacts" class="nav-link">
 								<i class="icon-width"> </i> <span
-								class="glyphicon glyphicon-cog">Category</span>
+								class="glyphicon glyphicon-cog">Contacts</span>
 						</a></li>
 
 
@@ -535,12 +535,14 @@
 							class="nav-link"><i class="icon-stack"></i> <span>Users</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
+								<!-- <li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Horizontal navigation</a></li>
+								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">No sidebar</a></li> -->
 								<li class="nav-item"><a href="/saveuser"
 									class="nav-link">Add new User</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/user"
 									class="nav-link">All Users</a>
-									</li>
-							</ul></li>
+									</li>		
+									</ul></li>
 
 
 						<!-- Contacts bar -->
@@ -550,26 +552,26 @@
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 
-								<li class="nav-item"><a href="/addcontacts"
-									class="nav-link">Add Contacts</a></li>
+								<li class="nav-item"><a href="/addcontacts" class="nav-link">Add
+										Contacts</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/contacts"
 									class="nav-link">All Users</a> 
-									</ul>
-									</li>
-							</ul>
-			
+										</li>
+							</ul></li>
+						
 
 
 
 						<!-- settings  bar -->
 
-						<li class="nav-item">
-							<a href="/setting" class="nav-link">
+						<li class="nav-item"><a
+							href="/setting" class="nav-link">
 								<i class="icon-width"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
-						</a>
-						</li>
+						</a></li>
 						<!-- /main -->
+
+					</ul>
 				</div>
 				<!-- /main navigation -->
 
@@ -577,103 +579,44 @@
 			<!-- /sidebar content -->
 
 		</div>
-		<!-- /main sidebar -->
+		
+<!-- page content  -->
 
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-			<!-- Page header -->
-			<div class="page-header page-header-light">
-				<div class="page-header-content header-elements-md-inline">
-					<div class="page-title d-flex">
-						<h4>
-							<i class="icon-arrow-left52 mr-2"></i> <span
-								class="font-weight-semibold">Home</span> - Dashboard
-						</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i
-							class="icon-more"></i></a>
-					</div>
-				</div>
-
-				<div
-					class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
-					<div class="d-flex">
-						<div class="breadcrumb">
-							<a href="/category" class="breadcrumb-item"><i
-								class="icon-home2 mr-2"></i> Home</a> <span
-								class="breadcrumb-item active">Category</span>
+			<div class="container">
+				<div class="card card-register mx-auto mt-5">
+					<div class="card-body">
+						<div class="card-header">
+							<header>
+		                    	<h2>Create New Personal Task</h2>
+		                	</header>
 						</div>
+					
+						<form id="task-form" class="form" action="/savetask"
+							method="post" >
+							
+							<div class="form-group">
+								<div class="form-label-group">
+									<h4>Title</h4>
+										<input type="text" id="title" name="title" class="form-control"
+											placeholder="Title" required="required"
+											autofocus="autofocus">
+									</div>
+								</div>
+								
+								
+								<div class="form-group">
+									<div class="form-label-group">
+										<h4>Task Description</h4><textarea class="form-control" name="taskDescription" rows="3" required="required" 
+												placeholder="please give task discraption"></textarea>
+									</div>
+								</div>
+							
+							<button type="submit" class="btn btn-primary btn-block">Add New Personal Task</button>
+						</form>
 
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i
-							class="icon-more"></i></a>
 					</div>
-
-
 				</div>
 			</div>
-			<!-- /page header -->
-
-
-
-
-
-
-			<!-- category data -->
-
-
-			<div class="card mb-6">
-
-				<div class="container">
-					<div class="card-body">
-						<form action="/savecategory" method="post">
-							<div class="form-group">
-							<table class="table datatable-basic" id="dataTable" width="100%" cellspacing="0">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>Name</th>
-										<th>Actions</th>
-
-									</tr>
-								</thead>
-
-								<tbody>
-										<tr id="list">
-											<td>
-												<input type="hidden" name="categoryId" value=${category.categoryId }>
-											</td>
-											
-											<td>
-												<input type="text" id="categoryname" name="categoryName" class="form-control"
-													value="${category.categoryName}" required="required" autofocus="autofocus" >
-											</td>
-											
-											<%-- <td>
-												<input type="text" id="categorycreated" name="created" class="form-control"
-												value="${category.created}" autofocus="autofocus" >	
-											</td> --%>
-											
-											<td>
-											
-												<button type="submit" class="btn btn-primary btn-block">Update</button>
-												
-											</td>
-										</tr>
-								</tbody>
-							</table>
-							</div>
-							</form>
-							</div>
-						</div>
-					</div>
-					</div>
-					</div>
-					
-					
-</body>
-
-
 </body>
 
 </html>

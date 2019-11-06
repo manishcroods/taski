@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -506,13 +507,13 @@
 									Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_2/LTR/default/full/index.html"
+									href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_3/LTR/default/full/index.html"
+									href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
@@ -689,56 +690,88 @@
 								</div>
 							</div>
 
-							<div class="card-body py-0">
-								<div class="row">
-									<div class="col-sm-4">
-										<div
-											class="d-flex align-items-center justify-content-center mb-2">
-											<a href="/saveuser"
-												class="btn bg-transparent border-teal text-teal rounded-round border-2 btn-icon mr-3">
-												<i class="icon-plus3"></i>
-											</a>
-											<div>
-												<div class="font-weight-semibold">New Users</div>
-												<span class="text-muted">2,349 avg</span>
-											</div>
-										</div>
-										<div class="w-75 mx-auto mb-3" id="new-visitors"></div>
-									</div>
+							<div class="card mb-6">
 
-									<div class="col-sm-4">
-										<div
-											class="d-flex align-items-center justify-content-center mb-2">
-											<a href="#"
-												class="btn bg-transparent border-warning-400 text-warning-400 rounded-round border-2 btn-icon mr-3">
-												<i class="icon-watch2"></i>
-											</a>
-											<div>
-												<div class="font-weight-semibold">New sessions</div>
-												<span class="text-muted">08:20 avg</span>
-											</div>
-										</div>
-										<div class="w-75 mx-auto mb-3" id="new-sessions"></div>
-									</div>
+				<div class="container">
 
-									<div class="col-sm-4">
-										<div
-											class="d-flex align-items-center justify-content-center mb-2">
-											<a href="#"
-												class="btn bg-transparent border-indigo-400 text-indigo-400 rounded-round border-2 btn-icon mr-3">
-												<i class="icon-people"></i>
-											</a>
-											<div>
-												<div class="font-weight-semibold">Total online</div>
-												<span class="text-muted"><span
-													class="badge badge-mark border-success mr-2"></span> 5,378
-													avg</span>
-											</div>
-										</div>
-										<div class="w-75 mx-auto mb-3" id="total-online"></div>
-									</div>
-								</div>
-							</div>
+
+
+					<!-- ** product table ** -->
+					<div class="card-body">
+						<div class="table-responsive">
+							<h2>Running Task List</h2>
+							<table class="table table-hover" id="dataTable">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Name</th>
+										<th>Created</th>
+										<th>Status</th>
+										<th>Assigned to</th>
+										<th>Send Warning</th>
+										<th>Actions</th>
+
+									</tr>
+								</thead>
+
+								<tbody>
+									<c:forEach var="task" items="${runningtasklist}">
+										<tr id="list${task.taskId}">
+											<td id="taskid">${task.taskId }</td>
+											<td id="titleid">${task.title}</td>
+											<td id="createdid">${task.created }</td>
+											<td id="statusid">${task.status}</td>
+											<td id="userid">${task.user.userName}</td>
+											<td>
+												<button type="button" data-user=${task.taskId }
+													class="warning glyphicon glyphicon-bell btn btn-warning"
+													data-toggle="modal" data-target="#myModal">Warning
+												</button>
+
+											</td>
+											<td>
+											<td>
+												<span> 
+													
+													<a href="/task/view/{task.taskId}" data-toggle="modal"
+														data-id="${task.taskId}"
+														class="btn btn-primary btn-sm view-task" title="view">
+														<i class="fa fa-trash"> </i>View
+												
+													</a> 
+													
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+															data-id="${task.taskId}"
+															onclick="updateTaskfun(this,${task.taskId})"
+															data-target="#task_update_modal"
+															class="btn btn-primary btn-sm edit-user"
+															title="Edit"> <i class="fa fa-edit"></i>Edit
+															</a>
+													
+												
+												<input type="button"
+													class="btn btn-primary btn-sm done-task"
+													data-item-id="${task.taskId}" id="done-task${task.taskId}"
+													value="Done" /> 
+													
+													<a href="JavaScript:Void(0)"
+														data-toggle="modal" data-id="${task.taskId}"
+														class="btn btn-primary btn-sm delete-task" title="Delete">
+															<i class="fa fa-trash"> </i>Delete
+													</a>
+														
+														
+												
+
+											</span></td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 
 							<div class="chart position-relative" id="traffic-sources"></div>
 						</div>

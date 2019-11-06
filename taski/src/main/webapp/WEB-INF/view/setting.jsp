@@ -480,7 +480,7 @@
 							<a href="#" class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
+								<li class="nav-item"><a href="/addtask" class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a href="/runningtask" class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a href="/completedtask" class="nav-link">Completed Task</a></li>
 							</ul>
@@ -489,9 +489,9 @@
 							<a href="#" class="nav-link"><i class="icon-color-sampler"></i> <span>Personal Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard" class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="../../../../layout_3/LTR/default/full/index.html" class="nav-link">Completed Task</a></li>
+								<li class="nav-item"><a href="/addpersonaltask" class="nav-link active">Add new Task</a></li>
+								<li class="nav-item"><a href="/runningpersonaltask" class="nav-link">Running Task</a></li>
+								<li class="nav-item"><a href="/completedpersonaltask" class="nav-link">Completed Task</a></li>
 							</ul>
 						</li>
 						
@@ -590,256 +590,59 @@
 <!-- category data -->
 
 
-		<div class="card mb-6">
+			<div class="admin-content-con">
+				<header>
+					<h3>Company Name</h3>
+				</header>
 
-					<div class="container">
-						<!-- Button to Open the Modal -->
-
-						<!-- <div class="row">
-							<div class="col-md-6 dashboard-right-cell">
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#myModal">+Add
-									Contacts</button>
-							</div>
-
-							<div class="col-md-6 dashboard-left-cell">
-								<div class="topnav">
-									<form class="example" action="/contacts"
-										style="margin: auto; max-width: 300px">
-										<input id="input" type="text" placeholder="Search.." name="search">
-										<button type="submit">
-											<i class="fa fa-search"></i>search
-										</button>
-									</form>
-								</div>
-							</div>
-						</div> -->
-
-
-						<!-- ** product table ** -->
-						<div class="card-body">
-							<div class="table-responsive">
-								<h2>User List</h2>
-									<table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Name</th>
-												<th>Email</th>
-												<th>Joined Time</th>
-												<th>Status</th>
-												<th>Actions</th>
-	
-											</tr>
-										</thead>
-
-									<tbody>
-										<c:forEach var="user" items="${userlist}">
-											<tr id="list${user.userId}">
-												<td>${user.userId}</td>
-												<td>${user.userName}</td>
-												<td>${user.email}</td>
-												<td>${user.joinedTime}</td>
-												<td>
-												<td>
-													<span>
-													
-												
-													<a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${user.userId}"
-															onclick="updateUserfun(this,${user.userId})"
-															data-target="#user_update_modal"
-															class="btn btn-primary btn-sm edit-user"
-															title="Edit"> <i class="fa fa-edit"></i>Edit
-															</a>
-															
-													
-													<a href = "/user/delete/${user.userId}" 
-															class="btn btn-primary btn-sm delete-user" 
-															data-id="${user.userId}" title="delete">
-															<i class="fa fa-trash"></i>
-															Delete</a>
-														
-													</span>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						
-						
-						
-		<!-- update user  -->
-						
-				<!-- <!--  edit model  -->
-					
-					<div class="modal fade" id="user_update_modal">
-						<div class="modal-dialog">
-							<div class="modal-content">
-
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h2>Update User</h2>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-
-								<!-- Modal body -->
-								<div class="modal-body">
-									<form id="user-form" class="form" action="/setting"
-										method="get">
-										
-									<div class="form-group">
-									
-											
-											<input type="hidden" id="updateuserid"name="userId" value=${user.userId }>
-							
-											<div class="form-group">
-												<div class="form-label-group">
-													<h4>User Name </h4>
-													<input type="text" data-id="username" id="username" name="userName" class="form-control"
-														value="${user.userName}" required="required" autofocus="autofocus" >
-												</div>
-											</div>
-											
-											<div class="form-group">
-												<div class="form-label-group">
-												<h4>Email</h4>													
-												<input type="text" id="inputEmail" name="email" class="form-control"
-														value="${user.email}" required="required" autofocus="autofocus" >
-												</div>
-											</div>
-												<button type="submit" class="btn btn-primary btn-block">Update
-												</button>
-										</div>
-										
-									</form>
-								</div>
-							</div>
-						</div>
+				<form
+					action="https://envato.kunjoonline.com/task/admin/project-name"
+					method="post">
+					<input type="hidden" name="_token"
+						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi">
+					<div class="form-group col-md-8">
+						<label class="">Name</label> <input type="text"
+							class="form-control " id="title" required="" name="project_name"
+							placeholder="Name">
 					</div>
+					<div class="form-group col-md-4 ">
+						<label class="">Submit</label> <input type="submit"
+							class="form-control btn btn-primary" name="" value="Save">
+					</div>
+				</form>
 				
-</body>
+				
+				<div class="admin-content-con"></div>
+				<header>
+					<h3>Set Office Time</h3>
+				</header>
+				<form action="https://envato.kunjoonline.com/task/admin/office-time"
+					method="post">
+					<input type="hidden" name="_token"
+						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi">
+					<div class="form-group col-xs-4">
+						<label class="">In time </label> <input type="text"
+							class="form-control" id="title" required="" name="in_time"
+							placeholder="In time">
+					</div>
+					<div class="form-group col-xs-4">
+						<label class="">Out time</label> <input type="text"
+							class="form-control" id="title" required="" name="out_time"
+							placeholder="Out time">
+					</div>
+					<div class="form-group col-xs-4">
+						<label class="">Submit </label> <input type="submit"
+							class="form-control btn btn-primary" name=""
+							value="Set Office Time">
+						<!-- <button type="button" class="btn btn-large btn-block btn-primary" name="Add_cat">Save Category</button> -->
+					</div>
+				</form>
 
+				<div class="clearfix"></div>
+				<header>
+					<h3>Enable/Disable User Registration</h3>
+				</header>
+				<a href="https://envato.kunjoonline.com/task/admin/ed_registration"
+					class="btn btn-danger">Disable</a>
 
-
-
-<!-- <script>
-$(document).ready(function() {
-
-	
-	
-	$("#user-form").submit(function(e) {
-
-	    e.preventDefault(); // avoid to execute the actual submit of the form.
-
-	    var form = $(this);
-	  
-
-	    $.ajax({
-	           type: "POST",
-	           url: "/saveuser",
-	           data: form.serialize(), // serializes the form's elements.
-	           success: function(data)
-	           {
-	        	   var user = '<tr id="list' + data.userId + '"><td>' + data.userId + '</td><td>' + data.usernameName + '</td><td>' + data.email + '</td>';
-	               user += '<td><a href="javascript:void(0)" id="edit-user" data-id="' + data.id + '" class="btn btn-info edit-user">Edit</a></td>';
-	               user += '<td><a href="javascript:void(0)" id="delete-user" data-id="' + data.id + '" class="btn btn-danger delete-user">Delete</a></td></tr>';
-	               console.log(user);
-
-	               $("#list" + data.userid).replaceWith(user);
-	               $('#user-form').trigger("reset");
-	               $('#user_update_modal').modal('hide');
-	               //alert(data); 
-	              // console.log(data);
-	              location.reload();
-	              
-	           }
-	         });
-	});
-
-});
-
-function updateUserfun(row, id) {
-	$("#updateuser").attr("disabled", false);
-
-	var crow = $(row).closest('tr');
-	var id=$(crow).find('td:eq(0)').text();
-	var userName = $(crow).find('td:eq(1)').text();
-	var email = $(crow).find('td:eq(2)').text();
-
-	console.log(id);
-	console.log(userName);
-	console.log(email);
-	
-	$('#username').val(userName);
-	$('#inputEmail').val(email);
-	$('#updateuserid').val(id);
-
-}
-</script> -->
-
-
-<!-- /* When click edit user */ -->
-
-<!-- <script >
-
-		$(document).ready(function () 
-			{
- 
-		    $('body').on('click', '.edit-user', function () {
-		    	//alert("hello");
-		    	console.log($(this).html());
-		      	var userid = $(this).data('id');
-		     	 alert(userid);
-		      
-		      $.get('user/' +'edit/'+ userid , function (data) {
-		         	$('#usermodal').html("Edit User");
-		         	 $('#btn-save').val("edituser");
-		          	$('#user_update_modal').modal('show');
-		          	$('#userid').val(data.id);
-		         	 $('#username').val(data.userName);
-		          	//$('#created').val(data.created);
-		      })
-		   });
-			});
- 
-		    </script> -->
-		    
-		    
-
-		<!-- //delete user  -->
-					<!-- <script>
-					   
-					    $('body').on('click', '.delete-user', function () {
-					        var userid = $(this).data("id");
-					        alert(userid);
-					        confirm("Are You sure want to delete !");
-					 
-					       
-					        $.ajax({
-					        	
-					            type: "GET",
-					            url: "/user/delete/"+userid,
-					            success: function (data) {
-					            	
-					                $("#list" + userid).remove();
-					                location.reload();
-					                $('#list').modal('show');
-					            },
-					            error: function (data) {
-					                console.log('Error:', data);
-					            }
-					        });
-					    });   
-					  </script>
- -->
-
-<script type="text/javascript">
-function showAlert(){
-alert("do you want to delete it?");
-}
-</script>
-
-</html>
+			</div></html>

@@ -22,4 +22,8 @@ public interface TaskService {
 	
 	public Task findById(long taskid) ;
 	
+	public void updateRuuningTask(long taskid) ;
+	
+	public void restoreTask(long taskid) ;
+	
 }

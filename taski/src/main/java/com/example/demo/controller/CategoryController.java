@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Category;
@@ -21,13 +20,13 @@ public class CategoryController {
 
 	
 	@PostMapping("/savecategory")
-	@ResponseBody
-	public Category saveCategory(@ModelAttribute Category category) 
+	//@ResponseBody
+	public String saveCategory(@ModelAttribute Category category) 
 	{
 		System.out.println("category save model");
 		category=categoryService.saveCategory(category);
 		System.out.println("category saved");
-		return category;
+		return "redirect:/category";
 	}
 	
 
@@ -40,6 +39,7 @@ public class CategoryController {
 	 * System.out.println("category saved"); return c; }
 	 */
 
+	
 	@GetMapping("/category")
 	public String getAllCategory(Model m) {
 		System.out.println("category page");

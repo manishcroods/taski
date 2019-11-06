@@ -1,4 +1,4 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -497,11 +497,9 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/dashboard"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningtask"
+								<li class="nav-item"><a href="/runningtask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedtask"
+								<li class="nav-item"><a href="/completedtask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 						<li class="nav-item nav-item-submenu"><a href="#"
@@ -509,13 +507,13 @@
 									Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_2/LTR/default/full/index.html"
+									href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
 								<li class="nav-item"><a
-									href="../../../../layout_3/LTR/default/full/index.html"
+									href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
@@ -535,11 +533,10 @@
 							class="nav-link"><i class="icon-stack"></i> <span>Users</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="/saveuser"
-									class="nav-link">Add new User</a></li>
+								<li class="nav-item"><a href="/saveuser" class="nav-link">Add
+										new User</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/user"
-									class="nav-link">All Users</a>
-									</li>
+									class="nav-link">All Users</a></li>
 							</ul></li>
 
 
@@ -552,24 +549,20 @@
 
 								<li class="nav-item"><a href="/addcontacts"
 									class="nav-link">Add Contacts</a></li>
-								<li class="nav-item nav-item-submenu">
-									<a href="/contacts"
+								<li class="nav-item nav-item-submenu"><a href="/contacts"
 									class="nav-link">All Users</a>
-									</ul>
-									</li>
-									
-							<!-- settings  bar -->
+							</ul></li>
 
-						<li class="nav-item"><a
-							href="/setting" class="nav-link">
+						<!-- settings  bar -->
+
+						<li class="nav-item"><a href="/setting" class="nav-link">
 								<i class="icon-width"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
-							</a>
-						</li>
-									
-									
-						</ul>
-						
+						</a></li>
+
+
+					</ul>
+
 				</div>
 				<!-- /main navigation -->
 
@@ -648,224 +641,210 @@
 					</div>
 				</div>
 			</div>
-		
 
 
-					<!-- ** product table ** -->
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table datatable-basic" id="dataTable">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>Name</th>
-										<th>Created</th>
-										<th>Actions</th>
 
-									</tr>
-								</thead>
+			<!-- ** product table ** -->
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table datatable-basic" id="dataTable">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Name</th>
+								<th>Created</th>
+								<th>Actions</th>
 
-								<tbody>
-									<c:forEach var="category" items="${categorylist}">
-										<tr id="list${category.categoryId}">
-											<td>${category.categoryId}</td>
-											<td>${category.categoryName}</td>
-											<td>${category.created}
-											<td>
-											<span>
+							</tr>
+						</thead>
+
+						<tbody>
+							<c:forEach var="category" items="${categorylist}">
+								<tr id="list${category.categoryId}">
+									<td>${category.categoryId}</td>
+									<td>${category.categoryName}</td>
+									<td>${category.created}
+									<td>
+										<span>
+											<a href="JavaScript:Void(0)"
+												data-toggle="modal" data-id="${category.categoryId}"
+												onclick="updateCategoryfun(this,${category.categoryId})"
+												data-target="#category_update_modal"
+												class="btn btn-primary btn-sm edit-category" title="Edit">
+												<i class="fa fa-edit"></i>Edit
+											</a>
 											
-												<a href="JavaScript:Void(0)" data-toggle="modal"
-															onclick="updateCategoryfun(this,${category.categoryId})"
-															data-target="#category_update_modal"
-															class="btn btn-primary btn-sm edit-category"
-															title="Edit"> <i class="fa fa-edit"></i>Edit
-															</a>
-															
-															
-							
-													<%-- 	<a href = "/category/delete/${category.categoryId}" 
-															 onclick="showAlert()"
-															class="btn btn-primary btn-sm" title="delete">
-															<i class="fa fa-trash">
-															</i>
-															Delete
-														</a> --%>
-														
-														
-																<a href="JavaScript:Void(0)" 
-																	data-toggle="modal"
-																	data-id="${category.categoryId}"
-																	class="btn btn-primary btn-sm delete-category"
-																	title="Delete"> <i class="fa fa-trash"></i>Delete
-																	</a>
-									
-									
-													</span>
-													
-													
-													
-											</td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
+											<a href="JavaScript:Void(0)" data-toggle="modal"
+												data-id="${category.categoryId}"
+												class="btn btn-primary btn-sm delete-category" title="Delete">
+													<i class="fa fa-trash"></i>Delete
+											</a>
+
+
+									</span></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+
+			<!-- pop-up open for add product -->
+			<div class="modal fade" id="myModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">Add New Category</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
-					</div>
 
+						<!-- Modal body -->
+						<div class="modal-body">
+							<form id="category-form" class="form" action="/savecategory"
+								method="post">
 
-					<!-- pop-up open for add product -->
-					<div class="modal fade" id="myModal">
-						<div class="modal-dialog">
-							<div class="modal-content">
+								<div class="form-group">
+									<h4>Category Name</h4>
+									<div class="form-input-group">
+										<input type="text" id="categoryname" name="categoryName"
+											class="form-control" placeholder="Category Name"
+											required="required" autofocus="autofocus">
+									</div>
 
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h4 class="modal-title">Add New Category</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
 								</div>
 
-								<!-- Modal body -->
-								<div class="modal-body">
-									<form id="category-form" class="form" action="/savecategory"
-										method="post">
 
-										<div class="form-group">
-											<h4>Category Name</h4>
-												<div class="form-input-group">
-													<input type="text" id="categoryname" name="categoryName"
-														class="form-control" placeholder="Category Name"
-														required="required" autofocus="autofocus">
-												</div>
-
-										</div>
-
-
-										<div class="modal-footer">
-											<button type="submit" class="btn btn-primary"
-												>Save</button>
-										</div>
-									</form>
+								<div class="modal-footer">
+									<button type="submit" data-toggle="modal" class="btn btn-primary">Save</button>
 								</div>
-							</div>
-						</div>
-					</div>
-					
-				
-				
-				
-				
-				
-					<!-- <!--  edit model  -->
-					
-					<div class="modal fade" id="category_update_modal">
-						<div class="modal-dialog">
-							<div class="modal-content">
-
-								<!-- Modal Header -->
-								<div class="modal-header">
-									<h4 class="modal-title">update category</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-
-								<!-- Modal body -->
-								<div class="modal-body">
-									<form id="category-form" class="form" action="/savecategory"
-										method="post">
-										
-									<div class="form-group">
-									
-											
-											<input type="hidden" id="updatecategoryid"name="categoryId" value=${category.categoryId }>
-							
-											<div class="form-group">
-												<div class="form-label-group">
-													<input type="text" id="updatecategoryname" name="categoryName" class="form-control"
-														value="${category.categoryName}" required="required" autofocus="autofocus" >
-												</div>
-											</div>
-												<button type="submit" class="btn btn-primary btn-block">Update
-												</button>
-										</div>
-										
-									</form>
-								</div>
-							</div>
+							</form>
 						</div>
 					</div>
 				</div>
-					
-					
-					
+			</div>
+
+
+
+
+
+
+			<!-- <!--  edit model  -->
+
+			<div class="modal fade" id="category_update_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">update category</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body">
+							<form id="category-form" class="form" action="/savecategory"
+								method="post">
+
+								<div class="form-group">
+
+
+									<input type="hidden" id="updatecategoryid" name="categoryId" 	>
+
+									<div class="form-group">
+										<div class="form-label-group">
+											<input type="text" id="updatecategoryname"
+												data-id="updatecategoryname" name="categoryName"
+												class="form-control" value="${category.categoryName }"
+												required="required" autofocus="autofocus">
+										</div>
+									</div>
+									
+									<button type="submit" class="btn btn-primary btn-block save-category">Update
+										</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 
 
-<!--update model code  -->
+
+<!-- AJAx code  -->
+
 
 <script>
+
 $(document).ready(function() {
 
 	
 	
-	$("#category-form").submit(function(e) {
+	$("#category-form").submit(function(e) 
+			{
 
-	    e.preventDefault(); // avoid to execute the actual submit of the form.
-		var form = $(this);
-	  
-
-	    $.ajax({
-		           type: "POST",
-		           url: "/savecategory",
-		           data: form.serialize(), // serializes the form's elements.
-		           success: function(data)
-			           {
-			        	   var category = '<tr id="list' + data.categoryId + '"><td>' + data.categoryId + '</td><td>' + data.categoryName + '</td><td>';
-			               category += '<td><a href="javascript:void(0)" id="edit-category" data-id="' + data.id + '" class="btn btn-info edit-category">Edit</a></td>';
-			               user += '<td><a href="javascript:void(0)" id="delete-category" data-id="' + data.id + '" class="btn btn-danger delete-category">Delete</a></td></tr>';
-			               console.log(data);
+			    e.preventDefault(); // avoid to execute the actual submit of the form.
+				var form = $(this);
+			  
 		
-			               $("#list" + data.categoryid).replaceWith(category);
-			               $('#category-form').trigger("reset");
-			               $('##category_update_modal').modal('hide');
-			               $('#list').modal('show');
-			               
-			               
-			               $(document).ajaxStop(function(){
-			            	   //alert("page reloded");
-			            	    window.location.reload();
-			            	});
-			            
-			               //alert(data); 
-			              // console.log(data);
-			             	 location.reload();
-			              
-			           }
-	         });
-	});
-
-});
-
-					
-				 function updateCategoryfun(row, id) {
-					$("#updatecategory").attr("disabled", false);
+			    $.ajax({
+				           type: "POST",
+				           url: "/savecategory",
+				           data: form.serialize(), // serializes the form's elements.
+				           success: function(data)
+					           {
+				        	   	$('#myModal').modal('hide');
+					        	  	var category = '<tr id="list' + data.categoryId + '"><td>' + data.categoryId + '</td>';
+					              	category += '<td><a href="javascript:void(0)" id="edit-category" data-id="' + data.id + '" class="btn btn-info edit-category">Edit</a></td>';
+					             	category += '<td><a href="javascript:void(0)" id="delete-category" data-id="' + data.id + '" class="btn btn-danger delete-category">Delete</a></td></tr>';
+					              	 console.log(data);
 				
-					var crow = $(row).closest('tr');
-					var id=$(crow).find('td:eq(0)').text();
-					var categoryName = $(crow).find('td:eq(1)').text();
-					//var email = $(crow).find('td:eq(2)').text();
+					               $("#list" + data.categoryId).replaceWith(category);
+					               $('#category-form').trigger("reset");
+					               $('#category_update_modal').modal('hide');
+					               $('#list').modal('show'); 
+					              
+					                // console.log(data);
+					                
+					             	location.reload();
+					              
+					           }
+			         });
+			});
+		
+		});
+
+						function updateCategoryfun(row, id) 
+							{
+								$("#updatecategory").attr("disabled", false);
+							
+								var crow = $(row).closest('tr');
+								var categoryid=$(crow).find('td:eq(0)').text();
+								var categoryName = $(crow).find('td:eq(1)').text();
+								
+								console.log(categoryid);
+								console.log(categoryName);
+								
+								$('#updatecategoryid').val(id);
+								$('#updatecategoryname').val(categoryName);
+								
+							
+								alert("hello you are editing ");
+								//alert(categoryid);
+							
+							}
 				
-					console.log(id);
-					console.log(categoryName);
-					
-					$('#categoryname').val(categoryName);
-					$('#updatecategoryid').val(id);
-				
-				}
-				</script> 
+						
+	</script>
 
 
-		<!-- //delete user  -->
-					
-					<script>
+	<!-- delete code  -->
+				<script>
 					   
 					    $('body').on('click', '.delete-category', function () {
 					        var categoryid = $(this).data("id");
@@ -893,7 +872,7 @@ $(document).ready(function() {
 					     
 					    });   
 					    
-					  </script>
+					 </script>
 
 
 					<script type="text/javascript">
@@ -901,6 +880,6 @@ $(document).ready(function() {
 						alert("do you want to delete it?");
 						}
 					</script>
-					
+
 
 </html>
