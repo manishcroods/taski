@@ -398,7 +398,7 @@
 						<!-- ** product table ** -->
 						<div class="card-body">
 							<div class="table-responsive">
-								<h2>User List</h2>
+								<h2>Completed Task List</h2>
 									<table class="table table-hover" id="dataTable" >
 										<thead>
 											<tr>
@@ -480,7 +480,7 @@
 	<!-- view page code  -->
 
 
-			<div class="modal fade" id="task_view_modal">
+			 <div class="modal fade" id="task_view_modal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 
@@ -498,36 +498,40 @@
 
 								<div class="form-group">
 
-									<input type="hidden" id="updatetaskid" name="taskId"
+									<input type="hidden" id="viewtaskid" name="taskId"
 										value=${task.taskId }>
 									<div class="admin-content-con">
 									
-									<header>
-					                    <h3 style="color: #101010;"> Network<span style="color: green; font-size: .5em"> ( Assign to :- "User")</span></h3>
-					
-					                </header>
-					
-					                <p>
-					                	<span style="color: #101010; font-size: 1.2em;">Description :- </span>
-					                    DO IT NOW
-					                </p>
-					                <%-- <hr>
-					 		           <a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${task.taskId}"
-															onclick="updateTaskfun(this,${task.taskId})"
-															data-target="#task_update_modal"
-															class="btn btn-primary btn-sm edit-user"
-															title="Edit"> <i class="fa fa-edit"></i>Edit
-														</a> --%>
-					                            </div>
-
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>Title</h4>
+												<input type="text" id="viewtitle" name="title" class="form-control"
+													 autofocus="autofocus" readonly>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>Task Description</h4>
+												<input type="text" id="viewstatus" name="status" class="form-control"
+													placeholder="status " autofocus="autofocus" readonly>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4> Status</h4>
+												<input type="text" id="viewtaskescription" name="taskDescription" class="form-control"
+													placeholder="task Description" autofocus="autofocus" readonly>
+										</div>
+									</div>
+				                 </div>
 								</div>
-
 							</form>
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 										
 </body>
 
@@ -566,37 +570,48 @@
 					</script>
 					
 		
-	<!-- view task  -->
-				<script>
-						   
-					$('body').on('click', '.view-task', function () 
+<!-- view task  -->
+	<script>
+				   
+			$('body').on('click', '.view-task', function () 
+				{
+					var taskid = $(this).data("id");
+						alert(taskid);
+					//confirm("Are You sure want to view this page !");
+					
+					 $.ajax(
 						{
-							var taskid = $(this).data("id");
-							//alert(taskid);
-							//confirm("Are You sure want to view this page !");
-							
-							 $.ajax(
-								{
-								        	
-								    type: "GET",
-								    url: "/task/view/"+taskid,
-								    success: function (data) 
-								    {
-								    	$('#task_view_modal').modal('show');
-								          $('.result').html(data);
-								          //location.reload();
-								  	},
-								            
-								          error: function (data) 
-								          {
-								          	console.log('Error:', data);
-								          } 
-								      
-								 });
-								     
-						});   
-								    
-			</script>
+						        	
+						    type: "GET",
+						    url: "/task/view/"+taskid,
+						    success: function (data) 
+						    { 
+						          $('#task_view_modal').modal('show');
+							      console.log(data);
+							      
+							      $('#viewtaskid').val(data.taskId);
+							      $('#viewtitle').val(data.title);
+							      $('#viewstatus').val(data.status);
+							     // $('#viewcategoryid').val(data.category.categoryId);
+							      //$('#viewuserid').val(data.user.userId);
+							      $("#viewtaskescription").val(data.taskDescription);
+						          
+						          
+						          
+						          
+						         
+						  	},
+						            
+						          error: function (data) 
+						          {
+						          	console.log('Error:', data);
+						          } 
+						      
+						 });
+						     
+				});   
+						    
+	</script>
 		
 	<!-- //delete user  -->
 				<script>

@@ -107,10 +107,12 @@ public class TaskController {
 
 	/* view task */
 	@GetMapping("/task/view/{id}")
-	public ModelAndView viewTask(@PathVariable("id") long taskid) {
+	@ResponseBody
+	public Task viewTask(@PathVariable("id") long taskid) {
 		System.out.println("showing task ");
-		ModelAndView mv = new ModelAndView("viewtask");
-		return mv.addObject("tasklist", taskservice.findById(taskid));
+		//ModelAndView mv = new ModelAndView("viewtask");
+		System.out.println("view data of user:"+taskservice.findById(taskid));
+		return taskservice.findById(taskid);
 
 	}
 	

@@ -61,7 +61,7 @@
 	<!-- Main navbar -->
 	<div class="navbar navbar-expand-md navbar-dark">
 		<div class="navbar-brand">
-			<a href="/addcontacts" class="d-inline-block"> <img
+			<a href="/login" class="d-inline-block"> <img
 				src="<%=request.getContextPath()%>croods.jpg" alt="">
 			</a>
 		</div>

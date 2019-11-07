@@ -439,9 +439,9 @@
 
 				<!-- Main charts -->
 				<div class="row">
-					<div class="col-xl-7">
+					<div class="col-md-6 dashboard-left-cell">
 						<!-- /personal task -->
-						<div class="card-body">
+						<div class="admin-content-con">
 						<div class="table-responsive">
 							<h2>Running Task List</h2>
 							<table class="table table-hover" id="dataTable">
@@ -480,8 +480,8 @@
 					</div>
 				</div>
 				
-				<div class="col-xl-5">
-					<div class="card-body">
+				<div class="col-md-6 dashboard-right-cell">
+					<div class="admin-content-con">
 						<div class="table-responsive">
 							<h2>Completed Task List</h2>
 							<table class="table table-hover" id="dataTable">
@@ -555,10 +555,22 @@
 						</button>
 					</div>
 
-					<div class="navbar-collapse collapse" id="navbar-footer">
-						<span class="navbar-text"> &copy; 2019 - 2020. <a href="#">Croods Consolidates</a> 
+
+<!-- <form method="post" target="_blank">
+    
+    <div class="navbar-collapse collapse" id="navbar-footer">
+						<span class="navbar-text"> &copy; 2019 - 2020. <a href="http://www.vasyerp.com/">Croods Consolidates</a> 
 						</span>
 					</div>
+</form> -->
+
+
+
+
+					<div class="navbar-collapse collapse" id="navbar-footer">
+						<span class="navbar-text"> &copy; 2019 - 2020. <a href="http://www.vasyerp.com/" target="_blank">Croods Consolidates</a> 
+						</span>
+					</div> 
 				</div>
 				<!-- /footer -->
 
@@ -592,22 +604,34 @@
 
 								<div class="form-group">
 
-									<input type="hidden" id="updatetaskid" name="taskId"
+									<input type="hidden" id="viewtaskid" name="taskId"
 										value=${task.taskId }>
 									<div class="admin-content-con">
 									
-									<header>
-					                    <h3 style="color: #101010;"> 
-					                    Network<span style="color: green; font-size: .5em"> 
-					                    ( Assign to :- "User")</span></h3>
-					
-					               </header>
-					
-					                <p>
-					                	<span style="color: #101010; font-size: 1.2em;">Description :- </span>
-					                    DO IT NOW
-					                </p>
-					                </div>
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>Title</h4>
+												<input type="text" id="viewtitle" name="title" class="form-control"
+													 autofocus="autofocus" readonly>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>Task Description</h4>
+												<input type="text" id="viewstatus" name="status" class="form-control"
+													placeholder="status " autofocus="autofocus" readonly>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4> Status</h4>
+												<input type="text" id="viewtaskescription" name="taskDescription" class="form-control"
+													placeholder="task Description" autofocus="autofocus" readonly>
+										</div>
+									</div>
+				                 </div>
 								</div>
 							</form>
 						</div>
@@ -615,12 +639,14 @@
 				</div>
 			</div>
 
-<script>
+<!-- view task  -->
+	<script>
 				   
 			$('body').on('click', '.view-task', function () 
 				{
 					var taskid = $(this).data("id");
-					//alert(taskid);
+						alert(taskid);
+					//confirm("Are You sure want to view this page !");
 					
 					 $.ajax(
 						{
@@ -628,11 +654,21 @@
 						    type: "GET",
 						    url: "/task/view/"+taskid,
 						    success: function (data) 
-						    {
-						    	$('#task_view_modal').modal('show');
-						          $('.result').html(data);
-						          console.log(data);
-						          //location.reload();
+						    { 
+						          $('#task_view_modal').modal('show');
+							      console.log(data);
+							      
+							      $('#viewtaskid').val(data.taskId);
+							      $('#viewtitle').val(data.title);
+							      $('#viewstatus').val(data.status);
+							     // $('#viewcategoryid').val(data.category.categoryId);
+							      //$('#viewuserid').val(data.user.userId);
+							      $("#viewtaskescription").val(data.taskDescription);
+						          
+						          
+						          
+						          
+						         
 						  	},
 						            
 						          error: function (data) 
@@ -645,4 +681,3 @@
 				});   
 						    
 	</script>
-</html>
