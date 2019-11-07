@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.Task;
 import com.example.demo.model.User;
+import com.example.demo.repository.TaskRepo;
 import com.example.demo.repository.UserRepo;
 
 @Controller
@@ -19,11 +23,17 @@ public class HomeController {
 	@Autowired
 	UserRepo userrepo;
 	
+	@Autowired
+	TaskRepo taskrepo;
+	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(@SessionAttribute("user") User u ) 
 	{
 		ModelAndView modelAndView = new ModelAndView("dashboard");
-		//User u=(User) session.getAttribute("user");
+		List<Task> task=taskrepo.findByUserAndStatus(u, "running");
+		List<Task> completedTask=taskrepo.findByUserAndStatus(u, "completed");
+		modelAndView.addObject("personaltasklist", task);
+		modelAndView.addObject("completedtasklist", completedTask);
 		System.out.println("username:"+u.getEmail());
 		return modelAndView;
 	}

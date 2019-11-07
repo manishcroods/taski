@@ -190,9 +190,7 @@
 			
 				<li class="nav-item dropdown dropdown-user"><a href=""
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
-					data-toggle="dropdown"> <img
-						src="croods.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>${user.userName}</span>
+					data-toggle="dropdown"> <span> Hello ${user.userName}</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
@@ -206,7 +204,7 @@
 			</ul>
 		</div>
 	</div>
-	<!-- /main navbar -->
+	<!-- main navbar -->
 
 
 	<!-- Page content -->
@@ -240,7 +238,7 @@
 							</div>
 
 							<div class="media-body">
-								<div class="media-title font-weight-semibold">Ceoods</div>
+								<div class="media-title font-weight-semibold">Croods</div>
 								<div class="font-size-xs opacity-50">
 									<i class="icon-pin font-size-sm"></i> &nbsp;Vastrapur,Ahemdabad
 								</div>
@@ -385,8 +383,8 @@
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
 						<h4>
-							<i class="icon-arrow-left52 mr-2"></i> <span
-								class="font-weight-semibold">Home</span> - Dashboard
+							 <span
+								class="font-weight-semibold">Well Come -</span>   ${user.userName}
 						</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i
 							class="icon-more"></i></a>
@@ -442,87 +440,96 @@
 				<!-- Main charts -->
 				<div class="row">
 					<div class="col-xl-7">
+						<!-- /personal task -->
+						<div class="card-body">
+						<div class="table-responsive">
+							<h2>Running Task List</h2>
+							<table class="table table-hover" id="dataTable">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Task-Name</th>
+										<th>Created</th>
+										<th>Status</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
 
-						<!-- Traffic sources -->
-						<div class="card">
-							<div class="card-header header-elements-inline">
-								<h6 class="card-title">Traffic sources</h6>
-								<div class="header-elements">
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-								</div>
-							</div>
-
-							<div class="card mb-6">
-
-				
-			</div>
-
-							<div class="chart position-relative" id="traffic-sources"></div>
+								<tbody>
+									<c:forEach var="task" items="${personaltasklist}">
+										<tr id="list${task.taskId}">
+											<td id="taskid">${task.taskId }</td>
+											<td id="titleid">${task.title}</td>
+											<td id="createdid">${task.created }</td>
+											<td id="statusid">${task.status}</td>
+											<td>
+												<span> 
+													<a href="JavaScript:Void(0)"
+														data-toggle="modal" data-id="${task.taskId}"
+														class="btn btn-primary btn-sm view-task" title="View">
+														<i class="fa fa-trash"> </i>View
+													</a>
+												</span>
+											</td>
+											
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
 						</div>
-						<!-- /traffic sources -->
-
-					</div>
-
-					<div class="col-xl-5">
-
-						<!-- Sales stats -->
-						
-						<div class="card">
-							<div class="card-header header-elements-inline">
-								<h6 class="card-title">Sales statistics ${user.email}</h6>
-								<div class="header-elements">
-									<select class="form-control" id="select_date" data-fouc>
-										<option value="val1">June, 29 - July, 5</option>
-										<option value="val2">June, 22 - June 28</option>
-										<option value="val3" selected>June, 15 - June, 21</option>
-										<option value="val4">June, 8 - June, 14</option>
-									</select>
-								</div>
-							</div>
-
-							<div class="card-body py-0">
-								<div class="row text-center">
-									<div class="col-4">
-										<div class="mb-3">
-											<h5 class="font-weight-semibold mb-0">5,689</h5>
-											<span class="text-muted font-size-sm">new orders</span>
-										</div>
-									</div>
-
-									<div class="col-4">
-										<div class="mb-3">
-											<h5 class="font-weight-semibold mb-0">32,568</h5>
-											<span class="text-muted font-size-sm">this month</span>
-										</div>
-									</div>
-
-									<div class="col-4">
-										<div class="mb-3">
-											<h5 class="font-weight-semibold mb-0">$23,464</h5>
-											<span class="text-muted font-size-sm">expected profit</span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="chart mb-2" id="app_sales"></div>
-							<div class="chart" id="monthly-sales-stats"></div>
-						</div>
-						<!-- /sales stats -->
-
 					</div>
 				</div>
+				
+				<div class="col-xl-5">
+					<div class="card-body">
+						<div class="table-responsive">
+							<h2>Completed Task List</h2>
+							<table class="table table-hover" id="dataTable">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Task-Name</th>
+										<th>Created</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<c:forEach var="task" items="${completedtasklist}">
+										<tr id="list${task.taskId}">
+											<td id="taskid">${task.taskId }</td>
+											<td id="titleid">${task.title}</td>
+											<td id="createdid">${task.created }</td>
+											<td>
+												<span> 
+													<a href="JavaScript:Void(0)"
+														data-toggle="modal" data-id="${task.taskId}"
+														class="btn btn-primary btn-sm view-task" title="View">
+														<i class="fa fa-trash"> </i>View
+													</a> 
+												
+													<%-- a href="JavaScript:Void(0)" data-toggle="modal"
+														data-id="${task.taskId}"
+														
+														data-target="#task_update_modal"
+														class="btn btn-primary btn-sm edit-task" title="Edit">
+															<i class="fa fa-edit"></i>Edit 
+													</a>--%>
+												</span>
+											</td>
+											
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+				
+				
+				
 				<!-- /main charts -->
 
 
@@ -559,6 +566,83 @@
 			<!-- /main content -->
 
 		</div>
+		</div>
 		<!-- /page content -->
 </body>
+
+
+<!-- view page code  -->
+
+
+			 <div class="modal fade" id="task_view_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h2>View Task</h2>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+					
+						<div class="modal-body">
+							<form id="task-form" class="form" action="/task/edit/{id}"
+								method="post">
+
+								<div class="form-group">
+
+									<input type="hidden" id="updatetaskid" name="taskId"
+										value=${task.taskId }>
+									<div class="admin-content-con">
+									
+									<header>
+					                    <h3 style="color: #101010;"> 
+					                    Network<span style="color: green; font-size: .5em"> 
+					                    ( Assign to :- "User")</span></h3>
+					
+					               </header>
+					
+					                <p>
+					                	<span style="color: #101010; font-size: 1.2em;">Description :- </span>
+					                    DO IT NOW
+					                </p>
+					                </div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+<script>
+				   
+			$('body').on('click', '.view-task', function () 
+				{
+					var taskid = $(this).data("id");
+					//alert(taskid);
+					
+					 $.ajax(
+						{
+						        	
+						    type: "GET",
+						    url: "/task/view/"+taskid,
+						    success: function (data) 
+						    {
+						    	$('#task_view_modal').modal('show');
+						          $('.result').html(data);
+						          console.log(data);
+						          //location.reload();
+						  	},
+						            
+						          error: function (data) 
+						          {
+						          	console.log('Error:', data);
+						          } 
+						      
+						 });
+						     
+				});   
+						    
+	</script>
 </html>
