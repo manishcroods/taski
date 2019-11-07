@@ -190,7 +190,7 @@
 			
 				<li class="nav-item dropdown dropdown-user"><a href=""
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
-					data-toggle="dropdown"> <span> Hello ${user.userName}</span>
+					data-toggle="dropdown"> <span> Hello "${user.userName}"</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
@@ -645,7 +645,7 @@
 			$('body').on('click', '.view-task', function () 
 				{
 					var taskid = $(this).data("id");
-						alert(taskid);
+						//alert(taskid);
 					//confirm("Are You sure want to view this page !");
 					
 					 $.ajax(
