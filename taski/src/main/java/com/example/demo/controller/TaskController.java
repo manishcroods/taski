@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Task;
+import com.example.demo.model.User;
 import com.example.demo.service.CategoryService;
 import com.example.demo.service.TaskService;
 import com.example.demo.service.UserService;
@@ -37,8 +39,13 @@ public class TaskController {
 	}
 
 	@PostMapping("/savetask")
-	public String saveTask(@ModelAttribute Task task) {
+	public String saveTask(@ModelAttribute Task task ,@SessionAttribute("user") User u) 
+	{
 		System.out.println("saving task:" + task);
+		if(task.getUser()==null) 
+		{
+			task.setUser(u);
+		}
 		taskservice.saveTask(task);
 		return "redirect:/runningtask";
 	}

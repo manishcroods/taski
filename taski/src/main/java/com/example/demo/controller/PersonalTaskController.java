@@ -11,11 +11,15 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.model.Task;
 import com.example.demo.model.User;
 import com.example.demo.repository.TaskRepo;
+import com.example.demo.service.TaskService;
 
 @Controller
 public class PersonalTaskController {
 	@Autowired
 	TaskRepo taskrepo;
+	
+	@Autowired
+	TaskService taskservice;
 
 	@GetMapping("/addpersonaltask")
 	public ModelAndView personalTask() {
@@ -23,6 +27,8 @@ public class PersonalTaskController {
 		ModelAndView mv = new ModelAndView("addpersonaltask");
 		return mv;
 	}
+	
+	
 
 	@GetMapping("/runningpersonaltask")
 	public ModelAndView runnigPersonalTask(@SessionAttribute("user") User u) {
@@ -42,5 +48,6 @@ public class PersonalTaskController {
 		mv.addObject("completedtasklist", task);
 		return mv;
 	}
-
+	
+	
 }

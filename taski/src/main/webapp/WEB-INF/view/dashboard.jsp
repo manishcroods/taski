@@ -61,7 +61,7 @@
 
 		<div class="navbar-brand">
 			<a href="/dashboard" class="d-inline-block"> <img
-				src="<%=request.getContextPath()%>/global_assets/images/logo_light.png"
+				src="<%=request.getContextPath()%>croods.jpg"
 				alt="">
 			</a>
 		</div>
@@ -185,232 +185,14 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				<li class="nav-item dropdown"><a href="#"
-					class="navbar-nav-link dropdown-toggle caret-0"
-					data-toggle="dropdown"> <i class="icon-people"></i> <span
-						class="d-md-none ml-2">Users</span>
-				</a>
+				
 
-					<div
-						class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-300">
-						<div class="dropdown-content-header">
-							<span class="font-weight-semibold">Users online</span> <a
-								href="#" class="text-default"><i
-								class="icon-search4 font-size-base"></i></a>
-						</div>
-
-						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Jordana
-											Ansley</a> <span class="d-block text-muted font-size-sm">Lead
-											web developer</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-success"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Will
-											Brason</a> <span class="d-block text-muted font-size-sm">Marketing
-											manager</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-danger"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Hanna
-											Walden</a> <span class="d-block text-muted font-size-sm">Project
-											manager</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-success"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Dori
-											Laperriere</a> <span class="d-block text-muted font-size-sm">Business
-											developer</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-warning-300"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Vanessa
-											Aurelius</a> <span class="d-block text-muted font-size-sm">UX
-											expert</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-grey-400"></span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dropdown-content-footer bg-light">
-							<a href="#" class="text-grey mr-auto">All users</a> <a href="#"
-								class="text-grey"><i class="icon-gear"></i></a>
-						</div>
-					</div></li>
-
-				<li class="nav-item dropdown"><a href="#"
-					class="navbar-nav-link dropdown-toggle caret-0"
-					data-toggle="dropdown"> <i class="icon-bubbles4"></i> <span
-						class="d-md-none ml-2">Messages</span> <span
-						class="badge badge-pill bg-warning-400 ml-auto ml-md-0">2</span>
-				</a>
-
-					<div
-						class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
-						<div class="dropdown-content-header">
-							<span class="font-weight-semibold">Messages</span> <a href="#"
-								class="text-default"><i class="icon-compose"></i></a>
-						</div>
-
-						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">James
-													Alexander</span> <span class="text-muted float-right font-size-sm">04:58</span>
-											</a>
-										</div>
-
-										<span class="text-muted">who knows, maybe that would be
-											the best thing for me...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Margo
-													Baker</span> <span class="text-muted float-right font-size-sm">12:16</span>
-											</a>
-										</div>
-
-										<span class="text-muted">That was something he was
-											unable to do because...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Jeremy
-													Victorino</span> <span class="text-muted float-right font-size-sm">22:48</span>
-											</a>
-										</div>
-
-										<span class="text-muted">But that would be extremely
-											strained and suspicious...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Beatrix
-													Diaz</span> <span class="text-muted float-right font-size-sm">Tue</span>
-											</a>
-										</div>
-
-										<span class="text-muted">What a strenuous career it is
-											that I've chosen...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Richard
-													Vango</span> <span class="text-muted float-right font-size-sm">Mon</span>
-											</a>
-										</div>
-
-										<span class="text-muted">Other travelling salesmen live
-											a life of luxury...</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dropdown-content-footer justify-content-center p-0">
-							<a href="#" class="bg-light text-grey w-100 py-2"
-								data-popup="tooltip" title="Load more"><i
-								class="icon-menu7 d-block top-0"></i></a>
-						</div>
-					</div></li>
-
-				<li class="nav-item dropdown dropdown-user"><a href="#"
+			
+				<li class="nav-item dropdown dropdown-user"><a href=""
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
-						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>Admin</span>
+						src="croods.jpg"
+						class="rounded-circle mr-2" height="34" alt=""> <span>${user.userName}</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
@@ -458,10 +240,9 @@
 							</div>
 
 							<div class="media-body">
-								<div class="media-title font-weight-semibold">Victoria
-									Baker</div>
+								<div class="media-title font-weight-semibold">Ceoods</div>
 								<div class="font-size-xs opacity-50">
-									<i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
+									<i class="icon-pin font-size-sm"></i> &nbsp;Vastrapur,Ahemdabad
 								</div>
 							</div>
 
@@ -568,7 +349,7 @@
 										<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
 									</ul> --></li>
 							</ul></li>
-						</li>
+						
 
 
 
@@ -611,16 +392,7 @@
 							class="icon-more"></i></a>
 					</div>
 
-					<div class="header-elements d-none">
-						<div class="d-flex justify-content-center">
-							<a href="#" class="btn btn-link btn-float text-default"><i
-								class="icon-bars-alt text-primary"></i><span>Statistics</span></a> <a
-								href="#" class="btn btn-link btn-float text-default"><i
-								class="icon-calculator text-primary"></i> <span>Invoices</span></a>
-							<a href="#" class="btn btn-link btn-float text-default"><i
-								class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
-						</div>
-					</div>
+					
 				</div>
 
 				<div
@@ -638,9 +410,7 @@
 
 					<div class="header-elements d-none">
 						<div class="breadcrumb justify-content-center">
-							<a href="#" class="breadcrumb-elements-item"> <i
-								class="icon-comment-discussion mr-2"></i> Support
-							</a>
+						
 
 							<div class="breadcrumb-elements-item dropdown p-0">
 								<a href="#" class="breadcrumb-elements-item dropdown-toggle"
@@ -678,97 +448,24 @@
 							<div class="card-header header-elements-inline">
 								<h6 class="card-title">Traffic sources</h6>
 								<div class="header-elements">
-									<div
-										class="form-check form-check-right form-check-switchery form-check-switchery-sm">
-										<label class="form-check-label"> Live update: <input
-											type="checkbox" class="form-input-switchery" checked
-											data-fouc>
-										</label>
-									</div>
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
+									
 								</div>
 							</div>
 
 							<div class="card mb-6">
 
-				<div class="container">
-
-
-
-					<!-- ** product table ** -->
-					<div class="card-body">
-						<div class="table-responsive">
-							<h2>Running Task List</h2>
-							<table class="table table-hover" id="dataTable">
-								<thead>
-									<tr>
-										<th>#</th>
-										<th>Name</th>
-										<th>Created</th>
-										<th>Status</th>
-										<th>Assigned to</th>
-										<th>Send Warning</th>
-										<th>Actions</th>
-
-									</tr>
-								</thead>
-
-								<tbody>
-									<c:forEach var="task" items="${runningtasklist}">
-										<tr id="list${task.taskId}">
-											<td id="taskid">${task.taskId }</td>
-											<td id="titleid">${task.title}</td>
-											<td id="createdid">${task.created }</td>
-											<td id="statusid">${task.status}</td>
-											<td id="userid">${task.user.userName}</td>
-											<td>
-												<button type="button" data-user=${task.taskId }
-													class="warning glyphicon glyphicon-bell btn btn-warning"
-													data-toggle="modal" data-target="#myModal">Warning
-												</button>
-
-											</td>
-											<td>
-											<td>
-												<span> 
-													
-													<a href="/task/view/{task.taskId}" data-toggle="modal"
-														data-id="${task.taskId}"
-														class="btn btn-primary btn-sm view-task" title="view">
-														<i class="fa fa-trash"> </i>View
-												
-													</a> 
-													
-													<a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${task.taskId}"
-															onclick="updateTaskfun(this,${task.taskId})"
-															data-target="#task_update_modal"
-															class="btn btn-primary btn-sm edit-user"
-															title="Edit"> <i class="fa fa-edit"></i>Edit
-															</a>
-													
-												
-												<input type="button"
-													class="btn btn-primary btn-sm done-task"
-													data-item-id="${task.taskId}" id="done-task${task.taskId}"
-													value="Done" /> 
-													
-													<a href="JavaScript:Void(0)"
-														data-toggle="modal" data-id="${task.taskId}"
-														class="btn btn-primary btn-sm delete-task" title="Delete">
-															<i class="fa fa-trash"> </i>Delete
-													</a>
-														
-														
-												
-
-											</span></td>
-										</tr>
-									</c:forEach>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 
 							<div class="chart position-relative" id="traffic-sources"></div>
@@ -833,88 +530,7 @@
 				<div class="row">
 					<div class="col-xl-8">
 
-						<!-- Marketing campaigns -->
-						<div class="card">
-							<div class="card-header header-elements-sm-inline">
-								<h6 class="card-title">Marketing campaigns</h6>
-								<div class="header-elements">
-									<span class="badge bg-success badge-pill">28 active</span>
-									<div class="list-icons ml-3">
-										<div class="list-icons-item dropdown">
-											<a href="#" class="list-icons-item dropdown-toggle"
-												data-toggle="dropdown"><i class="icon-menu7"></i></a>
-											<div class="dropdown-menu">
-												<a href="#" class="dropdown-item"><i class="icon-sync"></i>
-													Update data</a> <a href="#" class="dropdown-item"><i
-													class="icon-list-unordered"></i> Detailed log</a> <a href="#"
-													class="dropdown-item"><i class="icon-pie5"></i>
-													Statistics</a>
-												<div class="dropdown-divider"></div>
-												<a href="#" class="dropdown-item"><i class="icon-cross3"></i>
-													Clear list</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div
-								class="card-body d-sm-flex align-items-sm-center justify-content-sm-between flex-sm-wrap">
-								<div class="d-flex align-items-center mb-3 mb-sm-0">
-									<div id="campaigns-donut"></div>
-									<div class="ml-3">
-										<h5 class="font-weight-semibold mb-0">
-											38,289 <span
-												class="text-success font-size-sm font-weight-normal"><i
-												class="icon-arrow-up12"></i> (+16.2%)</span>
-										</h5>
-										<span class="badge badge-mark border-success mr-1"></span> <span
-											class="text-muted">May 12, 12:30 am</span>
-									</div>
-								</div>
-
-								<div class="d-flex align-items-center mb-3 mb-sm-0">
-									<div id="campaign-status-pie"></div>
-									<div class="ml-3">
-										<h5 class="font-weight-semibold mb-0">
-											2,458 <span
-												class="text-danger font-size-sm font-weight-normal"><i
-												class="icon-arrow-down12"></i> (-4.9%)</span>
-										</h5>
-										<span class="badge badge-mark border-danger mr-1"></span> <span
-											class="text-muted">Jun 4, 4:00 am</span>
-									</div>
-								</div>
-
-								<div>
-									<a href="#" class="btn bg-indigo-300"><i
-										class="icon-statistics mr-2"></i> View report</a>
-								</div>
-							</div>
-
-
-							<!-- /marketing campaigns -->
-
-
-							<!-- Quick stats boxes -->
-
-							<div class="row">
-								<div class="col-lg-4">
-
-									<!-- Members online -->
-
-								</div>
-
-								<div class="col-lg-4">
-
-									<!-- Current server load -->
-
-									<!-- /current server load -->
-
-								</div>
-							</div>
-						</div>
-
+						
 
 					</div>
 					<!-- /dashboard content -->
@@ -933,25 +549,8 @@
 					</div>
 
 					<div class="navbar-collapse collapse" id="navbar-footer">
-						<span class="navbar-text"> &copy; 2015 - 2018. <a href="#">Limitless
-								Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov"
-							target="_blank">Eugene Kopyov</a>
+						<span class="navbar-text"> &copy; 2019 - 2020. <a href="#">Croods Consolidates</a> 
 						</span>
-
-						<ul class="navbar-nav ml-lg-auto">
-							<li class="nav-item"><a href="https://kopyov.ticksy.com/"
-								class="navbar-nav-link" target="_blank"><i
-									class="icon-lifebuoy mr-2"></i> Support</a></li>
-							<li class="nav-item"><a
-								href="http://demo.interface.club/limitless/docs/"
-								class="navbar-nav-link" target="_blank"><i
-									class="icon-file-text2 mr-2"></i> Docs</a></li>
-							<li class="nav-item"><a
-								href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov"
-								class="navbar-nav-link font-weight-semibold"><span
-									class="text-pink-400"><i class="icon-cart2 mr-2"></i>
-										Purchase</span></a></li>
-						</ul>
 					</div>
 				</div>
 				<!-- /footer -->

@@ -60,7 +60,7 @@
 	<div class="navbar navbar-expand-md navbar-dark">
 
 		<div class="navbar-brand">
-			<a href="/addcontacts" class="d-inline-block"> <img
+			<a href="/dashboard" class="d-inline-block"> <img
 				src="<%=request.getContextPath()%>/global_assets/images/logo_light.png"
 				alt="">
 			</a>
@@ -185,235 +185,17 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				<li class="nav-item dropdown"><a href="#"
-					class="navbar-nav-link dropdown-toggle caret-0"
-					data-toggle="dropdown"> <i class="icon-people"></i> <span
-						class="d-md-none ml-2">Users</span>
-				</a>
+				
 
-					<div
-						class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-300">
-						<div class="dropdown-content-header">
-							<span class="font-weight-semibold">Users online</span> <a
-								href="#" class="text-default"><i
-								class="icon-search4 font-size-base"></i></a>
-						</div>
-
-						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Jordana
-											Ansley</a> <span class="d-block text-muted font-size-sm">Lead
-											web developer</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-success"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Will
-											Brason</a> <span class="d-block text-muted font-size-sm">Marketing
-											manager</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-danger"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Hanna
-											Walden</a> <span class="d-block text-muted font-size-sm">Project
-											manager</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-success"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Dori
-											Laperriere</a> <span class="d-block text-muted font-size-sm">Business
-											developer</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-warning-300"></span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<a href="#" class="media-title font-weight-semibold">Vanessa
-											Aurelius</a> <span class="d-block text-muted font-size-sm">UX
-											expert</span>
-									</div>
-									<div class="ml-3 align-self-center">
-										<span class="badge badge-mark border-grey-400"></span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dropdown-content-footer bg-light">
-							<a href="#" class="text-grey mr-auto">All users</a> <a href="#"
-								class="text-grey"><i class="icon-gear"></i></a>
-						</div>
-					</div></li>
-
-				<li class="nav-item dropdown"><a href="#"
-					class="navbar-nav-link dropdown-toggle caret-0"
-					data-toggle="dropdown"> <i class="icon-bubbles4"></i> <span
-						class="d-md-none ml-2">Messages</span> <span
-						class="badge badge-pill bg-warning-400 ml-auto ml-md-0">2</span>
-				</a>
-
-					<div
-						class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
-						<div class="dropdown-content-header">
-							<span class="font-weight-semibold">Messages</span> <a href="#"
-								class="text-default"><i class="icon-compose"></i></a>
-						</div>
-
-						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">James
-													Alexander</span> <span class="text-muted float-right font-size-sm">04:58</span>
-											</a>
-										</div>
-
-										<span class="text-muted">who knows, maybe that would be
-											the best thing for me...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3 position-relative">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Margo
-													Baker</span> <span class="text-muted float-right font-size-sm">12:16</span>
-											</a>
-										</div>
-
-										<span class="text-muted">That was something he was
-											unable to do because...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Jeremy
-													Victorino</span> <span class="text-muted float-right font-size-sm">22:48</span>
-											</a>
-										</div>
-
-										<span class="text-muted">But that would be extremely
-											strained and suspicious...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Beatrix
-													Diaz</span> <span class="text-muted float-right font-size-sm">Tue</span>
-											</a>
-										</div>
-
-										<span class="text-muted">What a strenuous career it is
-											that I've chosen...</span>
-									</div>
-								</li>
-
-								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-title">
-											<a href="#"> <span class="font-weight-semibold">Richard
-													Vango</span> <span class="text-muted float-right font-size-sm">Mon</span>
-											</a>
-										</div>
-
-										<span class="text-muted">Other travelling salesmen live
-											a life of luxury...</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div class="dropdown-content-footer justify-content-center p-0">
-							<a href="#" class="bg-light text-grey w-100 py-2"
-								data-popup="tooltip" title="Load more"><i
-								class="icon-menu7 d-block top-0"></i></a>
-						</div>
-					</div></li>
-
+			
 				<li class="nav-item dropdown dropdown-user"><a href="#"
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
 						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>Victoria</span>
+						class="rounded-circle mr-2" height="34" alt=""> <span>${user.userName}</span>
 				</a>
 
-				<div class="dropdown-menu dropdown-menu-right">
+					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
 							Account settings</a> 
@@ -458,10 +240,9 @@
 							</div>
 
 							<div class="media-body">
-								<div class="media-title font-weight-semibold">Victoria
-									Baker</div>
+								<div class="media-title font-weight-semibold">Ceoods</div>
 								<div class="font-size-xs opacity-50">
-									<i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
+									<i class="icon-pin font-size-sm"></i> &nbsp;Vastrapur,Ahemdabad
 								</div>
 							</div>
 
@@ -471,6 +252,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<!-- /user menu -->
 
 
@@ -490,7 +272,7 @@
 							class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addtask"
 									class="nav-link active">Add new Task</a></li>
 								<li class="nav-item"><a
 									href="/runningtask"
@@ -518,10 +300,16 @@
 						<!-- categories bars -->
 
 
-						<li class="nav-item"><a href="/Contacts" class="nav-link">
+
+						<li class="nav-item"><a href="/category" class="nav-link">
 								<i class="icon-width"> </i> <span
-								class="glyphicon glyphicon-cog">Contacts</span>
+								class="glyphicon glyphicon-cog">Category</span>
 						</a></li>
+
+						<!-- <li class="nav-item nav-item-submenu">
+							<a href="/category" class="nav-link">
+								<i class="icon-stack"></i> <span>Categories</span></a>
+						</li> -->
 
 
 						<!-- Users slide bar -->
@@ -532,11 +320,17 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 								<!-- <li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Horizontal navigation</a></li>
 								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">No sidebar</a></li> -->
-								<li class="nav-item"><a href="/saveuser"
-									class="nav-link">Add new User</a></li>
+								<li class="nav-item"><a href="/saveuser" class="nav-link">Add
+										new User</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/user"
-									class="nav-link">All Users</a>
-								</li>
+									class="nav-link">All Users</a></li>
+								<!-- <li class="nav-item nav-item-submenu">
+									<a href="#" class="nav-link">3 sidebars</a>
+									<ul class="nav nav-group-sub">
+										<li class="nav-item"><a href="../seed/sidebar_right_hidden.html" class="nav-link">Right sidebar hidden</a></li>
+										<li class="nav-item"><a href="../seed/sidebar_right_visible.html" class="nav-link">Right sidebar visible</a></li>
+									</ul>
+								</li> -->
 							</ul></li>
 
 
@@ -547,10 +341,10 @@
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 
-								<li class="nav-item"><a href="/addcontacts" class="nav-link">Add
-										Contacts</a></li>
+								<li class="nav-item"><a href="/addcontacts"
+									class="nav-link">Add New Contacts</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/contacts"
-									class="nav-link">All Users</a> <!-- 	<ul class="nav nav-group-sub">
+									class="nav-link">All Contacts</a> <!-- 	<ul class="nav nav-group-sub">
 										<li class="nav-item"><a href="../seed/sidebar_secondary.html" class="nav-link">Secondary sidebar</a></li>
 										<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
 									</ul> --></li>
@@ -561,12 +355,16 @@
 
 						<!-- settings  bar -->
 
-						<li class="nav-item"><a
-							href="/setting" class="nav-link">
+						<li class="nav-item"><a href="setting" class="nav-link">
 								<i class="icon-width"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
 						</a></li>
 						<!-- /main -->
+
+
+
+
+
 
 					</ul>
 				</div>
@@ -586,10 +384,10 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4>
+						<!-- <h4>
 							<i class="icon-arrow-left52 mr-2"></i> <span
 								class="font-weight-semibold">Home</span> - Dashboard
-						</h4>
+						</h4> -->
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i
 							class="icon-more"></i></a>
 					</div>
@@ -619,7 +417,7 @@
 			<div class="container">
 				<div class="card card-register mx-auto mt-5">
 					<div class="card-header"></div>
-					<h2>Create a new Contacts</h2>
+					<h2>Create a New Contacts</h2>
 					<div class="card-body">
 						<form id="register-form" class="form" action="/addcontacts"
 							method="post" >
@@ -627,6 +425,7 @@
 
 								<div class="form-group">
 									<div class="form-label-group">
+									<h5>Contact Name</h5>
 										<input type="text" id="firstName" name="contactName" class="form-control"
 											placeholder="Contact name" required="required"
 											autofocus="autofocus">
@@ -634,6 +433,7 @@
 								</div>
 								<div class="form-group">
 									<div class="form-label-group">
+									<h5>Email</h5>
 										<input type="email" id="inputEmail" name="email" class="form-control"
 											placeholder="Email" required="required">
 									</div>
@@ -641,6 +441,7 @@
 							</div>
 							<div class="form-group">
 								<div class="form-label-group">
+								<h5>Mobile</h5>
 									<input type="text" id="moile" name="mobile" class="form-control"
 										placeholder="Mobile" required="required"> 
 								</div>
@@ -653,6 +454,9 @@
 					</div>
 				</div>
 			</div>
+			</div>
+			</div>
+			
 </body>
 
 </html>

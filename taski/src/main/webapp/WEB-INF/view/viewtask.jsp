@@ -412,7 +412,7 @@
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
 						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>Victoria</span>
+						class="rounded-circle mr-2" height="34" alt=""> <span>${user.userName}</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
@@ -503,11 +503,11 @@
 									Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
+								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="/runningtask"
+								<li class="nav-item"><a href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="/completedtask"
+								<li class="nav-item"><a href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
