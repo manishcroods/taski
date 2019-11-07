@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.Category;
+import com.example.demo.model.User;
 import com.example.demo.service.CategoryService;
 
 @Controller
@@ -21,9 +23,10 @@ public class CategoryController {
 	
 	@PostMapping("/savecategory")
 	//@ResponseBody
-	public String saveCategory(@ModelAttribute Category category) 
+	public String saveCategory(@ModelAttribute Category category ,@SessionAttribute("user") User u) 
 	{
 		System.out.println("category save model");
+		category.setCreatedBy(u);
 		category=categoryService.saveCategory(category);
 		System.out.println("category saved");
 		return "redirect:/category";

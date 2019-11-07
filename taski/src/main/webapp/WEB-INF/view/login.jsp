@@ -62,7 +62,7 @@
 	<div class="navbar navbar-expand-md navbar-dark">
 
 		<div class="navbar-brand">
-			<a href="/category" class="d-inline-block"> <img
+			<a href="/addcontacts" class="d-inline-block"> <img
 				src="<%=request.getContextPath()%>/global_assets/images/logo_light.png"
 				alt="">
 			</a>
@@ -220,11 +220,7 @@
 								</li>
 
 								<li class="media">
-									<div class="mr-3">
-										<img
-											src="../../../../global_assets/images/placeholders/placeholder.jpg"
-											width="36" height="36" class="rounded-circle" alt="">
-									</div>
+									
 									<div class="media-body">
 										<a href="#" class="media-title font-weight-semibold">Will
 											Brason</a> <span class="d-block text-muted font-size-sm">Marketing
@@ -412,7 +408,7 @@
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
 						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>Victoria</span>
+						class="rounded-circle mr-2" height="34" alt=""> <span></span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
@@ -425,457 +421,106 @@
 			</ul>
 		</div>
 	</div>
-	<!-- /main navbar -->
 
 
-	<!-- Page content -->
-	<div class="page-content">
-
-		<!-- Main sidebar -->
-		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
-
-			<!-- Sidebar mobile toggler -->
-			<div class="sidebar-mobile-toggler text-center">
-				<a href="#" class="sidebar-mobile-main-toggle"> <i
-					class="icon-arrow-left8"></i>
-				</a> Navigation <a href="#" class="sidebar-mobile-expand"> <i
-					class="icon-screen-full"></i> <i class="icon-screen-normal"></i>
-				</a>
-			</div>
-			<!-- /sidebar mobile toggler -->
+	<!-- sb admin  -->
 
 
-			<!-- Sidebar content -->
-			<div class="sidebar-content">
+	<body class="bg-dark">
 
-				<!-- User menu -->
-				<div class="sidebar-user">
-					<div class="card-body">
-						<div class="media">
-							<div class="mr-3">
-								<a href="#"><img
-									src="../../../../global_assets/images/placeholders/placeholder.jpg"
-									width="38" height="38" class="rounded-circle" alt=""></a>
-							</div>
+	<div class="container">
+		<div class="card card-login mx-auto mt-5">
+			<div class="card-header">
+				<h1>Login</h1>
+				</div>
+				<div class="card-body">
+					<form id="login-form" class="form" name="loginform" action="/login" method="post">
 
-							<div class="media-body">
-								<div class="media-title font-weight-semibold">Victoria
-									Baker</div>
-								<div class="font-size-xs opacity-50">
-									<i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
-								</div>
-							</div>
-
-							<div class="ml-3 align-self-center">
-								<a href="#" class="text-white"><i class="icon-cog3"></i></a>
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="email" id="inputEmail" name="email"
+									class="form-control" placeholder="Email address"
+									 autofocus="autofocus">
 							</div>
 						</div>
-					</div>
-				</div>
-				<!-- /user menu -->
 
-
-				<!-- Main left side navigation -->
-				<div class="card card-sidebar-mobile">
-					<ul class="nav nav-sidebar" data-nav-type="accordion">
-
-						<!-- Main -->
-						<li class="nav-item-header"><div
-								class="text-uppercase font-size-xs line-height-xs">Main</div> <i
-							class="icon-menu" title="Main"></i></li>
-						<li class="nav-item"><a href="/dashboard"
-							class="nav-link active"> <i class="icon-home4"></i> <span>
-									Dashboard </span>
-						</a></li>
-						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
-
-							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/dashboard"
-									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a href="/runningtask"
-									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a href="/completedtask"
-									class="nav-link">Completed Task</a></li>
-							</ul></li>
-						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-color-sampler"></i> <span>Personal
-									Task</span></a>
-
-							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/addpersonaltask"
-									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningpersonaltask"
-									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedpersonaltask"
-									class="nav-link">Completed Task</a></li>
-							</ul></li>
-
-
-						<!-- categories bars -->
-
-
-						<li class="nav-item"><a href="/category" class="nav-link">
-								<i class="icon-width"> </i> <span
-								class="glyphicon glyphicon-cog">Category</span>
-						</a></li>
-
-
-						<!-- Users slide bar -->
-
-						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-stack"></i> <span>Users</span></a>
-
-							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<li class="nav-item"><a href="/saveuser" class="nav-link">Add
-										new User</a></li>
-								<li class="nav-item nav-item-submenu"><a href="/user"
-									class="nav-link">All Users</a></li>
-							</ul></li>
-
-
-						<!-- Contacts bar -->
-
-						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-stack"></i> <span>Contacts</span></a>
-
-							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-
-								<li class="nav-item"><a href="/addcontacts"
-									class="nav-link">Add Contacts</a></li>
-								<li class="nav-item nav-item-submenu"><a href="/contacts"
-									class="nav-link">All Users</a>
-							</ul></li>
-
-						<!-- settings  bar -->
-
-						<li class="nav-item"><a href="/setting" class="nav-link">
-								<i class="icon-width"> </i> <span
-								class="glyphicon glyphicon-cog">Settings</span>
-						</a></li>
-
-
-					</ul>
-
-				</div>
-				<!-- /main navigation -->
-
-			</div>
-			<!-- /sidebar content -->
-
-		</div>
-		<!-- /main sidebar -->
-
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-			<!-- Page header -->
-			<div class="page-header page-header-light">
-				<div class="page-header-content header-elements-md-inline">
-					<div class="page-title d-flex">
-						<h4>
-							<i class="icon-arrow-left52 mr-2"></i> <span
-								class="font-weight-semibold">Home</span> - Dashboard
-						</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i
-							class="icon-more"></i></a>
-					</div>
-				</div>
-
-				<div
-					class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
-					<div class="d-flex">
-						<div class="breadcrumb">
-							<a href="/category" class="breadcrumb-item"><i
-								class="icon-home2 mr-2"></i> Home</a> <span
-								class="breadcrumb-item active">Category</span>
-						</div>
-
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i
-							class="icon-more"></i></a>
-					</div>
-
-
-				</div>
-			</div>
-			<!-- /page header -->
-
-
-
-
-
-
-			<!-- category data -->
-
-
-			<div class="card mb-6">
-
-				<div class="container">
-					<!-- Button to Open the Modal -->
-
-					<div class="row">
-						<div class="col-md-6 dashboard-right-cell">
-							<button type="button" class="btn btn-primary" data-toggle="modal"
-								data-target="#myModal">+Add Category</button>
-						</div>
-
-						<div class="col-md-6 dashboard-left-cell">
-							<div class="topnav">
-								<form class="example" action="/categorylist"
-									style="margin: auto; max-width: 300px">
-									<input id="input" type="text" placeholder="Search.."
-										name="search">
-									<button type="submit">
-										<i class="fa fa-search"></i>search
-									</button>
-								</form>
+						<div class="form-group">
+							<div class="form-label-group">
+								<input type="password" id="inputPassword" name="password"
+									class="form-control" placeholder="Password">
+								
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
 
-
-
-			<!-- ** product table ** -->
-			<div class="card-body">
-				<div class="table-responsive">
-					<table class="table datatable-basic" id="dataTable">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>Name</th>
-								<th>Created</th>
-								<th>Actions</th>
-
-							</tr>
-						</thead>
-
-						<tbody>
-							<c:forEach var="category" items="${categorylist}">
-								<tr id="list${category.categoryId}">
-									<td>${category.categoryId}</td>
-									<td>${category.categoryName}</td>
-									<td>${category.createdBy.userName}
-									<td>
-										<span>
-											<a href="JavaScript:Void(0)"
-												data-toggle="modal" data-id="${category.categoryId}"
-												onclick="updateCategoryfun(this,${category.categoryId})"
-												data-target="#category_update_modal"
-												class="btn btn-primary btn-sm edit-category" title="Edit">
-												<i class="fa fa-edit"></i>Edit
-											</a>
-											
-											<a href="JavaScript:Void(0)" data-toggle="modal"
-												data-id="${category.categoryId}"
-												class="btn btn-primary btn-sm delete-category" title="Delete">
-													<i class="fa fa-trash"></i>Delete
-											</a>
-
-
-									</span></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-				</div>
-			</div>
-
-
-			<!-- pop-up open for add product -->
-			<div class="modal fade" id="myModal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-
-						<!-- Modal Header -->
-						<div class="modal-header">
-							<h4 class="modal-title">Add New Category</h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<div class="form-group">
+							<div class="checkbox">
+								<label> <input type="checkbox" value="remember-me">
+									Remember Password
+								</label>
+							</div>
 						</div>
 
-						<!-- Modal body -->
-						<div class="modal-body">
-							<form id="category-form" class="form" action="/savecategory"
-								method="post">
+						<button type="submit" class="btn btn-primary" >Login</button>
 
-								<div class="form-group">
-									<h4>Category Name</h4>
-									<div class="form-input-group">
-										<input type="text" id="categoryname" name="categoryName"
-											class="form-control" placeholder="Category Name"
-											required="required" autofocus="autofocus">
-									</div>
-
-								</div>
-
-
-								<div class="modal-footer">
-									<button type="submit" data-toggle="modal" class="btn btn-primary">Save</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-
-
-
-			<!-- <!--  edit model  -->
-
-			<div class="modal fade" id="category_update_modal">
-				<div class="modal-dialog">
-					<div class="modal-content">
-
-						<!-- Modal Header -->
-						<div class="modal-header">
-							<h4 class="modal-title">update category</h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-						</div>
-
-						<!-- Modal body -->
-						<div class="modal-body">
-							<form id="category-form" class="form" action="/savecategory"
-								method="post">
-
-								<div class="form-group">
-
-
-									<input type="hidden" id="updatecategoryid" name="categoryId" 	>
-
-									<div class="form-group">
-										<div class="form-label-group">
-											<input type="text" id="updatecategoryname"
-												data-id="updatecategoryname" name="categoryName"
-												class="form-control" value="${category.categoryName }"
-												required="required" autofocus="autofocus">
-										</div>
-									</div>
-									
-									<button type="submit" class="btn btn-primary btn-block save-category">Update
-										</button>
-								</div>
-
-							</form>
-						</div>
+					</form>
+					
+					<div class="text-center">
+						<a class="d-block small mt-3" href="/register">Register anAccount</a> 
+							<a class="d-block small" href="forgot-password.html">ForgotPassword?</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+
+	<!-- Bootstrap core JavaScript-->
+		<!-- <script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	Core plugin JavaScript
+		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
 </body>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
 
+<script src="vendor/jquery/jquery.min.js"></script>
 
-<!-- AJAx code  -->
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+Core plugin JavaScript
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+Bootstrap core JavaScript
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+Core plugin JavaScript
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
 
 
 <script>
+$("#login-form").submit(function(){
+    var isFormValid = true;
 
-$(document).ready(function() {
+    $("input").each(function(){
+        if ($.trim($(this).val()).length == 0){
+            $(this).addClass("highlight");
+            isFormValid = false;
+        }
+        else{
+            $(this).removeClass("highlight");
+        }
+    });
 
-	
-	
-	$("#category-form").submit(function(e) 
-			{
+    if (!isFormValid) alert("Please fill in all the required fields (indicated by *)");
 
-			    e.preventDefault(); // avoid to execute the actual submit of the form.
-				var form = $(this);
-			  
-		
-			    $.ajax({
-				           type: "POST",
-				           url: "/savecategory",
-				           data: form.serialize(), // serializes the form's elements.
-				           success: function(data)
-					           {
-				        	   	$('#myModal').modal('hide');
-					        	  	var category = '<tr id="list' + data.categoryId + '"><td>' + data.categoryId + '</td>';
-					              	category += '<td><a href="javascript:void(0)" id="edit-category" data-id="' + data.id + '" class="btn btn-info edit-category">Edit</a></td>';
-					             	category += '<td><a href="javascript:void(0)" id="delete-category" data-id="' + data.id + '" class="btn btn-danger delete-category">Delete</a></td></tr>';
-					              	 console.log(data);
-				
-					               $("#list" + data.categoryId).replaceWith(category);
-					               $('#category-form').trigger("reset");
-					               $('#category_update_modal').modal('hide');
-					               $('#list').modal('show'); 
-					              
-					                // console.log(data);
-					                
-					             	location.reload();
-					              
-					           }
-			         });
-			});
-		
-		});
-
-						function updateCategoryfun(row, id) 
-							{
-								$("#updatecategory").attr("disabled", false);
-							
-								var crow = $(row).closest('tr');
-								var categoryid=$(crow).find('td:eq(0)').text();
-								var categoryName = $(crow).find('td:eq(1)').text();
-								
-								console.log(categoryid);
-								console.log(categoryName);
-								
-								$('#updatecategoryid').val(id);
-								$('#updatecategoryname').val(categoryName);
-								
-							
-								alert("hello you are editing ");
-								//alert(categoryid);
-							
-							}
-				
-						
-	</script>
-
-
-	<!-- delete code  -->
-				<script>
-					   
-					    $('body').on('click', '.delete-category', function () {
-					        var categoryid = $(this).data("id");
-					        alert(categoryid);
-					        confirm("Are You sure want to delete !");
-					 
-					       
-					     $.ajax({
-					        	
-					            type: "GET",
-					            url: "/category/delete/"+categoryid,
-					            success: function (data) {
-					            	
-					                $("#list" + categoryid).remove();
-					                //location.reload();
-						            $('#list').modal('show');
-					                $('.result').html(data);
-					            },
-					            
-					            error: function (data) {
-					                console.log('Error:', data);
-					            } 
-					      
-					        });
-					     
-					    });   
-					    
-					 </script>
-
-
-					<script type="text/javascript">
-						function showAlert(){
-						alert("do you want to delete it?");
-						}
-					</script>
-
+    return isFormValid;
+});
+</script>
+</body>
+  
 
 </html>

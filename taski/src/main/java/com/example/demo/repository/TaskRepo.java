@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.Task;
+import com.example.demo.model.User;
 
 @Repository
 public interface TaskRepo extends JpaRepository<Task,Long>{
@@ -23,5 +24,7 @@ public interface TaskRepo extends JpaRepository<Task,Long>{
 	@Query(value = "update tbl_task set status='completed'  where task_id=?1;" , nativeQuery = true)
 	public void updateRunningTask(long taskid);
 	
+	public List<Task> findByUserAndStatus(User u,String status);
+		
 	
 }

@@ -410,20 +410,17 @@
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
 						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>Victoria</span>
+						class="rounded-circle mr-2" height="34" alt=""> <span>Admin</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
-						<a href="#" class="dropdown-item"><i class="icon-user-plus"></i>
-							My profile</a> <a href="#" class="dropdown-item"><i
-							class="icon-coins"></i> My balance</a> <a href="#"
-							class="dropdown-item"><i class="icon-comment-discussion"></i>
-							Messages <span class="badge badge-pill bg-blue ml-auto">58</span></a>
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> <a href="#" class="dropdown-item"><i
+							Account settings</a> 
+						<a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
-					</div></li>
+							</div>
+					</li>
 			</ul>
 		</div>
 	</div>
@@ -474,6 +471,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<!-- /user menu -->
 
 
@@ -782,9 +780,10 @@
 					<div class="col-xl-5">
 
 						<!-- Sales stats -->
+						
 						<div class="card">
 							<div class="card-header header-elements-inline">
-								<h6 class="card-title">Sales statistics</h6>
+								<h6 class="card-title">Sales statistics ${user.email}</h6>
 								<div class="header-elements">
 									<select class="form-control" id="select_date" data-fouc>
 										<option value="val1">June, 29 - July, 5</option>
