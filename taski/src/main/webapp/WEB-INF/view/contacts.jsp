@@ -402,27 +402,6 @@
 					<div class="container">
 						<!-- Button to Open the Modal -->
 
-						<!-- <div class="row">
-							<div class="col-md-6 dashboard-right-cell">
-								<button type="button" class="btn btn-primary"
-									data-toggle="modal" data-target="#myModal">+Add
-									Contacts</button>
-							</div>
-
-							<div class="col-md-6 dashboard-left-cell">
-								<div class="topnav">
-									<form class="example" action="/contacts"
-										style="margin: auto; max-width: 300px">
-										<input id="input" type="text" placeholder="Search.." name="search">
-										<button type="submit">
-											<i class="fa fa-search"></i>search
-										</button>
-									</form>
-								</div>
-							</div>
-						</div> -->
-
-
 						<!-- ** product table ** -->
 						<div class="card-body">
 							<div class="table-responsive">
