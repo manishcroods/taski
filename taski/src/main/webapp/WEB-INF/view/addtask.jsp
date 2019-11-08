@@ -385,7 +385,7 @@
 					<div class="card-body">
 						<div class="card-header">
 							<header>
-		                    	<h2>Create New task</h2>
+		                    	<h1 style="text-align: center">Create New task</h1>
 		                	</header>
 						</div>
 					

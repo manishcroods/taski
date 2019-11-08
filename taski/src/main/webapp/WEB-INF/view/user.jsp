@@ -440,10 +440,10 @@
 
 					<!-- ** product table ** -->
 					<div class="card-body">
-						<div class="table-responsive">
-							<h2>User List</h2>
-							<table class="table table-hover" id="dataTable" width="100%"
-								cellspacing="0">
+					<div class="jumbotron">
+						<!-- <div class="table-responsive"> -->
+							<h1 style="text-align: center">User List</h1>
+							<table class="table table-hover" id="dataTable" >
 								<thead>
 									<tr>
 										<th>#</th>

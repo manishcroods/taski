@@ -397,8 +397,10 @@
 					<div class="container">
 						<!-- ** product table ** -->
 						<div class="card-body">
-							<div class="table-responsive">
-								<h2>Completed Task List</h2>
+						<div class="jumbotron">
+						
+							<!-- <div class="table-responsive"> -->
+								<h1 style="text-align: center">Completed Task List</h1>
 									<table class="table table-hover" id="dataTable" >
 										<thead>
 											<tr>

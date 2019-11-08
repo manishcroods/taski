@@ -416,8 +416,9 @@
 
 					<!-- ** product table ** -->
 					<div class="card-body">
-						<div class="table-responsive">
-							<h2>Running Task List</h2>
+						<div class="jumbotron">
+						<!-- <div class="table-responsive"> -->
+							<h1 style="text-align: center">Running Task List</h1>
 							<table class="table table-hover" id="dataTable">
 								<thead>
 									<tr>

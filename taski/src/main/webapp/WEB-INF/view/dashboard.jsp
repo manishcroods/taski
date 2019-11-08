@@ -443,7 +443,7 @@
 						<!-- /personal task -->
 						<div class="admin-content-con">
 						<div class="table-responsive">
-							<h2>Running Task List</h2>
+							<h2 style="text-align: center">Running Task List</h2>
 							<table class="table table-hover" id="dataTable">
 								<thead>
 									<tr>
@@ -483,7 +483,7 @@
 				<div class="col-md-6 dashboard-right-cell">
 					<div class="admin-content-con">
 						<div class="table-responsive">
-							<h2>Completed Task List</h2>
+							<h2 style="text-align: center">Completed Task List</h2>
 							<table class="table table-hover" id="dataTable">
 								<thead>
 									<tr>

@@ -385,7 +385,7 @@
 					<div class="card-body">
 						<div class="card-header">
 							<header>
-		                    	<h2>Create New Personal Task</h2>
+		                    	<h1 style="text-align: center">Create New Personal Task</h1>
 		                	</header>
 						</div>
 					

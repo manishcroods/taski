@@ -426,7 +426,7 @@
 						<!-- ** product table ** -->
 						<div class="card-body">
 							<div class="table-responsive">
-								<h2>Contacts List</h2>
+								<h1 style="text-align: center">Contacts List</h1>
 									<table class="table datatable-basic" id="dataTable" >
 										<thead>
 											<tr>

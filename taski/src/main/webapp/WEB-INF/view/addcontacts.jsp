@@ -417,7 +417,7 @@
 			<div class="container">
 				<div class="card card-register mx-auto mt-5">
 					<div class="card-header"></div>
-					<h2>Create a New Contacts</h2>
+					<h1 style="text-align: center">Create a New Contacts</h1>
 					<div class="card-body">
 						<form id="register-form" class="form" action="/addcontacts"
 							method="post" >

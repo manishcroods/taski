@@ -396,34 +396,39 @@
 
 			<div class="admin-content-con">
 				<header>
-					<h3>Company Name</h3>
+					<h2 style="text-align: center">Company Name </h2>
 				</header>
 
 				<form id="setting-form" class="form" action="/savedetailes" method="post">
 					<!-- <input type="hidden" name="companyId"
 						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi"> -->
 
-					<div class="form-group col-md-10">
+					<div class="form-group col-md-12">
 						<input type="text" class="form-control " id="title" required
-							name="companyName" placeholder="companyname">
+							name="companyName" placeholder="Enter Company Name" style="text-align: center">
 					</div>
 
-					
-						<div class="form-group col-md-10">
-							<input type="text" class="form-control" id="title" required
-								name="inTime" placeholder="In time">
+					<div class="container">
+   						 <div class="row">
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="title" required
+									name="inTime" placeholder="In time" style="text-align: center">
+							</div>
+	
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="title" required
+									name="outTime" placeholder="Out time" style="text-align: center">
+							</div>
 						</div>
-
-						<div class="form-group col-md-10">
-							<input type="text" class="form-control" id="title" required
-								name="outTime" placeholder="Out time">
-						</div>
+					</div>
+				
 					
 
 
 					<div class="form-group col-md-2 ">
-						<label class="">Submit</label> <input type="submit"
-							class="form-control btn btn-primary" name="" value="Save">
+						<!-- <label class="">Submit</label>  -->
+						<input type="submit"
+							class="form-control btn btn-primary" name="" value="Save" style="text-align: center">
 					</div>
 				</form>
 
@@ -434,7 +439,7 @@
 			
 			<div class="card-body">
 						<div class="table-responsive">
-							<h2>Company Detalis</h2>
+							<h2 style="text-align: center">Company Details</h2>
 							<table class="table table-hover" id="dataTable">
 								<thead>
 									<tr>
