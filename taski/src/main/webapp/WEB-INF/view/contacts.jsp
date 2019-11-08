@@ -389,11 +389,6 @@
 			</div>
 			<!-- /page header -->
 
-
-
-
-
-
 <!-- category data -->
 
 
@@ -431,12 +426,7 @@
 															class="btn btn-primary btn-sm" title="delete">
 															<i class="fa fa-pencil"></i>
 															Edit</a>
-												
-														<%-- <a href = "/contacts/delete/${contacts.contactsId}" 
-															class="btn btn-primary btn-sm" title="delete">
-															<i class="fa fa-trash"></i>
-															Delete</a> --%>
-															
+													
 														<a href="JavaScript:Void(0)" data-toggle="modal"
 															data-id="${contacts.contactsId}"
 															class="btn btn-primary btn-sm delete-user"
