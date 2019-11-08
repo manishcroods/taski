@@ -42,10 +42,11 @@ public class TaskController {
 	public String saveTask(@ModelAttribute Task task ,@SessionAttribute("user") User u) 
 	{
 		System.out.println("saving task:" + task);
+		
 		if(task.getUser()==null) 
-		{
-			task.setUser(u);
-		}
+			{
+				task.setUser(u);
+			}
 		taskservice.saveTask(task);
 		return "redirect:/runningtask";
 	}

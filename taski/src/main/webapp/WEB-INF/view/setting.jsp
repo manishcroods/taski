@@ -170,9 +170,9 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				
 
-			
+
+
 				<li class="nav-item dropdown dropdown-user"><a href="#"
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
@@ -183,11 +183,9 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
+							Account settings</a> <a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
-							</div>
-					</li>
+					</div></li>
 			</ul>
 		</div>
 	</div>
@@ -237,7 +235,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- /user menu -->
 
 
@@ -259,11 +257,9 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/addtask"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningtask"
+								<li class="nav-item"><a href="/runningtask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedtask"
+								<li class="nav-item"><a href="/completedtask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 						<li class="nav-item nav-item-submenu"><a href="#"
@@ -273,11 +269,9 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningpersonaltask"
+								<li class="nav-item"><a href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedpersonaltask"
+								<li class="nav-item"><a href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
@@ -334,7 +328,7 @@
 										<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
 									</ul> --></li>
 							</ul></li>
-					
+
 
 
 
@@ -374,17 +368,20 @@
 					</div>
 				</div> -->
 
-				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+				<div
+					class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
 					<div class="d-flex">
 						<div class="breadcrumb">
-							<a href="/dashboard" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-							<span class="breadcrumb-item active">Setting</span>
+							<a href="/dashboard" class="breadcrumb-item"><i
+								class="icon-home2 mr-2"></i> Home</a> <span
+								class="breadcrumb-item active">Setting</span>
 						</div>
 
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+						<a href="#" class="header-elements-toggle text-default d-md-none"><i
+							class="icon-more"></i></a>
 					</div>
 
-					
+
 				</div>
 			</div>
 			<!-- /page header -->
@@ -394,7 +391,7 @@
 
 
 
-<!-- category data -->
+			<!-- category data -->
 
 
 			<div class="admin-content-con">
@@ -402,61 +399,261 @@
 					<h3>Company Name</h3>
 				</header>
 
-				<form
-					action="https://envato.kunjoonline.com/task/admin/project-name"
-					method="post">
-					<input type="hidden" name="_token"
-						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi">
-					<div class="form-group col-md-8">
-						<label class="">Name</label> <input type="text"
-							class="form-control " id="title" required name="project_name"
-							placeholder="Name">
+				<form id="setting-form" class="form" action="/savedetailes" method="post">
+					<!-- <input type="hidden" name="companyId"
+						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi"> -->
+
+					<div class="form-group col-md-10">
+						<input type="text" class="form-control " id="title" required
+							name="companyName" placeholder="companyname">
 					</div>
-					<div class="form-group col-md-4 ">
+
+					
+						<div class="form-group col-md-10">
+							<input type="text" class="form-control" id="title" required
+								name="inTime" placeholder="In time">
+						</div>
+
+						<div class="form-group col-md-10">
+							<input type="text" class="form-control" id="title" required
+								name="outTime" placeholder="Out time">
+						</div>
+					
+
+
+					<div class="form-group col-md-2 ">
 						<label class="">Submit</label> <input type="submit"
 							class="form-control btn btn-primary" name="" value="Save">
 					</div>
 				</form>
-				
-				
-				<div class="admin-content-con"></div>
-				<header>
-					<h3>Set Office Time</h3>
-				</header>
-				<form action="https://envato.kunjoonline.com/task/admin/office-time"
-					method="post">
-					<input type="hidden" name="_token"
-						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi">
-					<div class="form-group col-xs-4">
-						<label class="">In time </label> <input type="text"
-							class="form-control" id="title" required name="in_time"
-							placeholder="In time">
-					</div>
-					<div class="form-group col-xs-4">
-						<label class="">Out time</label> <input type="text"
-							class="form-control" id="title" required name="out_time"
-							placeholder="Out time">
-					</div>
-					<div class="form-group col-xs-4">
-						<label class="">Submit </label> <input type="submit"
-							class="form-control btn btn-primary" name=""
-							value="Set Office Time">
-						<!-- <button type="button" class="btn btn-large btn-block btn-primary" name="Add_cat">Save Category</button> -->
-					</div>
-				</form>
 
-				<div class="clearfix"></div>
-				<header>
-					<h3>Enable/Disable User Registration</h3>
-				</header>
-				<a href="https://envato.kunjoonline.com/task/admin/ed_registration"
-					class="btn btn-danger">Disable</a>
+
+
 
 			</div>
+			
+			<div class="card-body">
+						<div class="table-responsive">
+							<h2>Company Detalis</h2>
+							<table class="table table-hover" id="dataTable">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>Company Name</th>
+										<th>In-Time</th>
+										<th>Out-Time</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<c:forEach var="company" items="${companylist}">
+										<tr id="list${company.companyId}">
+											<td id="compnayid">${company.companyId}</td>
+											<td id="companynameid">${company.companyName}</td>
+											<td id="intimeid">${company.inTime}</td>
+											<td id="outtimeid">${company.outTime}</td>
+											<td>
+												<span> 
+												
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+														data-id="${company.companyId}"
+														data-target="#company_update_modal"
+														class="btn btn-primary btn-sm edit-company" title="Edit">
+															<i class="fa fa-edit"></i>Edit
+													</a> 
+													
+													<a href="JavaScript:Void(0)" data-toggle="modal"
+														data-id="${company.companyId}"
+														class="btn btn-primary btn-sm delete-company" title="Delete">
+														<i class="fa fa-trash"> </i>Delete
+													</a>
+												</span>
+											</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+			
+			
+			
+			
+		</div>
+	</div>
+	
+	
+	
+	<div class="modal fade" id="company_update_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h2>Update Company Details</h2>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body">
+							<form id="company-form" class="form" action="/savedetailes"
+								method="post">
+
+								<div class="form-group">
+
+
+									<input type="hidden" id="updatecompanyid" name="companyId">
+
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>Company Name</h4>
+											<input type="text" data-id="editname" id="editname"
+												name="companyName" class="form-control" value="${company.companyName}"
+												required="required" autofocus="autofocus">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>In-Time</h4>
+											<input type="text" id="editintime" data-id="editintime"
+												name="inTime" class="form-control"
+												value="${company.inTime}" required="required"
+												autofocus="autofocus">
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<div class="form-label-group">
+											<h4>In-Time</h4>
+											<input type="text" id="editouttime" data-id="editouttime"
+												name="outTime" class="form-control"
+												value="${company.outTime}" required="required"
+												autofocus="autofocus">
+										</div>
+									</div>
+
+									<button type="submit"
+										class="btn btn-primary btn-block update-task">Update
+									</button>
+
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
-			</div>
-			</body>
+</body>
+
+
+<script>
+	$(document).ready(function() 
+		{
+			$("#company-form").submit(function(e) 
+				{
+					e.preventDefault(); // avoid to execute the actual submit of the form.
+					var form = $(this);
+					console.log("hello");
+					  
+					$.ajax(
+							{
+					           type: "POST",
+					           url: "/savedetailes",
+					           data: form.serialize(), // serializes the form's elements.
+					           success: function(data)
+						           {
+						        	   var company = '<tr id="list' + data.companyId + '"><td>' + data.companyId + '</td><td>' + data.CompanyName + '</td><td>' + data.inTime + '</td><td>' + data.outTime + '</td>';
+						        	   company += '<td><a href="javascript:void(0)" id="edit-company" data-id="' + data.id + '" class="btn btn-info edit-company">Edit</a></td>';
+						        	   company += '<td><a href="javascript:void(0)" id="delete-company" data-id="' + data.id + '" class="btn btn-danger delete-company">Delete</a></td></tr>';
+						               console.log(data);
+					
+						               $("#list" + data.companyId).replaceWith(company);
+						               $('#company-form').trigger("reset");
+						               $('#company_update_modal').modal('hide');
+						               $('#list').modal('show');
+						              
+						               location.reload();
+						              
+						           }
+				         });
+				});
+	
+		});
+	
+	
+	   
+	$('body').on('click', '.edit-company', function () 
+		{
+			var companyid = $(this).data("id");
+			console.log("hello is");
+			alert(companyid);
 			
-			
-			
-			</html>
+			 $.ajax(
+				{    	
+				    type: "GET",
+				    //please check url
+				    url: "/company/findbyid/"+companyid,
+				    success: function (data) 
+				    {
+					      $('#company_update_modal').modal('show');
+					      console.log(data);
+					      
+					      $('#updatecompanyid').val(data.companyId);
+					      $('#editname').val(data.companyName);
+					      $('#editintime').val(data.inTime);
+					      $('#editouttime').val(data.outTime);
+					      
+				          
+				          //location.reload();
+				  	},
+				            
+				          error: function (data) 
+				          {
+				          	console.log('Error:', data);
+				          } 
+				      
+				 });
+				     
+		});   
+	    
+</script> 
+
+
+<!--  delete task -->
+<script>
+				   
+			$('body').on('click', '.delete-company', function () 
+				{
+					var companyid = $(this).data("id");
+					alert(companyid);
+					confirm("Are You sure want to delete !");
+					
+					 $.ajax(
+						{
+						        	
+						    type: "GET",
+						    url: "/company/delete/"+companyid,
+						    success: function (data) 
+						    {
+						            		
+						          $("#list" + companyid).remove();
+							      $('#list').modal('show');
+						          $('.result').html(data);
+						          location.reload();
+						  	},
+						            
+						          error: function (data) 
+						          {
+						          	console.log('Error:', data);
+						          } 
+						      
+						 });
+					 updatestatus
+				});   
+						    
+	</script>
+
+
+</html>

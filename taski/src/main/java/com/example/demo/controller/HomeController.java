@@ -6,16 +6,23 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.CompanyDetails;
 import com.example.demo.model.Task;
 import com.example.demo.model.User;
+import com.example.demo.repository.CompanyDetailsRepo;
 import com.example.demo.repository.TaskRepo;
 import com.example.demo.repository.UserRepo;
+import com.example.demo.service.CompanyDetailsService;
 
 @Controller
 public class HomeController {
@@ -25,6 +32,12 @@ public class HomeController {
 	
 	@Autowired
 	TaskRepo taskrepo;
+	
+	@Autowired
+	CompanyDetailsService companyDetailsService;
+	
+	@Autowired
+	CompanyDetailsRepo companyDetailsRepo;
 	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(@SessionAttribute("user") User u ) 
@@ -82,4 +95,47 @@ public class HomeController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/setting")
+	public String setting(@SessionAttribute("user") User u ,Model m ) 
+	{
+		System.out.println("user type:"+u.getUserType());
+		
+		if (u.getUserType().equalsIgnoreCase("admin")) 
+		{
+			System.out.println("settinf page showd");
+			m.addAttribute("companylist", companyDetailsRepo.findAll());
+			return "setting";
+		}else {
+			System.out.println("not admin so showing dashboard page ");
+			return "redirect:/dashboard";
+		}
+		
+	}
+	
+	@PostMapping("/savedetailes")
+	public String saveTask(@ModelAttribute CompanyDetails cd ,@SessionAttribute("user") User u) 
+	{
+		System.out.println("CompanyDetails:" + cd);
+		companyDetailsService.saveCompanydetails(cd);
+		return "redirect:/setting";
+	}
+	
+	@GetMapping("/company/findbyid/{id}")
+	@ResponseBody
+	public CompanyDetails findById(@PathVariable("id") long companyid) 
+	{
+		System.out.println("find company by id");
+		return companyDetailsService.findById(companyid);
+	}
+
+	@GetMapping("company/delete/{id}")
+	public String  deleteCompany(@PathVariable("id") long companyid)
+	{
+		System.out.println("deleting comapny details");
+		companyDetailsRepo.deleteById(companyid);
+		return "redirect:/setting";
+		
+	}
+	
 }

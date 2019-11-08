@@ -428,9 +428,6 @@
 										<th>Assigned to</th>
 										<th>Send Warning</th>
 										<th>Actions</th>
-										<!-- <th data-field="valid_s" data-align="center" data-sortable="true" data-visible="false">Category</th>
-										<th data-field="valid_s" data-align="center" data-sortable="true" data-visible="false">Task Descripation</th> -->
-
 									</tr>
 								</thead>
 
@@ -458,7 +455,6 @@
 												
 													<a href="JavaScript:Void(0)" data-toggle="modal"
 														data-id="${task.taskId}"
-														
 														data-target="#task_update_modal"
 														class="btn btn-primary btn-sm edit-task" title="Edit">
 															<i class="fa fa-edit"></i>Edit
@@ -479,8 +475,6 @@
 													</a>
 												</span>
 											</td>
-											<%-- <td id="categoryid" >${task.category.categoryName}</td>
-											<td id="taskdescripationid" >${task.taskDescription}</td> --%>
 										</tr>
 									</c:forEach>
 								</tbody>
