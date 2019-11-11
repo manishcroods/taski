@@ -640,7 +640,7 @@ $(document).ready(function() {
 								$('#updatecategoryname').val(categoryName);
 								
 							
-								alert("hello you are editing ");
+								//alert("hello you are editing ");
 								//alert(categoryid);
 							
 							}

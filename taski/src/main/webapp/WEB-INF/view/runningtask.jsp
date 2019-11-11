@@ -698,7 +698,7 @@
 						$('body').on('click', '.edit-task', function () 
 							{
 								var taskid = $(this).data("id");
-								alert(taskid);
+								//alert(taskid);
 								
 								 $.ajax(
 									{    	
@@ -738,7 +738,7 @@
 				{
 					var taskid = $(this).data("id");
 					alert(taskid);
-					confirm("Are You sure want to delete !");
+					confirm("Are You sure want to delete ?");
 					
 					 $.ajax(
 						{
@@ -772,7 +772,7 @@
 			$('body').on('click', '.view-task', function () 
 				{
 					var taskid = $(this).data("id");
-						alert(taskid);
+					//alert(taskid);
 					//confirm("Are You sure want to view this page !");
 					
 					 $.ajax(
@@ -817,8 +817,8 @@
 			$('body').on('click', '.done-task', function () 
 				{
 					var taskid = $(this).data("id");
-					alert(taskid);
-					//confirm("Are You sure want to view this page !");
+					//alert(taskid);
+					confirm("Are You sure this task is completed?");
 					
 					 $.ajax(
 						{

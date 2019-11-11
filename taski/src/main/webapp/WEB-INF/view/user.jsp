@@ -611,81 +611,10 @@ $(document).ready(function() {
 				}
 				</script>
 				
-				
-				
-<!-- edit user -from git hub -->
-
-
-<!-- <script>
-	
-		$(document).ready(function() 
-			{
-				$("#user-form").submit(function(e) 
-						{
-							alert("hello");
-						    e.preventDefault(); // avoid to execute the actual submit of the form.
-							var form = $(this);
-					
-							 $('body').on('click', '.edit-user', function(e)
-								{
-								   alert("hello1");
-							       var id = $(this).closest('tr').children('td:first').text();
-							       var name = $(this).closest('tr').children('td:nth-child(2)').text(); 
-							       var email = $(this).closest('tr').children('td:nth-child(3)').text(); 
-							       //var book = $(this).closest('tr').children('td:nth-child(4)').text(); 
-							
-							        $("#userName").val(name);
-							        $("#userId").val(age);
-							        		
-							        $("#update").show();
-							        $("#save").hide();
-							
-							        $(".update-user").click(function() 
-							        	{
-							
-								            //var ageNum = parseInt($("#age").val());
-								
-								            var jsonVar = 
-								            			   {
-												               name: $("#userName").val(),
-												               email: $("#email").val(),
-												               id:$('#userId').val()
-												           };
-								
-								            $.ajax(
-								            	{
-									                type:"PUT",
-									                data: JSON.stringify(jsonVar),
-									                contentType: "application/json",
-									                url:"/users/edit/" + id,
-									                success: function(data){
-									                    alertUsing("Düzenlendi.", true);
-									                    //$("#update").hide();
-									                    $(".update-user").show();
-									                    $("#name").val("");
-									                    $("#email").val("");
-									                    //$("#book").val("");
-									                    assignDataToTable();
-									                },
-									                error: function(err) {  
-									                    console.log(err);
-									                    alert(err);
-									                }
-									
-									        	});
-								
-								    	});
-							
-						   		 })
-						});	
-			});
-    
-    </script> -->
-
 
 <!-- //delete user  -->
 
-<script>
+				<script>
 					   
 					    $('body').on('click', '.delete-user', function () {
 					        var userid = $(this).data("id");
@@ -713,47 +642,6 @@ $(document).ready(function() {
 					     
 					    });   
 					    
-					  </script>
-
-
-
-
-
-<!-- function for user data   -->
-
-<!-- <script>
-						 function assignDataToTable() {
-						        $("tbody").empty();
-						        $.ajax({    
-						          type:"GET",
-						          contentType: "application/json",
-						          url:"/user",
-						          success: function(data) {
-						            var users = JSON.parse(JSON.stringify(data));
-						            for (var i in users) {
-						                $("tbody").
-						                append("<tr> \
-						                            <td>" +  users[i].id + "</td> \
-						                            <td>" +  users[i].userName + "</td> \
-						                            <td>" +  users[i].email + "</td> \
-						                            <td>" +  users[i].joinedTime + "</td> \
-						                            <td>" +  users[i].status + "</td> \
-						                            <td> \
-						                            	<button id='delete' class='btn btn-danger delete-user'>Delete</button> \
-						                           		<button id='edit' class='btn btn-warning edit-user' >Edit</button> \ </td> \
-						                        </tr>");
-						            }
-						          },
-						          error: function(data) { 
-						            console.log(data);
-						            }
-						        });
-						       
-						    }
-						 </script> -->
-
-
-
-
+					 </script>
 
 </html>

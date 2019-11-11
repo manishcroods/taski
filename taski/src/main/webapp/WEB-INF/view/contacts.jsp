@@ -387,62 +387,65 @@
 					
 				</div>
 			</div>
-			<!-- /page header -->
+			
+
+
+
 
 <!-- category data -->
 
 
-		<div class="card mb-6">
+<div class="card mb-6">
 
-					<div class="container">
-						<!-- Button to Open the Modal -->
+	<div class="container">
+				<!-- Button to Open the Modal -->
 
-						<!-- ** product table ** -->
-						<div class="card-body">
-							<div class="table-responsive">
-								<h1 style="text-align: center">Contacts List</h1>
-									<table class="table datatable-basic" id="dataTable" >
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>Contact Name</th>
-												<th>Email</th>
-												<th>Mobile</th>
-												<th>Actions</th>
-	
-											</tr>
-										</thead>
+<!-- ** product table ** -->
+<div class="card-body">
+	<div class="table-responsive">
+		<h1 style="text-align: center">Contacts List</h1>
+			<table class="table datatable-basic" id="dataTable" >
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Contact Name</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Actions</th>
 
-									<tbody>
-										<c:forEach var="contacts" items="${contactslist}">
-											<tr id="list${contacts.contactsId}">
-												<td>${contacts.contactsId}</td>
-												<td>${contacts.contactName}</td>
-												<td>${contacts.email}</td>
-												<td>${contacts.mobile}</td>
-												<td>
-													<span>
-														<a href = "/contacts/edit/${contacts.contactsId}" 
-															class="btn btn-primary btn-sm" title="delete">
-															<i class="fa fa-pencil"></i>
-															Edit</a>
-													
-														<a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${contacts.contactsId}"
-															class="btn btn-primary btn-sm delete-user"
-															title="Delete"> <i class="fa fa-trash"></i>Delete
-															</a>
-														
-													</span>
-												</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						</div>
-						</div>
+					</tr>
+				</thead>
+
+			<tbody>
+				<c:forEach var="contacts" items="${contactslist}">
+					<tr id="list${contacts.contactsId}">
+						<td>${contacts.contactsId}</td>
+						<td>${contacts.contactName}</td>
+						<td>${contacts.email}</td>
+						<td>${contacts.mobile}</td>
+						<td>
+							<span>
+								<a href = "/contacts/edit/${contacts.contactsId}" 
+									class="btn btn-primary btn-sm" title="delete">
+									<i class="fa fa-pencil"></i>
+									Edit</a>
+							
+								<a href="JavaScript:Void(0)" data-toggle="modal"
+									data-id="${contacts.contactsId}"
+									class="btn btn-primary btn-sm delete-user"
+									title="Delete"> <i class="fa fa-trash"></i>Delete
+									</a>
+								
+							</span>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>
 						</div>
 						</div>
 						
@@ -450,36 +453,37 @@
 
 
 <!-- //delete Contacts  -->
-					<script>
-					   
-					    $('body').on('click', '.delete-user', function () {
-					        var contactid = $(this).data("id");
-					        alert(contactid);
-					        confirm("Are You sure want to delete !");
-					 
-					       
-					     $.ajax({
-					        	
-					            type: "GET",
-					            url: "/contacts/delete/"+contactid,
-					            success: function (data) {
-					            	
-					                $("#list" + contactid).remove();
-					                //location.reload();
-						            $('#list').modal('show');
-					                $('.result').html(data);
-					            },
-					            
-					            error: function (data) {
-					                console.log('Error:', data);
-					            } 
-					            
-					      
-					        });
-					     
-					    });   
-					    
-					  </script>
+
+	<script>
+		   
+		    $('body').on('click', '.delete-user', function () {
+		        var contactid = $(this).data("id");
+		        alert(contactid);
+		        confirm("Are You sure want to delete !");
+		 
+		       
+		     $.ajax({
+		        	
+		            type: "GET",
+		            url: "/contacts/delete/"+contactid,
+		            success: function (data) {
+		            	
+		                $("#list" + contactid).remove();
+		                //location.reload();
+			            $('#list').modal('show');
+		                $('.result').html(data);
+		            },
+		            
+		            error: function (data) {
+		                console.log('Error:', data);
+		            } 
+		            
+		      
+		        });
+		     
+		    });   
+		    
+	  </script>
 
 						
 </body>

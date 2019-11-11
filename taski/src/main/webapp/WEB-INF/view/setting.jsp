@@ -185,7 +185,8 @@
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
 							Account settings</a> <a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
-					</div></li>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -201,15 +202,15 @@
 			<!-- Sidebar mobile toggler -->
 			<div class="sidebar-mobile-toggler text-center">
 				<a href="#" class="sidebar-mobile-main-toggle"> <i
-					class="icon-arrow-left8"></i>
+				   class="icon-arrow-left8"></i>
 				</a> Navigation <a href="#" class="sidebar-mobile-expand"> <i
 					class="icon-screen-full"></i> <i class="icon-screen-normal"></i>
 				</a>
 			</div>
-			<!-- /sidebar mobile toggler -->
+			<!-- /side bar mobile toggler -->
 
 
-			<!-- Sidebar content -->
+			<!-- Side bar content -->
 			<div class="sidebar-content">
 
 				<!-- User menu -->
@@ -422,19 +423,11 @@
 						</div>
 					</div>
 				
-					
-
-
 					<div class="form-group col-md-2 ">
-						<!-- <label class="">Submit</label>  -->
-						<input type="submit"
-							class="form-control btn btn-primary" name="" value="Save" style="text-align: center">
+						<button type="submit" class="btn btn-primary btn-block">save
+						</button>
 					</div>
 				</form>
-
-
-
-
 			</div>
 			
 			<div class="card-body">
@@ -593,7 +586,7 @@
 		{
 			var companyid = $(this).data("id");
 			console.log("hello is");
-			alert(companyid);
+			//alert(companyid);
 			
 			 $.ajax(
 				{    	
@@ -613,50 +606,44 @@
 				          
 				          //location.reload();
 				  	},
-				            
 				          error: function (data) 
 				          {
 				          	console.log('Error:', data);
-				          } 
-				      
-				 });
-				     
+				          }  
+				 });	     
 		});   
 	    
 </script> 
 
 
 <!--  delete task -->
+
 <script>
-				   
-			$('body').on('click', '.delete-company', function () 
+	$('body').on('click', '.delete-company', function () 
+		{
+			var companyid = $(this).data("id");
+			alert(companyid);
+			confirm("Are You sure want to delete !");
+			
+			 $.ajax(
 				{
-					var companyid = $(this).data("id");
-					alert(companyid);
-					confirm("Are You sure want to delete !");
-					
-					 $.ajax(
-						{
-						        	
-						    type: "GET",
-						    url: "/company/delete/"+companyid,
-						    success: function (data) 
-						    {
-						            		
-						          $("#list" + companyid).remove();
-							      $('#list').modal('show');
-						          $('.result').html(data);
-						          location.reload();
-						  	},
-						            
-						          error: function (data) 
-						          {
-						          	console.log('Error:', data);
-						          } 
-						      
-						 });
-					 updatestatus
-				});   
+				    type: "GET",
+				    url: "/company/delete/"+companyid,
+				    success: function (data) 
+				    {
+				            		
+				          $("#list" + companyid).remove();
+					      $('#list').modal('show');
+				          $('.result').html(data);
+				          location.reload();
+				  	},
+				          error: function (data) 
+				          {
+				          	console.log('Error:', data);
+				          } 
+				});
+			 updatestatus
+		});   
 						    
 	</script>
 
