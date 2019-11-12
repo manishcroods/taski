@@ -53,6 +53,20 @@
 
 </head>
 
+
+<!-- code for preventing back after logout  -->
+
+<script>
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null;
+	}
+</script>
+
+
 <body>
 
 
@@ -201,6 +215,9 @@
 							Account settings</a> 
 						<a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
+						<a href="/changepassword" class="dropdown-item">
+								<i class="icon-pencil"></i>Change password
+							</a>
 							</div>
 					</li>
 			</ul>

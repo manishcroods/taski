@@ -23,6 +23,7 @@ import com.example.demo.repository.CompanyDetailsRepo;
 import com.example.demo.repository.TaskRepo;
 import com.example.demo.repository.UserRepo;
 import com.example.demo.service.CompanyDetailsService;
+import com.example.demo.service.UserService;
 
 @Controller
 public class HomeController {
@@ -39,9 +40,13 @@ public class HomeController {
 	@Autowired
 	CompanyDetailsRepo companyDetailsRepo;
 	
+	@Autowired
+	UserService userservice;
+	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(@SessionAttribute("user") User u ) 
 	{
+		System.out.println("user details:"+u);
 		ModelAndView modelAndView = new ModelAndView("dashboard");
 		List<Task> task=taskrepo.findByUserAndStatus(u, "running");
 		List<Task> completedTask=taskrepo.findByUserAndStatus(u, "completed");
@@ -91,7 +96,7 @@ public class HomeController {
 	public ModelAndView logout() 
 	{
 		System.out.println("logout page");
-		ModelAndView mv=new ModelAndView("login");
+		ModelAndView mv=new ModelAndView("logout");
 		return mv;
 		
 	}
@@ -136,6 +141,38 @@ public class HomeController {
 		companyDetailsRepo.deleteById(companyid);
 		return "redirect:/setting";
 		
+	}
+	
+	@GetMapping("/changepassword")
+	public ModelAndView chnagePassword() 
+	{
+		System.out.println("changing password");
+		ModelAndView mv= new ModelAndView("changepassword");
+		return mv;
+		
+	}
+	
+	@PostMapping("/changepassword")
+	public String changepassword(@RequestParam String newpassword,@SessionAttribute("user") User u) 
+	{
+		System.out.println("password now changed");
+		u.setPassword(newpassword);
+		userservice.saveUser(u);	
+		return "redirect:/login";
+	}
+	
+	@GetMapping("/checkoldpassword")
+	@ResponseBody
+	public String checkolpassword(@RequestParam String password , @SessionAttribute("user") User u ) 
+	{
+		System.out.println("checking old password"+u.getPassword());
+		
+		if (u.getPassword().equalsIgnoreCase(password)) 
+		{
+			return "succuss";
+		} else{
+			return "fail";
+		}
 	}
 	
 }

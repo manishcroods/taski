@@ -35,8 +35,22 @@
 	<script src="assets/js/app.js"></script>
 	<script src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
 	<!-- /theme JS files -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
 
 </head>
+
+<!-- code for preventing back after logout  -->
+
+<script>
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null;
+	}
+</script>
 
 <body>
 
@@ -188,6 +202,9 @@
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
 							Account settings</a> <a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
+						<a href="/changepassword" class="dropdown-item">
+								<i class="icon-pencil"></i>Change password
+							</a>
 					</div>
 				</li>
 			</ul>

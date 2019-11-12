@@ -22,7 +22,6 @@ public class CategoryController {
 
 	
 	@PostMapping("/savecategory")
-	//@ResponseBody
 	public String saveCategory(@ModelAttribute Category category ,@SessionAttribute("user") User u) 
 	{
 		System.out.println("category save model");
@@ -32,16 +31,6 @@ public class CategoryController {
 		return "redirect:/category";
 	}
 	
-
-	/*
-	 * @PostMapping("/savecategory")
-	 * 
-	 * @ResponseBody public Category saveCategory(@RequestParam String categoryName)
-	 * { System.out.println("category save model"); Category c=new Category();
-	 * c.setCategoryName(categoryName); c=categoryService.saveCategory(c);
-	 * System.out.println("category saved"); return c; }
-	 */
-
 	
 	@GetMapping("/category")
 	public String getAllCategory(Model m) {

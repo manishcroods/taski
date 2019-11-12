@@ -55,9 +55,10 @@
 
 </head>
 
+
 <!-- code for preventing back after logout  -->
 
-<!-- <script>
+<script>
 	function preventBack() {
 		window.history.forward();
 	}
@@ -65,100 +66,28 @@
 	window.onunload = function() {
 		null;
 	}
-</script> -->
+</script>
+
 
 <body>
 
-
-	<!-- Main navbar -->
-	<div class="navbar navbar-expand-md navbar-dark">
-		<div class="navbar-brand">
-			<a href="/login" class="d-inline-block"> <img
-				src="<%=request.getContextPath()%>croods.jpg" alt="">
-			</a>
-		</div>
-
-		<div class="collapse navbar-collapse" id="navbar-mobile">
-			<span class="badge bg-success ml-md-3 mr-md-auto">WELL COME TO
-				CROODS 
-			</span>
-			<ul class="navbar-nav"></ul>
-		</div>
-	</div>
-
-
-	<!-- sb admin  -->
-<body class="bg-dark">
 	<div class="container">
 		<div class="card card-login mx-auto mt-5">
-			<div class="card-header">
-				<h1>Login</h1>
-			</div>
+			<h1 align="center">YOU ARE LOGGED OUT</h1>
+			<h2 align="center">Please Log-In</h2>
+
 			<div class="card-body">
 				<form id="login-form" class="form" name="loginform" action="/login"
-					method="post">
+					method="get">
 
-					<div class="form-group">
-						<div class="form-label-group">
-							<input type="email" id="inputEmail" name="email"
-								class="form-control" placeholder="Email address"
-								autofocus="autofocus">
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="form-label-group">
-							<input type="password" id="inputPassword" name="password"
-								class="form-control" placeholder="Password">
-
-						</div>
-					</div>
-
-					<div class="form-group">
-						<div class="checkbox">
-							<label> <input type="checkbox" value="remember-me">
-								Remember Password
-							</label>
-						</div>
-					</div>
-
-					<button type="submit" class="btn btn-primary">Login</button>
+					<!-- <button type="submit" class="btn btn-primary">Login</button> -->
+					<button type="submit" class="btn btn-primary"
+						style="margin-left: auto; margin-right: auto; display: block; margin-top: 0%; margin-bottom: 1%">
+						LogIn</button>
 
 				</form>
 
-				<!-- <div class="text-center">
-						<a class="d-block small mt-3" href="/register">Register anAccount</a> 
-							<a class="d-block small" href="forgot-password.html">ForgotPassword?</a>
-					</div> -->
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-	<script>
-$("#login-form").submit(function(){
-    var isFormValid = true;
-
-    $("input").each(function(){
-        if ($.trim($(this).val()).length == 0){
-            $(this).addClass("highlight");
-            isFormValid = false;
-        }
-        else{
-            $(this).removeClass("highlight");
-        }
-    });
-
-    if (!isFormValid) alert("Please fill in all the required fields (indicated by *)");
-
-    return isFormValid;
-});
-</script>
-</body>
-
-
-
 </html>

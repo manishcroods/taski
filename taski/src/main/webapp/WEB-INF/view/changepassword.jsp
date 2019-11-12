@@ -1,5 +1,4 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +52,8 @@
 	src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
 <!-- /theme JS files -->
 
-
 </head>
+
 
 <!-- code for preventing back after logout  -->
 
@@ -68,18 +67,14 @@
 	}
 </script>
 
-</head>
-
 <body>
-
 
 	<!-- Main navbar -->
 	<div class="navbar navbar-expand-md navbar-dark">
 
 		<div class="navbar-brand">
 			<a href="/dashboard" class="d-inline-block"> <img
-				src="<%=request.getContextPath()%>/global_assets/images/logo_light.png"
-				alt="">
+				src="<%=request.getContextPath()%>croods.jpg" alt="">
 			</a>
 		</div>
 
@@ -202,31 +197,27 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				
 
-			
-				<li class="nav-item dropdown dropdown-user"><a href="#"
+
+
+				<li class="nav-item dropdown dropdown-user"><a href=""
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
-					data-toggle="dropdown"> <img
-						src="../../../../global_assets/images/placeholders/placeholder.jpg"
-						class="rounded-circle mr-2" height="34" alt=""> <span>${user.userName}</span>
+					data-toggle="dropdown"> <span> Hello "${user.userName}"</span>
 				</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
+							Account settings</a> <a href="/logout" class="dropdown-item"><i
 							class="icon-switch2"></i> Logout</a>
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
 							</a>
-							</div>
-					</li>
+					</div></li>
 			</ul>
 		</div>
 	</div>
-	<!-- /main navbar -->
+	<!-- main navbar -->
 
 
 	<!-- Page content -->
@@ -272,7 +263,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- /user menu -->
 
 
@@ -294,11 +285,9 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/addtask"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningtask"
+								<li class="nav-item"><a href="/runningtask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedtask"
+								<li class="nav-item"><a href="/completedtask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 						<li class="nav-item nav-item-submenu"><a href="#"
@@ -308,11 +297,9 @@
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
 								<li class="nav-item"><a href="/addpersonaltask"
 									class="nav-link active">Add new Task</a></li>
-								<li class="nav-item"><a
-									href="/runningpersonaltask"
+								<li class="nav-item"><a href="/runningpersonaltask"
 									class="nav-link">Running Task</a></li>
-								<li class="nav-item"><a
-									href="/completedpersonaltask"
+								<li class="nav-item"><a href="/completedpersonaltask"
 									class="nav-link">Completed Task</a></li>
 							</ul></li>
 
@@ -369,9 +356,6 @@
 										<li class="nav-item"><a href="../seed/sidebar_right.html" class="nav-link">Right sidebar</a></li>
 									</ul> --></li>
 							</ul></li>
-						</li>
-
-
 
 						<!-- settings  bar -->
 
@@ -379,13 +363,6 @@
 								<i class="icon-width"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
 						</a></li>
-						<!-- /main -->
-
-
-
-
-
-
 					</ul>
 				</div>
 				<!-- /main navigation -->
@@ -394,45 +371,153 @@
 			<!-- /sidebar content -->
 
 		</div>
-		<!-- /main sidebar -->
-		
-<!-- page content  -->
 
-			<div class="container">
-				<div class="card card-register mx-auto mt-5">
-					<div class="card-body">
-						<div class="card-header">
-							<header>
-		                    	<h1 style="text-align: center">Create New Personal Task</h1>
-		                	</header>
+		<div class="container">
+			<div class="card card-login mx-auto mt-5">
+				<div class="card-header">
+					<h1>Change Password</h1>
+				</div>
+				
+				<div class="card-body">
+					<form id="changepassword-form" class="form"
+						name="changepasswordform" action="/changepassword" method="post">
+
+						<div class="form-group">
+							<div class="col-md-8">
+								<input type="password" id="oldpassword" name="oldpassword"
+									class="form-control oldpassword" placeholder="Old Password"
+									autofocus="autofocus">
+							</div>
 						</div>
-					
-						<form id="task-form" class="form" action="/savetask"
-							method="post" >
-							
-							<div class="form-group">
-								<div class="form-label-group">
-									<h4>Title</h4>
-										<input type="text" id="title" name="title" class="form-control"
-											placeholder="Title" required="required"
-											autofocus="autofocus">
-									</div>
-								</div>
-								
-								
-								<div class="form-group">
-									<div class="form-label-group">
-										<h4>Task Description</h4><textarea class="form-control" name="taskDescription" rows="3" required="required" 
-												placeholder="please give task discraption"></textarea>
-									</div>
-								</div>
-							
-							<button type="submit" class="btn btn-primary btn-block">Add New Personal Task</button>
-						</form>
 
-					</div>
+						<div class="form-group">
+							<div class="col-md-8">
+								<input type="password" id="newpassword" name="newpassword"
+									class="form-control pass" placeholder="New Password">
+
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-8">
+								<input type="password" id="conformnewpassword" name="conformnewpassword"
+									class="form-control pass" placeholder="Confirm Password">
+							</div>
+						</div>
+
+						<button type="submit" id="savebutton" class="btn btn-primary">Change Password</button>
+
+					</form>
+
+					
 				</div>
 			</div>
+		</div>
+	</div>
 </body>
 
+
+
+
+<%-- <script
+		src="<%=request.getContextPath()%>/assets/vendors/base/vendors.bundle.js"
+		type="text/javascript"></script> --%>
+	<%-- <script
+		src="<%=request.getContextPath()%>/assets/demo/demo12/base/scripts.bundle.js"
+		type="text/javascript"></script> --%>
+	<%-- <%@include file="../global/global-script.jsp"%> --%>
+	<!--end::Base Scripts -->
+
+	<script
+		src="<%=request.getContextPath()%>/assets/vendors/formvalidation/formValidation.min.js"></script>
+	<script
+		src="<%=request.getContextPath()%>/assets/vendors/formvalidation/framework/bootstrap.min.js"></script>
+
+
+       <!--  *********validation for change password**********  -->
+
+	<script type="text/javascript">
+	
+		$( document ).ready(function()
+				{
+					console.log("000");
+					
+	                $('#savebutton').prop('disabled', true);
+	                
+	              
+					 var password = document.getElementById("newpassword")
+					  			, confirm_password = document.getElementById("conformnewpassword");
+	
+					function validatePassword()
+						{
+						  if(password.value != confirm_password.value) 
+							  {
+					                $('#savebutton').prop('disabled', true);
+			
+									console.log("Passwords Don't Match");
+			
+							    confirm_password.setCustomValidity("Passwords Don't Match");
+							  } 
+						  else 
+						  	  {
+				                $('#savebutton').prop('disabled', false);
+		
+								console.log("Passwords  Match");
+		
+						    	confirm_password.setCustomValidity('');
+						  	  }
+						
+						}
+					 	 $(".pass").keyup(function()
+				                {
+									console.log("000");
+									validatePassword();
+				                	//  $("input").css("background-color", "pink");
+				                });
+					 	 
+		 /* old password chechking */
+		 
+					 	
+				});
+	
+			</script>
+			
+			
+<script>
+			
+	$("#savebutton").click(function()
+		{
+			console.log("old password checking")
+			var oldpassword = $(#oldpassword).val();
+			console.log(oldpassword);
+			//alert(oldpassword);
+			
+			
+			
+			 $.ajax(
+					{
+					    type: "POST	",
+					    url: "/checkoldpassword",
+					    data:oldpassword,
+					    dataType: "text",
+					    success: function (data) 
+					    	{
+					    	alert("old password is correct")	
+					         
+					  		},
+					          error: function (data) 
+					          {
+					        	  lert("old password is not correct")	
+					          } 
+					});
+		
+		
+			})
+</script>
+</body>
+
+
+
+
 </html>
+<!-- /main sidebar -->

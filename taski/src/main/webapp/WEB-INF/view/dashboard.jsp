@@ -54,6 +54,20 @@
 
 </head>
 
+
+<!-- code for preventing back after logout  -->
+
+<script>
+	function preventBack() {
+		window.history.forward();
+	}
+	setTimeout("preventBack()", 0);
+	window.onunload = function() {
+		null;
+	}
+</script>
+
+
 <body>
 
 	<!-- Main navbar -->
@@ -195,10 +209,18 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
+						
+							<a href="#" class="dropdown-item">
+								<i class="icon-cog"></i>Account settings
+							</a> 
+							
+							<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+							</a>
+								
+							<a href="/changepassword" class="dropdown-item">
+								<i class="icon-pencil"></i>Change password
+							</a>
 							</div>
 					</li>
 			</ul>
