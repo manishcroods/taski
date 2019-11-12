@@ -1,5 +1,4 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -473,10 +472,6 @@
 							</table>
 						</div>
 					</div>
-			
-			
-			
-			
 		</div>
 	</div>
 	
@@ -544,6 +539,12 @@
 			</div>
 </body>
 
+<!-- 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>      
+<script src="http://someothersite.com/external.js"></script>	 -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
 
 <script>
 	$(document).ready(function() 
@@ -585,7 +586,7 @@
 		{
 			var companyid = $(this).data("id");
 			console.log("hello is");
-			//alert(companyid);
+			alert(companyid);
 			
 			 $.ajax(
 				{    	
@@ -617,7 +618,7 @@
 
 <!--  delete task -->
 
-<script>
+<!-- <script>
 	$('body').on('click', '.delete-company', function () 
 		{
 			var companyid = $(this).data("id");
@@ -643,6 +644,43 @@
 				});
 			 updatestatus
 		});   
+						    
+	</script> -->
+	
+	
+
+	
+	<!-- delete task  -->
+	<script>
+				   
+			$('body').on('click', '.delete-company', function () 
+				{
+					var companyid = $(this).data("id");
+					alert(companyid);
+					confirm("Are You sure want to delete ?");
+					
+					 $.ajax(
+						{
+						        	
+						    type: "GET",
+						    url: "/company/delete/"+companyid,
+						    success: function (data) 
+						    {
+						            		
+						          $("#list" + companyid).remove();
+							      $('#list').modal('show');
+						          $('.result').html(data);
+						          location.reload();
+						  	},
+						            
+						          error: function (data) 
+						          {
+						          	console.log('Error:', data);
+						          } 
+						      
+						 });
+					 updatestatus
+				});   
 						    
 	</script>
 
