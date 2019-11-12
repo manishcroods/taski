@@ -83,7 +83,10 @@
 						</div>
 
 						<div class="dropdown-content-body dropdown-scrollable">
-							<ul class="media-list">
+							
+							
+							
+							<!-- <ul class="media-list">
 								<li class="media">
 									<div class="mr-3">
 										<a href="#"
@@ -151,7 +154,9 @@
 										<div class="text-muted font-size-sm">Dec 12, 05:46</div>
 									</div>
 								</li>
-							</ul>
+							</ul> -->
+							
+							
 						</div>
 
 						<div class="dropdown-content-footer bg-light">
@@ -171,8 +176,6 @@
 
 			<ul class="navbar-nav">
 
-
-
 				<li class="nav-item dropdown dropdown-user"><a href="#"
 					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <img
@@ -190,16 +193,17 @@
 			</ul>
 		</div>
 	</div>
+	
 	<!-- /main navbar -->
 
 
 	<!-- Page content -->
 	<div class="page-content">
 
-		<!-- Main sidebar -->
+	<!-- Main sidebar -->
 		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-md">
 
-			<!-- Sidebar mobile toggler -->
+	<!-- Sidebar mobile toggler -->
 			<div class="sidebar-mobile-toggler text-center">
 				<a href="#" class="sidebar-mobile-main-toggle"> <i
 				   class="icon-arrow-left8"></i>
@@ -207,10 +211,10 @@
 					class="icon-screen-full"></i> <i class="icon-screen-normal"></i>
 				</a>
 			</div>
-			<!-- /side bar mobile toggler -->
+	<!-- /side bar mobile toggler -->
 
 
-			<!-- Side bar content -->
+	<!-- Side bar content -->
 			<div class="sidebar-content">
 
 				<!-- User menu -->
@@ -237,10 +241,10 @@
 					</div>
 				</div>
 
-				<!-- /user menu -->
+	<!-- /user menu -->
 
 
-				<!-- Main navigation -->
+	<!-- Main navigation -->
 				<div class="card card-sidebar-mobile">
 					<ul class="nav nav-sidebar" data-nav-type="accordion">
 
@@ -277,7 +281,7 @@
 							</ul></li>
 
 
-						<!-- categories bars -->
+		<!-- categories bars -->
 
 
 
@@ -286,12 +290,7 @@
 								class="glyphicon glyphicon-cog">Category</span>
 						</a></li>
 
-						<!-- <li class="nav-item nav-item-submenu">
-							<a href="/category" class="nav-link">
-								<i class="icon-stack"></i> <span>Categories</span></a>
-						</li> -->
-
-
+				
 						<!-- Users slide bar -->
 
 						<li class="nav-item nav-item-submenu"><a href="#"
@@ -303,18 +302,13 @@
 								<li class="nav-item"><a href="/saveuser" class="nav-link">Add
 										new User</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/user"
-									class="nav-link">All Users</a></li>
-								<!-- <li class="nav-item nav-item-submenu">
-									<a href="#" class="nav-link">3 sidebars</a>
-									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="../seed/sidebar_right_hidden.html" class="nav-link">Right sidebar hidden</a></li>
-										<li class="nav-item"><a href="../seed/sidebar_right_visible.html" class="nav-link">Right sidebar visible</a></li>
-									</ul>
-								</li> -->
-							</ul></li>
+									class="nav-link">All Users</a>
+								</li>
+							</ul>
+						</li>
 
 
-						<!-- Contacts bar -->
+		<!-- Contacts bar -->
 
 						<li class="nav-item nav-item-submenu"><a href="#"
 							class="nav-link"><i class="icon-stack"></i> <span>Contacts</span></a>
@@ -330,31 +324,19 @@
 									</ul> --></li>
 							</ul></li>
 
+		<!-- settings  bar -->
 
-
-
-						<!-- settings  bar -->
-
-						<li class="nav-item"><a href="setting" class="nav-link">
+						<li class="nav-item">
+							<a href="setting" class="nav-link">
 								<i class="icon-width"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
-						</a></li>
-						<!-- /main -->
-
-
-
-
-
-
+							</a>
+						</li>
 					</ul>
 				</div>
-				<!-- /main navigation -->
-
 			</div>
-			<!-- /sidebar content -->
-
 		</div>
-		<!-- /main sidebar -->
+		
 
 
 		<!-- Main content -->
