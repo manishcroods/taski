@@ -20,7 +20,6 @@ public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 
-	
 	@PostMapping("/savecategory")
 	public String saveCategory(@ModelAttribute Category category ,@SessionAttribute("user") User u) 
 	{

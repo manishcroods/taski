@@ -299,21 +299,33 @@
 							class="nav-link active"> <i class="icon-home4"></i> <span>
 									Dashboard </span>
 						</a></li>
-						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-copy"></i> <span>Task</span></a>
+						
+						<li class="nav-item nav-item-submenu">
+							<a href="#" class="nav-link">
+								<i class="icon-task"></i> 
+									<span>Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
-								<li class="nav-item"><a href="/addtask"
-									class="nav-link active">Add new Task</a></li>
+							
+								<li class="nav-item ">
+									<a href="/addtask" class="nav-link active">
+									<span>Add new Task</span></a>
+								</li>
+								
 								<li class="nav-item"><a
 									href="/runningtask"
-									class="nav-link">Running Task</a></li>
+									class="nav-link">Running Task</a>
+								</li>
+								
 								<li class="nav-item"><a
 									href="/completedtask"
-									class="nav-link">Completed Task</a></li>
-							</ul></li>
+									class="nav-link">Completed Task</a>
+								</li>
+								
+							</ul>
+						</li>
 						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-color-sampler"></i> <span>Personal
+							class="nav-link"><i class="icon-menu down"></i> <span>Personal
 									Task</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
@@ -346,29 +358,21 @@
 						<!-- Users slide bar -->
 
 						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-stack"></i> <span>Users</span></a>
+							class="nav-link"><i class="icon-user"></i> <span>Users</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
-								<!-- <li class="nav-item"><a href="../seed/layout_nav_horizontal.html" class="nav-link">Horizontal navigation</a></li>
-								<li class="nav-item"><a href="../seed/sidebar_none.html" class="nav-link">No sidebar</a></li> -->
+								
 								<li class="nav-item"><a href="/saveuser" class="nav-link">Add
 										new User</a></li>
 								<li class="nav-item nav-item-submenu"><a href="/user"
 									class="nav-link">All Users</a></li>
-								<!-- <li class="nav-item nav-item-submenu">
-									<a href="#" class="nav-link">3 sidebars</a>
-									<ul class="nav nav-group-sub">
-										<li class="nav-item"><a href="../seed/sidebar_right_hidden.html" class="nav-link">Right sidebar hidden</a></li>
-										<li class="nav-item"><a href="../seed/sidebar_right_visible.html" class="nav-link">Right sidebar visible</a></li>
-									</ul>
-								</li> -->
 							</ul></li>
 
 
 						<!-- Contacts bar -->
 
 						<li class="nav-item nav-item-submenu"><a href="#"
-							class="nav-link"><i class="icon-stack"></i> <span>Contacts</span></a>
+							class="nav-link"><i class="icon-list"></i> <span>Contacts</span></a>
 
 							<ul class="nav nav-group-sub" data-submenu-title="Starter kit">
 
@@ -387,7 +391,7 @@
 						<!-- settings  bar -->
 
 						<li class="nav-item"><a href="setting" class="nav-link">
-								<i class="icon-width"> </i> <span
+								<i class="icon-cog"> </i> <span
 								class="glyphicon glyphicon-cog">Settings</span>
 						</a></li>
 						<!-- /main -->

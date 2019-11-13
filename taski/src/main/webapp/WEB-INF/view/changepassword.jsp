@@ -457,55 +457,54 @@
 					                });
 						 	 
 			 /* old password chechking */
-			 
 						 	$("#savebutton").click(function()
-						 			{
-						 				console.log("old password checking");
-						 				var oldpassword = $('#oldpassword').val();
-						 				var newpassword=$('#newpassword').val();
-						 				console.log(oldpassword);
-						 				//alert(oldpassword);
-						 				
-						 				 $.post(
-						 						{
-						 						    
-						 						    url: "/checkoldpassword",
-						 						    data:{"oldpassword":oldpassword,"newpassword":newpassword},
-						 						    success: function (data) 
-						 						    	{
-						 						    		if(data=="old password is wrong")
-						 						    		{
-								 						       // alert("old password is InCorrect")
-						 						    			  new PNotify({
-						 						    	                title: 'OOps',
-						 						    	                text: 'old password is InCorrect',
-						 						    	                icon: 'icon-blocked',
-						 						    	                type: 'error'
-						 						    	            });
-						 						    		}else if(data=="your password updated succussful")
-						 						    		{
-								 						    	//alert("Password Updated")
-								 						    	new PNotify({
-															                title: 'Success',
-															                text: 'Password Updated Successfully',
-															                icon: 'icon-checkmark3',
-															                type: 'success'
-		           														});
-								 						    	setTimeout(function() {
-																  location.href="/login";
-																},1000); 
-								 						    	
-						 						    		}
-						 						         
-						 						  		},
-						 						          error: function (data) 
-						 						          {
-						 						        	  alert("old password is not correct")	
-						 						          } 
-						 						});
-						 			
-						 			
-						 				});
+					 			{
+					 				console.log("old password checking");
+					 				var oldpassword = $('#oldpassword').val();
+					 				var newpassword=$('#newpassword').val();
+					 				console.log(oldpassword);
+					 				//alert(oldpassword);
+					 				
+					 				 $.post(
+					 						{
+					 						    
+					 						    url: "/checkoldpassword",
+					 						    data:{"oldpassword":oldpassword,"newpassword":newpassword},
+					 						    success: function (data) 
+					 						    	{
+					 						    		if(data=="old password is wrong")
+					 						    		{
+							 						       // alert("old password is InCorrect")
+					 						    			  new PNotify({
+					 						    	                title: 'OOps',
+					 						    	                text: 'old password is InCorrect',
+					 						    	                icon: 'icon-blocked',
+					 						    	                type: 'error'
+					 						    	            });
+					 						    		}else if(data=="your password updated succussful")
+					 						    		{
+							 						    	//alert("Password Updated")
+							 						    	new PNotify({
+														                title: 'Success',
+														                text: 'Password Updated Successfully',
+														                icon: 'icon-checkmark3',
+														                type: 'success'
+	           														});
+							 						    	setTimeout(function() {
+															  location.href="/login";
+															},1000); 
+							 						    	
+					 						    		}
+					 						         
+					 						  		},
+					 						          error: function (data) 
+					 						          	{
+					 						        	  alert("old password is not correct")	
+					 						         	} 
+					 						});
+					 			
+					 			
+					 				});
 						 	
 					});
 		
