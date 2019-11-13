@@ -69,9 +69,9 @@
 </script>
 
 
-<body>
+<body class="bg-dark">
 
-	<div class="container">
+	<div class="container ">
 		<div class="card card-login mx-auto mt-5">
 			<h1 align="center">YOU ARE LOGGED OUT</h1>
 			<h2 align="center">Please Log-In</h2>

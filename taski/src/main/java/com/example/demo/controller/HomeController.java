@@ -19,8 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.demo.model.CompanyDetails;
 import com.example.demo.model.Task;
 import com.example.demo.model.User;
+import com.example.demo.model.UserAttendance;
 import com.example.demo.repository.CompanyDetailsRepo;
 import com.example.demo.repository.TaskRepo;
+import com.example.demo.repository.UserAttendanceRepo;
 import com.example.demo.repository.UserRepo;
 import com.example.demo.service.CompanyDetailsService;
 import com.example.demo.service.UserService;
@@ -42,6 +44,9 @@ public class HomeController {
 	
 	@Autowired
 	UserService userservice;
+	
+	@Autowired
+	UserAttendanceRepo userAttendanceRepo;
 	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(@SessionAttribute("user") User u ) 
@@ -173,6 +178,16 @@ public class HomeController {
 		} else{
 			return "old password is wrong";
 		}
+	}
+	
+	@PostMapping("/saveattendance")
+	@ResponseBody
+	public String saveattendance(@ModelAttribute UserAttendance ua ,@SessionAttribute("user") User u) 
+	{
+		System.out.println("attemdance details:" + ua);
+		ua.setUser(u);
+		userAttendanceRepo.save(ua);
+		return "succussfull";
 	}
 	
 }

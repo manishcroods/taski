@@ -496,6 +496,7 @@
 													data-id="${user.userId}"
 													class="btn btn-primary btn-sm delete-user" title="Delete">
 														<i class="fa fa-trash"></i>Delete
+														
 												</a> <%-- <a href = "/user/delete/${user.userId}" 
 															class="btn btn-primary btn-sm delete-user" 
 															data-id="${user.userId}" title="delete">

@@ -212,13 +212,23 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				
-
+				<li class="nav-item  ">
+					<a href="JavaScript:Void(0)"
+						data-toggle="modal"
+						data-target="#user_attendance_modal"
+						class="btn btn-link briefcase" title="Add-Attendance">
+						<span class="glyphicon glyphicon-briefcase">Attendance</span>
+						<!-- <i class="fa fa-edit"></i> -->
+					</a>	
+				</li>
 			
-				<li class="nav-item dropdown dropdown-user"><a href=""
-					class="navbar-nav-link d-flex align-items-center dropdown-toggle"
+			
+			
+
+				<li class="nav-item dropdown dropdown-user">
+					<a href=""class="navbar-nav-link d-flex align-items-center dropdown-toggle"
 					data-toggle="dropdown"> <span> Hello "${user.userName}"</span>
-				</a>
+					</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
@@ -230,10 +240,8 @@
 							<a href="/logout" class="dropdown-item">
 								<i class="icon-switch2"></i> Logout
 							</a>
-								
-							
-							</div>
-					</li>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -666,6 +674,56 @@
 
 <!-- view task  -->
 
+<!-- attendance saving code -->
+
+					<div class="modal fade" id="user_attendance_modal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+					
+											<!-- Modal Header -->
+											<div class="modal-header">
+												<h2>Add Attendance</h2>
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+											</div>
+					
+											<!-- Modal body -->
+											<div class="modal-body">
+												<form id="attendance-form" class="form" action="/saveattendance"
+													method="post">
+													
+													<div class="form-group">
+					
+														<div class="form-group">
+															<div class="form-label-group">
+																<h4>In Time</h4>
+																	<input type="text" data-id="intime" id="intime"
+																		name="inTime" class="form-control" required="required"
+																		autofocus="autofocus">
+															</div>
+														</div>
+					
+														<div class="form-group">
+															<div class="form-label-group">
+																<h4>Out Time</h4>
+																	<input type="text" data-id="outtime" id="outtime"
+																		name="outTime" class="form-control" required="required"
+																		autofocus="autofocus">
+															</div>
+														</div>
+														
+														<button type="submit"
+															class="btn btn-primary btn-block save-attendance">Save
+														</button>
+													</div>
+					
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
 	<script>
 				   
 			$('body').on('click', '.view-task', function () 
@@ -707,6 +765,48 @@
 				});   
 						    
 	</script>
+	
+	<script>
+					   
+			 $('body').on('click', '.attendance-button', function () 
+					 {
+				        var intime = $('#intime').val();
+				        var outtime = $('#outtime').val();
+				        confirm("Are You sure want save attendance !");
+				 
+					       
+				     $.ajax({
+				        	
+				            type: "POST",
+				            url: "/saveattendance",
+				            data:{"intime":intime, "outtime":outtime }
+				            success: function (data) 
+				            	{   
+				            	    if(data=="succussfull")
+ 						    		{
+				            	    	new PNotify({
+							                title: 'Success',
+							                text: 'attendance saved Successfully',
+							                icon: 'icon-checkmark3',
+							                type: 'success'
+											});
+				            	    	setTimeout(function() {
+											  location.reload();
+											},1000);
+				            	    	
+				            	    	$('#user_attendance_modal').modal('hide');
+					               
+				           		 },
+				            
+				            error: function (data) {
+				                console.log('Error:', data);
+				            } 
+				      
+				        });
+				     
+				    });   
+					    
+					 </script>
 	
 	
 	
