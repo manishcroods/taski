@@ -31,7 +31,6 @@ public class CategoryController {
 		return "redirect:/category";
 	}
 	
-	
 	@GetMapping("/category")
 	public String getAllCategory(Model m) {
 		System.out.println("category page");

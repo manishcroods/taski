@@ -429,13 +429,15 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
-						<a href="/changepassword" class="dropdown-item">
+						
+					<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
-							</a>
+					</a>
+							
+					<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+					</a>
+							
 							</div></li>
 			</ul>
 		</div>

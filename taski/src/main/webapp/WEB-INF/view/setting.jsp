@@ -8,6 +8,8 @@
 	<title>Taski-croods app</title>
 
 	<!-- Global stylesheets -->
+	
+	
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
 	<link href="../../../../global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -15,15 +17,38 @@
 	<link href="assets/css/layout.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/components.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
+	
 	<!-- /global stylesheets -->
 
-	<!-- Core JS files -->
-	<script src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/global_assets/js/main/bootstrap.bundle.min.js"></script>
-	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/loaders/blockui.min.js"></script>
-	<!-- /core JS files -->
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>	
+	
+<!-- Core JS files -->
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+		
+		<script src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+		
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/main/bootstrap.bundle.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/plugins/loaders/blockui.min.js"></script>
+			
+<!-- /core JS files -->
+	
+	
+	
 	<!-- Theme JS files -->
+	
 	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
 	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/forms/styling/switchery.min.js"></script>
@@ -32,9 +57,10 @@
 	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
 	<script src="assets/js/app.js"></script>
-	<script src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
+	
+	
 	<!-- /theme JS files -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
 	
 
 </head>
@@ -198,12 +224,15 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> <a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
-							</a>
+						</a>
+							
+						<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+						</a>
+						
 					</div>
 				</li>
 			</ul>
@@ -543,8 +572,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>      
 <script src="http://someothersite.com/external.js"></script>	 -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+
 
 <script>
 	$(document).ready(function() 
@@ -614,41 +642,6 @@
 		});   
 	    
 </script> 
-
-
-<!--  delete task -->
-
-<!-- <script>
-	$('body').on('click', '.delete-company', function () 
-		{
-			var companyid = $(this).data("id");
-			alert(companyid);
-			confirm("Are You sure want to delete !");
-			
-			 $.ajax(
-				{
-				    type: "GET",
-				    url: "/company/delete/"+companyid,
-				    success: function (data) 
-				    {
-				            		
-				          $("#list" + companyid).remove();
-					      $('#list').modal('show');
-				          $('.result').html(data);
-				          location.reload();
-				  	},
-				          error: function (data) 
-				          {
-				          	console.log('Error:', data);
-				          } 
-				});
-			 updatestatus
-		});   
-						    
-	</script> -->
-	
-	
-
 	
 	<!-- delete task  -->
 	<script>
@@ -683,6 +676,4 @@
 				});   
 						    
 	</script>
-
-
 </html>

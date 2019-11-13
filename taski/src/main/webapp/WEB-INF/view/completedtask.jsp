@@ -18,11 +18,25 @@
 	<link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
+	
 	<!-- Core JS files -->
-	<script src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/global_assets/js/main/bootstrap.bundle.min.js"></script>
-	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/loaders/blockui.min.js"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+		
+		<script src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+		
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/main/bootstrap.bundle.min.js"></script>
+		<script
+			src="<%=request.getContextPath()%>/global_assets/js/plugins/loaders/blockui.min.js"></script>
 	<!-- /core JS files -->
+	
 
 	<!-- Theme JS files -->
 	<script src="<%=request.getContextPath()%>/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
@@ -196,13 +210,15 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
-							</a>
+						</a>
+							
+						<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+						</a>
+							
 							</div>
 					</li>
 			</ul>

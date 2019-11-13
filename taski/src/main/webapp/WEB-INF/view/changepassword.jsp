@@ -46,6 +46,8 @@
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/ui/moment/moment.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+<script
+	src="<%=request.getContextPath()%>/global_assets/js/plugins/notifications/pnotify.min.js"></script>
 
 <script src="assets/js/app.js"></script>
 <script
@@ -207,12 +209,15 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> <a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
-							</a>
+						</a>
+							
+						<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+						</a>
+							
 					</div></li>
 			</ul>
 		</div>
@@ -405,7 +410,7 @@
 							</div>
 						</div>
 
-						<button type="submit" id="savebutton" class="btn btn-primary">Change Password</button>
+						<button type="button" id="savebutton" class="btn btn-primary">Change Password</button>
 
 					</form>
 
@@ -416,108 +421,94 @@
 	</div>
 </body>
 
-
-
-
-<%-- <script
-		src="<%=request.getContextPath()%>/assets/vendors/base/vendors.bundle.js"
-		type="text/javascript"></script> --%>
-	<%-- <script
-		src="<%=request.getContextPath()%>/assets/demo/demo12/base/scripts.bundle.js"
-		type="text/javascript"></script> --%>
-	<%-- <%@include file="../global/global-script.jsp"%> --%>
-	<!--end::Base Scripts -->
-
-	<script
-		src="<%=request.getContextPath()%>/assets/vendors/formvalidation/formValidation.min.js"></script>
-	<script
-		src="<%=request.getContextPath()%>/assets/vendors/formvalidation/framework/bootstrap.min.js"></script>
-
-
        <!--  *********validation for change password**********  -->
 
-	<script type="text/javascript">
-	
-		$( document ).ready(function()
-				{
-					console.log("000");
-					
-	                $('#savebutton').prop('disabled', true);
-	                
-	              
-					 var password = document.getElementById("newpassword")
-					  			, confirm_password = document.getElementById("conformnewpassword");
-	
-					function validatePassword()
-						{
-						  if(password.value != confirm_password.value) 
-							  {
-					                $('#savebutton').prop('disabled', true);
-			
-									console.log("Passwords Don't Match");
-			
-							    confirm_password.setCustomValidity("Passwords Don't Match");
-							  } 
-						  else 
-						  	  {
-				                $('#savebutton').prop('disabled', false);
+		<script type="text/javascript">
 		
-								console.log("Passwords  Match");
-		
-						    	confirm_password.setCustomValidity('');
-						  	  }
-						
-						}
-					 	 $(".pass").keyup(function()
-				                {
-									console.log("000");
-									validatePassword();
-				                	//  $("input").css("background-color", "pink");
-				                });
-					 	 
-		 /* old password chechking */
-		 
-					 	
-				});
-	
-			</script>
-			
-			
-<script>
-			
-	$("#savebutton").click(function()
-		{
-			console.log("old password checking")
-			var oldpassword = $(#oldpassword).val();
-			console.log(oldpassword);
-			//alert(oldpassword);
-			
-			
-			
-			 $.ajax(
+			$( document ).ready(function()
 					{
-					    type: "POST	",
-					    url: "/checkoldpassword",
-					    data:oldpassword,
-					    dataType: "text",
-					    success: function (data) 
-					    	{
-					    	alert("old password is correct")	
-					         
-					  		},
-					          error: function (data) 
-					          {
-					        	  lert("old password is not correct")	
-					          } 
+						console.log("000");
+						$('#savebutton').prop('disabled', true);
+		                
+		              	var password = document.getElementById("newpassword") ,
+						    confirm_password = document.getElementById("conformnewpassword");
+		
+						function validatePassword()
+							{
+							  if(password.value != confirm_password.value) 
+								  {
+						               $('#savebutton').prop('disabled', true);
+									   console.log("Passwords Don't Match");
+									   confirm_password.setCustomValidity("Passwords Don't Match");
+								  } 
+							  else 
+							  	  {
+					                $('#savebutton').prop('disabled', false);
+									console.log("Passwords  Match");
+							    	confirm_password.setCustomValidity('');
+							  	  }
+							
+							}
+						 	 $(".pass").keyup(function()
+					                {
+										console.log("000");
+										validatePassword();
+					                	//  $("input").css("background-color", "pink");
+					                });
+						 	 
+			 /* old password chechking */
+			 
+						 	$("#savebutton").click(function()
+						 			{
+						 				console.log("old password checking");
+						 				var oldpassword = $('#oldpassword').val();
+						 				var newpassword=$('#newpassword').val();
+						 				console.log(oldpassword);
+						 				//alert(oldpassword);
+						 				
+						 				 $.post(
+						 						{
+						 						    
+						 						    url: "/checkoldpassword",
+						 						    data:{"oldpassword":oldpassword,"newpassword":newpassword},
+						 						    success: function (data) 
+						 						    	{
+						 						    		if(data=="old password is wrong")
+						 						    		{
+								 						       // alert("old password is InCorrect")
+						 						    			  new PNotify({
+						 						    	                title: 'OOps',
+						 						    	                text: 'old password is InCorrect',
+						 						    	                icon: 'icon-blocked',
+						 						    	                type: 'error'
+						 						    	            });
+						 						    		}else if(data=="your password updated succussful")
+						 						    		{
+								 						    	//alert("Password Updated")
+								 						    	new PNotify({
+															                title: 'Success',
+															                text: 'Password Updated Successfully',
+															                icon: 'icon-checkmark3',
+															                type: 'success'
+		           														});
+								 						    	setTimeout(function() {
+																  location.href="/login";
+																},1000); 
+								 						    	
+						 						    		}
+						 						         
+						 						  		},
+						 						          error: function (data) 
+						 						          {
+						 						        	  alert("old password is not correct")	
+						 						          } 
+						 						});
+						 			
+						 			
+						 				});
+						 	
 					});
 		
-		
-			})
-</script>
+				</script>
 </body>
-
-
-
-
 </html>
-<!-- /main sidebar -->

@@ -152,26 +152,26 @@ public class HomeController {
 		
 	}
 	
-	@PostMapping("/changepassword")
-	public String changepassword(@RequestParam String newpassword,@SessionAttribute("user") User u) 
-	{
-		System.out.println("password now changed");
-		u.setPassword(newpassword);
-		userservice.saveUser(u);	
-		return "redirect:/login";
-	}
+	/*
+	 * @PostMapping("/changepassword") public String changepassword(@RequestParam
+	 * String newpassword,@SessionAttribute("user") User u) {
+	 * System.out.println("password now changed"); u.setPassword(newpassword);
+	 * userservice.saveUser(u); return "redirect:/login"; }
+	 */
 	
-	@GetMapping("/checkoldpassword")
+	@PostMapping("/checkoldpassword")
 	@ResponseBody
-	public String checkolpassword(@RequestParam String password , @SessionAttribute("user") User u ) 
+	public String checkolpassword(@RequestParam String oldpassword ,@RequestParam String newpassword, @SessionAttribute("user") User u ) 
 	{
 		System.out.println("checking old password"+u.getPassword());
 		
-		if (u.getPassword().equalsIgnoreCase(password)) 
+		if (u.getPassword().equalsIgnoreCase(oldpassword)) 
 		{
-			return "succuss";
+			u.setPassword(newpassword);
+			userservice.saveUser(u);	
+			return "your password updated succussful";
 		} else{
-			return "fail";
+			return "old password is wrong";
 		}
 	}
 	

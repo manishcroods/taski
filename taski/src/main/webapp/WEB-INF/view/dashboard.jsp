@@ -6,9 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 <title>Taski-croods app</title>
 
-<!-- Global stylesheets -->
+
+<!-- *****Global stylesheets***** -->
+
 <link
 	href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
 	rel="stylesheet" type="text/css">
@@ -22,9 +25,19 @@
 <link href="assets/css/components.min.css" rel="stylesheet"
 	type="text/css">
 <link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
-<!-- /global stylesheets -->
+
+
+<!-- *******global stylesheets****** -->
+
+
 
 <!-- Core JS files -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
 <script
@@ -46,8 +59,8 @@
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/ui/moment/moment.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/pickers/daterangepicker.js"></script>
-
 <script src="assets/js/app.js"></script>
+
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
 <!-- /theme JS files -->
@@ -210,17 +223,15 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						
-							<a href="#" class="dropdown-item">
-								<i class="icon-cog"></i>Account settings
-							</a> 
+							<a href="/changepassword" class="dropdown-item">
+								<i class="icon-pencil"></i>Change password
+							</a>
 							
 							<a href="/logout" class="dropdown-item">
 								<i class="icon-switch2"></i> Logout
 							</a>
 								
-							<a href="/changepassword" class="dropdown-item">
-								<i class="icon-pencil"></i>Change password
-							</a>
+							
 							</div>
 					</li>
 			</ul>
@@ -577,18 +588,6 @@
 						</button>
 					</div>
 
-
-<!-- <form method="post" target="_blank">
-    
-    <div class="navbar-collapse collapse" id="navbar-footer">
-						<span class="navbar-text"> &copy; 2019 - 2020. <a href="http://www.vasyerp.com/">Croods Consolidates</a> 
-						</span>
-					</div>
-</form> -->
-
-
-
-
 					<div class="navbar-collapse collapse" id="navbar-footer">
 						<span class="navbar-text"> &copy; 2019 - 2020. <a href="http://www.vasyerp.com/" target="_blank">Croods Consolidates</a> 
 						</span>
@@ -662,6 +661,7 @@
 			</div>
 
 <!-- view task  -->
+
 	<script>
 				   
 			$('body').on('click', '.view-task', function () 
@@ -703,3 +703,7 @@
 				});   
 						    
 	</script>
+	
+	
+	
+	</html>

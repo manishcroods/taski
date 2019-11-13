@@ -25,16 +25,32 @@
 <link href="assets/css/colors.min.css" rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
 
-<!-- Core JS files -->
+
+
+<!--**** Core JS files **** -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+
+<script src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/main/jquery.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/main/bootstrap.bundle.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/loaders/blockui.min.js"></script>
+	
 <!-- /core JS files -->
 
+
 <!-- Theme JS files -->
+
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/visualization/d3/d3.min.js"></script>
 <script
@@ -49,6 +65,7 @@
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/pickers/daterangepicker.js"></script>
 
 <script src="assets/js/app.js"></script>
+
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/demo_pages/dashboard.js"></script>
 <!-- /theme JS files -->
@@ -210,13 +227,15 @@
 
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
-						<a href="#" class="dropdown-item"><i class="icon-cog5"></i>
-							Account settings</a> 
-						<a href="/logout" class="dropdown-item"><i
-							class="icon-switch2"></i> Logout</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
-							</a>
+						</a>
+							
+						<a href="/logout" class="dropdown-item">
+								<i class="icon-switch2"></i> Logout
+						</a>
+							
 							</div>
 					</li>
 			</ul>
@@ -737,10 +756,8 @@
 									          error: function (data) 
 									          {
 									          	console.log('Error:', data);
-									          } 
-									      
-									 });
-									     
+									          }      
+									 });     
 							});   
 						    
 	</script> 
@@ -756,14 +773,12 @@
 					confirm("Are You sure want to delete ?");
 					
 					 $.ajax(
-						{
-						        	
+						{   	
 						    type: "GET",
 						    url: "/task/delete/"+taskid,
 						    success: function (data) 
 						    {
-						            		
-						          $("#list" + taskid).remove();
+						    	  $("#list" + taskid).remove();
 							      $('#list').modal('show');
 						          $('.result').html(data);
 						          location.reload();
@@ -782,6 +797,7 @@
 	
 	
 	<!-- view task  -->
+	
 	<script>
 				   
 			$('body').on('click', '.view-task', function () 
@@ -806,29 +822,21 @@
 							     // $('#viewcategoryid').val(data.category.categoryId);
 							      //$('#viewuserid').val(data.user.userId);
 							      $("#viewtaskescription").val(data.taskDescription);
-						          
-						          
-						          
-						          
 						         
 						  	},
 						            
 						          error: function (data) 
 						          {
 						          	console.log('Error:', data);
-						          } 
-						      
-						 });
-						     
+						          }  
+						 });     
 				});   
 						    
 	</script>
 	
-	
-	<!-- done task  -->
+	<!-- **** done task ****  -->
 	
 	<script>
-				   
 			$('body').on('click', '.done-task', function () 
 				{
 					var taskid = $(this).data("id");
@@ -844,8 +852,7 @@
 						    	//$('#task_view_modal').modal('show');
 						          //$('.result').html(data);
 						          location.reload();
-						  	},
-						            
+						  	},  
 						          error: function (data) 
 						          {
 						          	console.log('Error:', data);
@@ -856,8 +863,4 @@
 				});   
 						    
 	</script>
-	
-	
-
-
 </html>
