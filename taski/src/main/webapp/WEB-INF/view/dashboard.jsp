@@ -7,7 +7,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-<title>Taski-croods app</title>
+<title>Taski-Croods App</title>
 
 
 <!-- *****Global stylesheets***** -->
@@ -293,7 +293,8 @@
 							<div class="media-body">
 								<div class="media-title font-weight-semibold">Croods</div>
 								<div class="font-size-xs opacity-50">
-									<i class="icon-pin font-size-sm"></i> &nbsp;Vastrapur,Ahemdabad
+									<i class="icon-pin font-size-sm"></i> &nbsp;
+									Vastrapur,Ahemdabad
 								</div>
 							</div>
 
@@ -779,8 +780,7 @@
 						    
 	</script>
 	
-	<!--*** save attendance ***  -->
-	
+<!--*** save attendance ***  -->
 	
 		<script>
 		$("#save-attendance").click(function()
@@ -810,28 +810,18 @@
 												});
 					            	    	setTimeout(function() {
 												  location.reload();
-												},1000);
-					            	    	
-					            	    	
-						               
+												},500);
 					           		 	}
 					            	},
 					            
 					            error: function (data) 
 					            	{
 					                console.log('Error:', data);
-					            	} 
-					      
-					        
+					            	}
 					    });
 					     
 					    });   
 						
 						    
-						 </script>
-	
-	<!--  /* $('body').on('click', '.attendance-button', function ()  */ 
-		$("#save-attendance").click(function()
-	-->
-	
+			 </script>
 	</html>

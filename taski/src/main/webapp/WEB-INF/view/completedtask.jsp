@@ -592,6 +592,7 @@
 					                //location.reload();
 						            $('#list').modal('show');
 					                $('.result').html(data);
+					                location.reload();
 					            },
 					            
 					            error: function (data) {
@@ -630,10 +631,6 @@
 							     // $('#viewcategoryid').val(data.category.categoryId);
 							      //$('#viewuserid').val(data.user.userId);
 							      $("#viewtaskescription").val(data.taskDescription);
-						          
-						          
-						          
-						          
 						         
 						  	},
 						            
