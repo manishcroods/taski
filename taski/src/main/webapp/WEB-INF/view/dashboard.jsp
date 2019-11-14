@@ -59,6 +59,8 @@
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/ui/moment/moment.min.js"></script>
 <script
 	src="<%=request.getContextPath()%>/global_assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script
+	src="<%=request.getContextPath()%>/global_assets/js/plugins/notifications/pnotify.min.js"></script>
 <script src="assets/js/app.js"></script>
 
 <script
@@ -212,29 +214,39 @@
 			<span class="badge bg-success ml-md-3 mr-md-auto">Online</span>
 
 			<ul class="navbar-nav">
-				<li class="nav-item  ">
-					<a href="JavaScript:Void(0)"
+				<!--  <li class="nav-item  ">
+					<button type="button" 
+						id="attendancebutton" class="btn btn-primary attendance-button "
 						data-toggle="modal"
 						data-target="#user_attendance_modal"
-						class="btn btn-link briefcase" title="Add-Attendance">
-						<span class="glyphicon glyphicon-briefcase">Attendance</span>
-						<!-- <i class="fa fa-edit"></i> -->
-					</a>	
-				</li>
-			
+						title="Add-Attendance">Attendance</button>
+				</li> 
+			 -->
 			
 			
 
 				<li class="nav-item dropdown dropdown-user">
+				
 					<a href=""class="navbar-nav-link d-flex align-items-center dropdown-toggle"
-					data-toggle="dropdown"> <span> Hello "${user.userName}"</span>
+						data-toggle="dropdown"> 
+						<span> Hello "${user.userName}"</span>
 					</a>
 
 					<div class="dropdown-menu dropdown-menu-right">
-						<div class="dropdown-divider"></div>
+						<div class="dropdown-divider">
+						</div>
 						
+							<a href="JavaScript:Void(0)"
+								data-toggle="modal"
+								data-target="#user_attendance_modal"
+								class="btn btn-link briefcase" title="Add-Attendance">
+								<i class="icon-add">
+								  Attendance
+								</i>
+							</a>
+					
 							<a href="/changepassword" class="dropdown-item">
-								<i class="icon-pencil"></i>Change password
+								<i class="icon-pencil"></i>Change Password
 							</a>
 							
 							<a href="/logout" class="dropdown-item">
@@ -676,7 +688,7 @@
 
 <!-- attendance saving code -->
 
-					<div class="modal fade" id="user_attendance_modal">
+						<div class="modal fade" id="user_attendance_modal">
 									<div class="modal-dialog">
 										<div class="modal-content">
 					
@@ -688,7 +700,8 @@
 					
 											<!-- Modal body -->
 											<div class="modal-body">
-												<form id="attendance-form" class="form" action="/saveattendance"
+												<form id="attendance-form" class="form" 
+													action="/saveattendance" name="attendanceform"
 													method="post">
 													
 													<div class="form-group">
@@ -711,7 +724,7 @@
 															</div>
 														</div>
 														
-														<button type="submit"
+														<button type="button" id="save-attendance"
 															class="btn btn-primary btn-block save-attendance">Save
 														</button>
 													</div>
@@ -766,48 +779,59 @@
 						    
 	</script>
 	
-	<script>
-					   
-			 $('body').on('click', '.attendance-button', function () 
-					 {
-				        var intime = $('#intime').val();
-				        var outtime = $('#outtime').val();
-				        confirm("Are You sure want save attendance !");
-				 
-					       
-				     $.ajax({
-				        	
-				            type: "POST",
-				            url: "/saveattendance",
-				            data:{"intime":intime, "outtime":outtime }
-				            success: function (data) 
-				            	{   
-				            	    if(data=="succussfull")
- 						    		{
-				            	    	new PNotify({
-							                title: 'Success',
-							                text: 'attendance saved Successfully',
-							                icon: 'icon-checkmark3',
-							                type: 'success'
-											});
-				            	    	setTimeout(function() {
-											  location.reload();
-											},1000);
-				            	    	
-				            	    	$('#user_attendance_modal').modal('hide');
-					               
-				           		 },
-				            
-				            error: function (data) {
-				                console.log('Error:', data);
-				            } 
-				      
-				        });
-				     
-				    });   
-					    
-					 </script>
+	<!--*** save attendance ***  -->
 	
 	
+		<script>
+		$("#save-attendance").click(function()
+
+						 {
+					        var intime = $('#intime').val();
+					        var outtime = $('#outtime').val();
+					        //confirm("Are You sure want save attendance !");
+					        console.log(intime);
+					        console.log(outtime);
+					        console.log("Are You sure want save attendance !");
+					 
+						       
+					     $.post({
+					            url: "/saveattendance",
+					            data:{"inTime":intime, 
+					            	  "outTime":outtime },
+					            success: function (data) 
+					            	{   
+					            	    if(data=="succussfull")
+	 						    		{
+					            	    	new PNotify({
+								                title: 'Success',
+								                text: 'attendance saved Successfully',
+								                icon: 'icon-checkmark3',
+								                type: 'success'
+												});
+					            	    	setTimeout(function() {
+												  location.reload();
+												},1000);
+					            	    	
+					            	    	
+						               
+					           		 	}
+					            	},
+					            
+					            error: function (data) 
+					            	{
+					                console.log('Error:', data);
+					            	} 
+					      
+					        
+					    });
+					     
+					    });   
+						
+						    
+						 </script>
+	
+	<!--  /* $('body').on('click', '.attendance-button', function ()  */ 
+		$("#save-attendance").click(function()
+	-->
 	
 	</html>

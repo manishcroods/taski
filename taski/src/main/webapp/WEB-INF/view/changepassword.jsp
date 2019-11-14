@@ -467,7 +467,6 @@
 					 				
 					 				 $.post(
 					 						{
-					 						    
 					 						    url: "/checkoldpassword",
 					 						    data:{"oldpassword":oldpassword,"newpassword":newpassword},
 					 						    success: function (data) 
