@@ -762,20 +762,14 @@
 							     // $('#viewcategoryid').val(data.category.categoryId);
 							      //$('#viewuserid').val(data.user.userId);
 							      $("#viewtaskescription").val(data.taskDescription);
-						          
-						          
-						          
-						          
-						         
+ 
 						  	},
 						            
 						          error: function (data) 
 						          {
 						          	console.log('Error:', data);
-						          } 
-						      
+						          }    
 						 });
-						     
 				});   
 						    
 	</script>
@@ -784,7 +778,6 @@
 	
 		<script>
 		$("#save-attendance").click(function()
-
 						 {
 					        var intime = $('#intime').val();
 					        var outtime = $('#outtime').val();
@@ -793,7 +786,6 @@
 					        console.log(outtime);
 					        console.log("Are You sure want save attendance !");
 					 
-						       
 					     $.post({
 					            url: "/saveattendance",
 					            data:{"inTime":intime, 
@@ -820,8 +812,6 @@
 					            	}
 					    });
 					     
-					    });   
-						
-						    
+					    }); 
 			 </script>
 	</html>
