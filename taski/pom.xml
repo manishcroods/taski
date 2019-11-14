@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.croodstech</groupId>
-	<artifactId>shyamtimber</artifactId>
+	<artifactId>taski</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ShyamTimber</name>
+	<name>taski</name>
 	<description>Project for Task</description>
 
 	<properties>

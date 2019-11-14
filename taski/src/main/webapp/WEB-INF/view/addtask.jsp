@@ -423,7 +423,7 @@
 				                        <h4>Category</h4>
 					                        <select class="form-control  chosen-select" name="category.categoryId">
 					                        	<c:forEach var="category" items="${categorylist}">
-																<option value="${category.categoryId}">${category.categoryName}</option>
+													<option value="${category.categoryId}">${category.categoryName}</option>
 												</c:forEach>
 					                        </select>
 				                    </div>
