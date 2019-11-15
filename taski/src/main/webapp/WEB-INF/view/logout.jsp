@@ -69,7 +69,8 @@
 </script>
 
 
-<body class="bg-dark">
+<body background="q1.jpg">
+<!-- class="bg-dark" -->
 
 	<div class="container ">
 		<div class="card card-login mx-auto mt-5">
@@ -90,4 +91,7 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
 </html>

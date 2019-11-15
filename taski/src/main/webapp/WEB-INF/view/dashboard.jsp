@@ -689,13 +689,14 @@
 
 <!-- attendance saving code -->
 
+
 		<div class="modal fade"  id="user_attendance_modal">
-				<div class="modal-dialog">
+				<div class="modal-dialog modal-sm">
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header ">
-							<h2>Add Attendance</h2>
+						<div class="modal-header" >
+							<h2 align="center" class="modal-title" style="padding-left:90px">Add Attendance</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
 
@@ -704,23 +705,21 @@
 							<form id="attendance-form" class="form" 
 								action="/saveattendance" name="attendanceform"
 								method="post">
+							<div class="form-group" style="padding-left:90px">
 								
-								<div class="form-group">
+								<div class="row">
+									<div class="col-sm-5">
 									<div class="form-group">
-									
 										<div class="form-label-group">
-											<!-- <h4>In Time</h4>
-													<input type="time" data-id="intime" id="intime"
-													name="inTime" class="form-control" required="required"
-													autofocus="autofocus"> -->
-													
-												<button type="button" id="intimeid" name="inTime"
+											<button type="button" id="intimeid" name="inTime"
 													class="btn btn-success" >In
 												</button>
 													  
 										</div>
 									</div>
+								</div>
 
+								<div class="col-sm-4">
 									<div class="form-group">
 										<div class="form-label-group">
 												<button type="button" id="outtimeid" name="outTime"
@@ -728,6 +727,8 @@
 												</button>
 										</div>
 									</div>
+								</div>
+								</div>
 									</div>
 							</form>
 						</div>
