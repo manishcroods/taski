@@ -689,52 +689,51 @@
 
 <!-- attendance saving code -->
 
-						<div class="modal fade" id="user_attendance_modal">
-									<div class="modal-dialog">
-										<div class="modal-content">
-					
-											<!-- Modal Header -->
-											<div class="modal-header">
-												<h2>Add Attendance</h2>
-												<button type="button" class="close" data-dismiss="modal">&times;</button>
-											</div>
-					
-											<!-- Modal body -->
-											<div class="modal-body">
-												<form id="attendance-form" class="form" 
-													action="/saveattendance" name="attendanceform"
-													method="post">
+		<div class="modal fade"  id="user_attendance_modal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h2>Add Attendance</h2>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body">
+							<form id="attendance-form" class="form" 
+								action="/saveattendance" name="attendanceform"
+								method="post">
+								
+								<div class="form-group">
+									<div class="form-group">
+									
+										<div class="form-label-group">
+											<!-- <h4>In Time</h4>
+													<input type="time" data-id="intime" id="intime"
+													name="inTime" class="form-control" required="required"
+													autofocus="autofocus"> -->
 													
-													<div class="form-group">
-					
-														<div class="form-group">
-															<div class="form-label-group">
-																<h4>In Time</h4>
-																	<input type="text" data-id="intime" id="intime"
-																		name="inTime" class="form-control" required="required"
-																		autofocus="autofocus">
-															</div>
-														</div>
-					
-														<div class="form-group">
-															<div class="form-label-group">
-																<h4>Out Time</h4>
-																	<input type="text" data-id="outtime" id="outtime"
-																		name="outTime" class="form-control" required="required"
-																		autofocus="autofocus">
-															</div>
-														</div>
-														
-														<button type="button" id="save-attendance"
-															class="btn btn-primary btn-block save-attendance">Save
-														</button>
-													</div>
-					
-												</form>
-											</div>
+												<button type="button" id="intimeid" name="inTime"
+													class="btn btn-success" >In
+												</button>
+													  
 										</div>
 									</div>
-								</div>
+
+									<div class="form-group">
+										<div class="form-label-group">
+												<button type="button" id="outtimeid" name="outTime"
+													class="btn btn-danger" >Out
+												</button>
+										</div>
+									</div>
+									</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				</div>
 
 
 
@@ -776,7 +775,7 @@
 	
 <!--*** save attendance ***  -->
 	
-		<script>
+	<!-- 	<script>
 		$("#save-attendance").click(function()
 						 {
 					        var intime = $('#intime').val();
@@ -813,5 +812,112 @@
 					    });
 					     
 					    }); 
+			 </script> -->
+			 
+			 
+ <!-- in time ajax code -->
+ 
+ 	<script>
+		$("#intimeid").click(function()
+						 {
+					        var intime = $('#intime').val();
+					        console.log(intime);
+					        console.log("Are You sure want save attendance !");
+					 
+					     $.post({
+					            url: "/saveintime",
+					            data:{"inTime":intime },
+					            success: function (data) 
+					            	{   
+					            	    if(data=="succussfull")
+	 						    		{
+					            	    	new PNotify(
+					            	    		{
+									                title: 'Success',
+									                text: 'attendance saved Successfully',
+									                icon: 'icon-checkmark3',
+									                type: 'success'
+												});
+					            	    	
+					            	    	setTimeout(function() 
+					            	    			{
+													  location.reload();
+													},500);
+					           		 	}else if(data=="failed")
+	 						    		{
+			 						    	new PNotify(
+			 						    		{
+				 						    		title: 'OOps',
+	 						    	                text: 'your are already done for today ,"SEE YOU TOMMORROW"',
+	 						    	                icon: 'icon-blocked',
+	 						    	                type: 'error'
+												});
+			 						    	
+			 						    	setTimeout(function() 
+			 						    		{
+			 						    		location.reload();
+												},1000); 
+			 						    	
+	 						    		}
+					            	    
+					            	},
+					            
+					            error: function (data) 
+					            	{
+					                console.log('Error:', data);
+					            	}
+					    });
+					     
+					    }); 
 			 </script>
+ 	
+ 	
+ 	<script>
+		$("#outtimeid").click(function()
+						 {
+					        var outtime = $('#outtime').val();
+					        console.log(outtime);
+					        console.log("Are You sure want leave !");
+					 
+					     $.post({
+					            url: "/saveouttime",
+					            data:{"outTime":outtime },
+					            success: function (data) 
+					            	{   
+					            	    if(data=="succussfull")
+	 						    		{
+					            	    	new PNotify({
+								                title: 'Success',
+								                text: 'attendance saved Successfully',
+								                icon: 'icon-checkmark3',
+								                type: 'success'
+												});
+					            	    	setTimeout(function() {
+												  location.reload();
+												},500);
+					           		 	}else if(data=="failed")
+	 						    		{
+			 						    	new PNotify({
+			 						    		title: 'OOps',
+ 						    	                text: 'please enter in time first',
+ 						    	                icon: 'icon-blocked',
+ 						    	                type: 'error'
+														});
+			 						    	setTimeout(function() {
+											  location.href="/dashboard";
+											},1000); 
+			 						    	
+	 						    		}
+					            	},
+					            
+					            error: function (data) 
+					            	{
+					                console.log('Error:', data);
+					            	}
+					    });
+					     
+					    }); 
+			 </script>
+ 	
+ 	
 	</html>

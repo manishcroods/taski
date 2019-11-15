@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -157,13 +158,6 @@ public class HomeController {
 		
 	}
 	
-	/*
-	 * @PostMapping("/changepassword") public String changepassword(@RequestParam
-	 * String newpassword,@SessionAttribute("user") User u) {
-	 * System.out.println("password now changed"); u.setPassword(newpassword);
-	 * userservice.saveUser(u); return "redirect:/login"; }
-	 */
-	
 	@PostMapping("/checkoldpassword")
 	@ResponseBody
 	public String checkolpassword(@RequestParam String oldpassword ,@RequestParam String newpassword, @SessionAttribute("user") User u ) 
@@ -188,6 +182,47 @@ public class HomeController {
 		ua.setUser(u);
 		userAttendanceRepo.save(ua);
 		return "succussfull";
+	}
+	
+	@PostMapping("/saveintime")
+	@ResponseBody
+	public String saveintime(@SessionAttribute("user") User u) 
+	{
+	
+		UserAttendance ua=new UserAttendance();
+		Date currentdate=new Date();
+		
+		if (userAttendanceRepo.findByDateAndUser(currentdate, u)==null) 
+		{
+			ua.setDate(new Date());
+			ua.setUser(u);
+			ua.setInTime(new Date());
+			System.out.println("user full details after in time:"+ua);
+			userAttendanceRepo.save(ua);
+			return "succussfull";
+		} else {
+				return "failed";
+		}
+	}
+	
+	@PostMapping("/saveouttime")
+	@ResponseBody
+	public String saveouttime(@SessionAttribute("user") User u) 
+	{
+		UserAttendance ua=new UserAttendance();
+		Date currentdate=new Date();
+		
+		if (userAttendanceRepo.findByDateAndUser(currentdate, u)!=null) 
+		{
+			ua=userAttendanceRepo.findByDateAndUser(currentdate, u);
+			ua.setOutTime(new Date());
+			System.out.println("attemdance details:" + ua);
+			userAttendanceRepo.save(ua);
+			return "succussfull";
+		} else{
+			return "failed";
+		}
+		
 	}
 	
 }

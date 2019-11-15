@@ -389,15 +389,7 @@
 
 			<!-- Page header -->
 			<div class="page-header page-header-light">
-				<!-- <div class="page-header-content header-elements-md-inline">
-					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Dashboard</h4>
-						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
-					</div>
-				</div> -->
-
-				<div
-					class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
 					<div class="d-flex">
 						<div class="breadcrumb">
 							<a href="/dashboard" class="breadcrumb-item"><i
@@ -419,44 +411,68 @@
 
 
 
-			<!-- category data -->
+<!-- ** form tebal for setting  **  -->
 
 
-			<div class="admin-content-con">
-				<header>
-					<h2 style="text-align: center">Company Name </h2>
-				</header>
+<div class="admin-content-con">
+	<header>
+		<h2 >Company Name </h2>
+	</header>
 
-				<form id="setting-form" class="form" action="/savedetailes" method="post">
-					<!-- <input type="hidden" name="companyId"
-						value="PZWUBoRGdWBgkIw4I4GcExUUUdo7mqHwnfdqktMi"> -->
+	<form id="setting-form" class="form" action="/savedetailes" method="post">
+		<div class="form-group col-md-8">
+			<input type="text" class="form-control " id="title" required
+				name="companyName" placeholder="Enter Company Name" style="text-align: center">
+		</div>
 
-					<div class="form-group col-md-12">
-						<input type="text" class="form-control " id="title" required
-							name="companyName" placeholder="Enter Company Name" style="text-align: center">
+		<div class="container">
+			<div class="row">
+			
+				
+<!-- ** iN time form**  -->
+					<div class="col-md-4">
+						<h6 style="text-align: center" class="font-weight-semibold">In time</h6>
+							<div class="input-group">
+								<span class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="icon-alarm"></i>
+										</span>
+								</span>
+								<input type="text" class="form-control pickatime" id="title" 
+									name="inTime" placeholder="In time" style="text-align: center" required>
+							</div>
 					</div>
 
-					<div class="container">
-   						 <div class="row">
-							<div class="col-md-6">
-								<input type="text" class="form-control" id="title" required
-									name="inTime" placeholder="In time" style="text-align: center">
+
+<!-- ** out time form**  -->
+					<div class="col-md-4">
+						<h6 style="text-align: center" class="font-weight-semibold">Out time</h6>
+							<div class="input-group">
+								<span class="input-group-prepend">
+										<span class="input-group-text">
+											<i class="icon-alarm"></i>
+										</span>
+								</span>
+								<input type="text" class="form-control pickatime" id="title" 
+									name="outTime" placeholder="Out time" style="text-align: center" required>
 							</div>
-	
-							<div class="col-md-6">
-								<input type="text" class="form-control" id="title" required
-									name="outTime" placeholder="Out time" style="text-align: center">
-							</div>
-						</div>
 					</div>
 				
-					<div class="form-group col-md-2 ">
-						<button type="submit" class="btn btn-primary btn-block">save
-						</button>
-					</div>
-				</form>
+				
+				
 			</div>
+		</div>
+
+		<div class="form-group col-md-2 ">
+			<button type="submit" class="btn btn-primary btn-block">save
+			</button>
+		</div>
+	</form>
+</div>
 			
+			
+<!--** showing page of data **  -->	
+
 			<div class="card-body">
 						<div class="table-responsive">
 							<h2 style="text-align: center">Company Details</h2>
@@ -567,11 +583,6 @@
 				</div>
 			</div>
 </body>
-
-<!-- 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>      
-<script src="http://someothersite.com/external.js"></script>	 -->
-
 
 
 <script>
