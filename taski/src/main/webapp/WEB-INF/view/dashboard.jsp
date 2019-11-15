@@ -239,7 +239,7 @@
 							<a href="JavaScript:Void(0)"
 								data-toggle="modal"
 								data-target="#user_attendance_modal"
-								class="btn btn-link briefcase" title="Add-Attendance">
+								class="dropdown-item" title="Add-Attendance">
 								<i class="icon-add">
 								  Attendance
 								</i>
@@ -637,7 +637,7 @@
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header">
+						<div class="modal-header bg-primary">
 							<h2>View Task</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
@@ -694,7 +694,7 @@
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header">
+						<div class="modal-header ">
 							<h2>Add Attendance</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>

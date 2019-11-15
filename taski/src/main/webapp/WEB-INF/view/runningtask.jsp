@@ -228,6 +228,15 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						
+						<a href="JavaScript:Void(0)"
+								data-toggle="modal"
+								data-target="#user_attendance_modal"
+								class="dropdown-item" title="Add-Attendance">
+								<i class="icon-add">
+								  Attendance
+								</i>
+						</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
 						</a>
@@ -527,7 +536,7 @@
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header">
+						<div class="modal-header bg-warning">
 							<h2>Update Task</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
@@ -613,7 +622,7 @@
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header">
+						<div class="modal-header bg-primary">
 							<h2>View Task</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>

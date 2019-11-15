@@ -89,13 +89,13 @@
 
 	<!-- sb admin  -->
 <body class="bg-dark">
-	<div class="container">
+	<div class="content d-flex justify-content-center ">
 		<div class="card card-login mx-auto mt-5">
 			<div class="card-header">
 				<h1>Login</h1>
 			</div>
 			<div class="card-body">
-				<form id="login-form" class="form" name="loginform" action="/login"
+				<form id="login-form" class="login-form wmin-sm-400" name="loginform" action="/login"
 					method="post">
 
 					<div class="form-group">
@@ -122,9 +122,14 @@
 						</div>
 					</div>
 
-					<button type="submit" class="btn btn-primary">Login</button>
+					<button type="submit" class="btn btn-primary btn-block">Login</button>
 
 				</form>
+				<span class="form-text text-center text-muted">
+					By continuing, you're confirming that you've read our 
+						<br><a href="#">Terms &amp; Conditions</a> 
+						and <a href="#">Cookie Policy</a></span>
+				
 
 				<!-- <div class="text-center">
 						<a class="d-block small mt-3" href="/register">Register anAccount</a> 

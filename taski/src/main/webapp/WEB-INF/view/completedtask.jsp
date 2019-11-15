@@ -211,6 +211,15 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="dropdown-divider"></div>
 						
+						<a href="JavaScript:Void(0)"
+								data-toggle="modal"
+								data-target="#user_attendance_modal"
+								class="dropdown-item" title="Add-Attendance">
+								<i class="icon-add">
+								  Attendance
+								</i>
+							</a>
+						
 						<a href="/changepassword" class="dropdown-item">
 								<i class="icon-pencil"></i>Change password
 						</a>
@@ -460,30 +469,12 @@
 												<td>
 												<td>
 													<span>
-													
-												
-													<%-- <a href="JavaScript:Void(0)" data-toggle="modal"
-															data-id="${task.taskId}"
-															onclick="updateUserfun(this,${task.taskId})"
-															data-target="#task_update_modal"
-															class="btn btn-primary btn-sm edit-task"
-															title="Edit"> <i class="fa fa-edit"></i>Edit
-															</a> --%>
-															
-															
 													 <a href="JavaScript:Void(0)"
 														data-toggle="modal" data-id="${task.taskId}"
 														class="btn btn-primary btn-sm view-task" title="View">
 														<i class="fa fa-trash"> </i>View
 													</a>
-													
-													
-													 <%-- <a href = "JavaScript:Void(0)" 
-															class="btn btn-warning btn-sm restore-user" 
-															data-id="${task.taskId}" title="restore">
-															<i class="fa fa-trash"></i>
-															Restore</a>  --%>
-															
+														
 													<a href="JavaScript:Void(0)" data-toggle="modal"
 														data-id="${task.taskId}"
 														class="btn btn-primary btn-sm restore-task" title="Done">
@@ -520,7 +511,7 @@
 					<div class="modal-content">
 
 						<!-- Modal Header -->
-						<div class="modal-header">
+						<div class="modal-header bg-primary">
 							<h2>View Task</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
