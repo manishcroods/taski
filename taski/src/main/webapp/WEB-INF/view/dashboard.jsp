@@ -772,48 +772,6 @@
 				});   
 						    
 	</script>
-	
-<!--*** save attendance ***  -->
-	
-	<!-- 	<script>
-		$("#save-attendance").click(function()
-						 {
-					        var intime = $('#intime').val();
-					        var outtime = $('#outtime').val();
-					        //confirm("Are You sure want save attendance !");
-					        console.log(intime);
-					        console.log(outtime);
-					        console.log("Are You sure want save attendance !");
-					 
-					     $.post({
-					            url: "/saveattendance",
-					            data:{"inTime":intime, 
-					            	  "outTime":outtime },
-					            success: function (data) 
-					            	{   
-					            	    if(data=="succussfull")
-	 						    		{
-					            	    	new PNotify({
-								                title: 'Success',
-								                text: 'attendance saved Successfully',
-								                icon: 'icon-checkmark3',
-								                type: 'success'
-												});
-					            	    	setTimeout(function() {
-												  location.reload();
-												},500);
-					           		 	}
-					            	},
-					            
-					            error: function (data) 
-					            	{
-					                console.log('Error:', data);
-					            	}
-					    });
-					     
-					    }); 
-			 </script> -->
-			 
 			 
  <!-- in time ajax code -->
  
@@ -871,6 +829,7 @@
 					    }); 
 			 </script>
  	
+ <!-- ** out time ajax code ** -->
  	
  	<script>
 		$("#outtimeid").click(function()
