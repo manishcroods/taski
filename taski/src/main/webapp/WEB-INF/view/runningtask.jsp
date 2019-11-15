@@ -471,7 +471,7 @@
 										<th>Status</th>
 										<th>Assigned to</th>
 										<th>Send Warning</th>
-										<th>Actions</th>
+										<th style="padding-left:80px">Actions</th>
 									</tr>
 								</thead>
 
@@ -493,7 +493,7 @@
 												<span> 
 													<a href="JavaScript:Void(0)"
 														data-toggle="modal" data-id="${task.taskId}"
-														class="btn btn-primary btn-sm view-task" title="View">
+														class="btn btn-info btn-sm view-task" title="View">
 														<i class="fa fa-trash"> </i>View
 													</a> 
 												
@@ -508,13 +508,13 @@
 													
 													<a href="JavaScript:Void(0)" data-toggle="modal"
 														data-id="${task.taskId}"
-														class="btn btn-primary btn-sm done-task" title="Done">
+														class="btn btn btn-success btn-sm done-task" title="Done">
 														<i class="fa fa-view"> </i>Done
 													</a> 
 													
 													<a href="JavaScript:Void(0)" data-toggle="modal"
 														data-id="${task.taskId}"
-														class="btn btn-primary btn-sm delete-task" title="Delete">
+														class="btn btn-danger btn-sm delete-task" title="Delete">
 														<i class="fa fa-trash"> </i>Delete
 													</a>
 												</span>

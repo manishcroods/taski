@@ -696,7 +696,7 @@
 
 						<!-- Modal Header -->
 						<div class="modal-header" >
-							<h2 align="center" class="modal-title" style="padding-left:90px">Add Attendance</h2>
+							<h2 align="center" class="modal-title" style="padding-left:100px">Add Attendance</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
 
@@ -705,25 +705,25 @@
 							<form id="attendance-form" class="form" 
 								action="/saveattendance" name="attendanceform"
 								method="post">
-							<div class="form-group" style="padding-left:90px">
+							<div class="form-group" style="padding-left:80px">
 								
 								<div class="row">
 									<div class="col-sm-5">
 									<div class="form-group">
 										<div class="form-label-group">
 											<button type="button" id="intimeid" name="inTime"
-													class="btn btn-success" >In
+													class="btn btn-success" >In-Time
 												</button>
 													  
 										</div>
 									</div>
 								</div>
 
-								<div class="col-sm-4">
+								<div class="col-sm-6">
 									<div class="form-group">
 										<div class="form-label-group">
 												<button type="button" id="outtimeid" name="outTime"
-													class="btn btn-danger" >Out
+													class="btn btn-danger" >Out-Time
 												</button>
 										</div>
 									</div>
