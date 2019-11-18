@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,6 +49,9 @@ public class HomeController {
 	
 	@Autowired
 	UserAttendanceRepo userAttendanceRepo;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	
 	@GetMapping("/dashboard")
 	public ModelAndView dashboard(HttpSession session) 
@@ -161,9 +165,10 @@ public class HomeController {
 	{
 		System.out.println("checking old password"+u.getPassword());
 		
-		if (u.getPassword().equalsIgnoreCase(oldpassword)) 
+		if(passwordEncoder.matches(oldpassword, u.getPassword()))
 		{
-			u.setPassword(newpassword);
+			//u.setPassword(newpassword);
+			u.setPassword(passwordEncoder.encode(newpassword));
 			userservice.saveUser(u);	
 			return "your password updated succussful";
 		} else{
