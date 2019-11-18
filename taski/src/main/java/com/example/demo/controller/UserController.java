@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
@@ -26,11 +25,26 @@ public class UserController {
 	
 	@PostMapping("/saveuser")
 	@ResponseBody
-	public User saveUser(@ModelAttribute User user) {
-		System.out.println("adding user in list" + user.getEmail());
-		System.out.println("user added in list");
-		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		return userserviceImpl.saveUser(user);
+	public User saveUser(@ModelAttribute User user) 
+	{
+		if (user.getPassword()!=null) 
+		{
+			System.out.println("user added in list"+user);
+			user.setPassword(passwordEncoder.encode(user.getPassword()));
+			return userserviceImpl.saveUser(user);
+			
+		} else {
+			
+			long userid=user.getUserId();
+			User u1=userserviceImpl.findById(userid);
+			u1.setUserName(user.getUserName());
+			u1.setEmail(user.getEmail());
+			System.out.println("user updating in list***"+u1);
+			return userserviceImpl.saveUser(u1);
+		}
+		
+		
+		
 	}
 
 	@PostMapping("/adduser")
@@ -73,13 +87,24 @@ public class UserController {
 
 	}
 
+	/*
+	 * @GetMapping("/user/edit/{id}") public ModelAndView
+	 * editUser(@PathVariable("id") long userid) {
+	 * 
+	 * System.out.println("edit user model"); ModelAndView mv = new
+	 * ModelAndView("/edituser");
+	 * System.out.println("edit user data:"+userserviceImpl.findById(userid));
+	 * mv.addObject("user", userserviceImpl.findById(userid)); return mv; }
+	 */
+	
 	@GetMapping("/user/edit/{id}")
-	public ModelAndView editUser(@PathVariable("id") long userid) {
+	@ResponseBody
+	public User editUser(@PathVariable("id") long userid) {
 
 		System.out.println("edit user model");
-		ModelAndView mv = new ModelAndView("/edituser");
-		mv.addObject("user", userserviceImpl.findById(userid));
-		return mv;
+		System.out.println("edit user data:"+userserviceImpl.findById(userid));
+		return userserviceImpl.findById(userid);
+		
 	}
 	
 	

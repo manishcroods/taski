@@ -709,65 +709,40 @@
 				});
 	
 		});
-	
-					/* function updateTaskfun(row, id) {
-						$("#updatetask").attr("disabled", false);
-					
-						var crow = $(row).closest('tr');
-						var id=$(crow).find('td:eq(0)').text();
-						var title = $(crow).find('td:eq(1)').text();
-						var category = $(crow).find('td:eq(7)').text();
-						var user = $(crow).find('td:eq(4)').text();
-						var taskDescripation = $(crow).find('td:eq(8)').text();
-					
-						console.log(id);
-						console.log(title);
-						console.log(category);
-						console.log(user);
-						console.log(taskDescripation); 
-						
-						$('#updatetaskid').val(id);
-						$('#edittitleid').val(title);
-						$('#editcategoryid').val(category);
-						$('#edituserid').val(user);
-						$('#edittaskdesceiptionid').val(taskDescripation);
-					
-					}   */
-					</script>
-					
-					
-					 <script>
+</script>
+
+<script>
 							   
-						$('body').on('click', '.edit-task', function () 
-							{
-								var taskid = $(this).data("id");
-								//alert(taskid);
-								
-								 $.ajax(
-									{    	
-									    type: "GET",
-									    url: "/task/findbyid/"+taskid,
-									    success: function (data) 
-									    {
-										      $('#task_update_modal').modal('show');
-										      console.log(data);
-										      
-										      $('#updatetaskid').val(data.taskId);
-										      $('#edittitleid').val(data.title);
-										      $('#editcategoryid').val(data.category.categoryId);
-										      $('#edituserid').val(data.user.userId);
-										      $("#edittaskdesceiptionid").val(data.taskDescription);
-										      
-									          
-									          //location.reload();
-									  	},
-									            
-									          error: function (data) 
-									          {
-									          	console.log('Error:', data);
-									          }      
-									 });     
-							});   
+	$('body').on('click', '.edit-task', function () 
+		{
+			var taskid = $(this).data("id");
+			//alert(taskid);
+			
+			 $.ajax(
+				{    	
+				    type: "GET",
+				    url: "/task/findbyid/"+taskid,
+				    success: function (data) 
+				    {
+					      $('#task_update_modal').modal('show');
+					      console.log(data);
+					      
+					      $('#updatetaskid').val(data.taskId);
+					      $('#edittitleid').val(data.title);
+					      $('#editcategoryid').val(data.category.categoryId);
+					      $('#edituserid').val(data.user.userId);
+					      $("#edittaskdesceiptionid").val(data.taskDescription);
+					      
+				          
+				          //location.reload();
+				  	},
+				            
+				          error: function (data) 
+				          {
+				          	console.log('Error:', data);
+				          }      
+				 });     
+		});   
 						    
 	</script> 
 
@@ -843,7 +818,7 @@
 						    
 	</script>
 	
-	<!-- **** done task ****  -->
+<!-- **** done task ****  -->
 	
 	<script>
 			$('body').on('click', '.done-task', function () 

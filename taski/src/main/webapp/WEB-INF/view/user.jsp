@@ -495,22 +495,20 @@
 											
 													<a href="JavaScript:Void(0)"
 															data-toggle="modal" data-id="${user.userId}"
-															onclick="updateUserfun(this,${user.userId})"
+															
 															data-target="#user_update_modal"
 															class="btn btn-primary btn-sm edit-user" title="Edit">
 																<i class="fa fa-edit"></i>Edit
 													</a> 
+												
+												<!--onclick="updateUserfun(this,${user.userId})"  -->
 												
 												<a href="JavaScript:Void(0)" data-toggle="modal"
 													data-id="${user.userId}"
 													class="btn btn-primary btn-sm delete-user" title="Delete">
 														<i class="fa fa-trash"></i>Delete
 														
-												</a> <%-- <a href = "/user/delete/${user.userId}" 
-															class="btn btn-primary btn-sm delete-user" 
-															data-id="${user.userId}" title="delete">
-															<i class="fa fa-trash"></i>
-															Delete</a> --%>
+												</a> 
 
 											</span></td>
 										</tr>
@@ -524,35 +522,33 @@
 
 
 
-			<!-- update user  -->
+<!--***** update user ***** -->
 
-			<!-- <!--  edit model  -->
+	 <!--  edit model  -->
 
 			<div class="modal fade" id="user_update_modal">
 				<div class="modal-dialog">
 					<div class="modal-content">
 
-						<!-- Modal Header -->
+				<!-- Modal Header -->
 						<div class="modal-header">
 							<h2>Update User</h2>
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
 
-						<!-- Modal body -->
+				<!-- Modal body -->
 						<div class="modal-body">
 							<form id="user-form" class="form" action="/saveuser"
 								method="post">
 
 								<div class="form-group">
-
-
 									<input type="hidden" id="updateuserid" name="userId"
 										value=${user.userId }>
 
 									<div class="form-group">
 										<div class="form-label-group">
 											<h4>User Name</h4>
-											<input type="text" data-id="username" id="username"
+											<input type="text" data-id="username" id="editusername"
 												name="userName" class="form-control"
 												value="${user.userName}" required="required"
 												autofocus="autofocus">
@@ -562,7 +558,7 @@
 									<div class="form-group">
 										<div class="form-label-group">
 											<h4>Email</h4>
-											<input type="text" id="inputEmail" name="email"
+											<input type="text" id="editemail" name="email"
 												class="form-control" value="${user.email}"
 												required="required" autofocus="autofocus">
 										</div>
@@ -617,8 +613,7 @@ $(document).ready(function() {
 	});
 
 });
-
-					
+	/* 
 				 function updateUserfun(row, id) {
 					$("#updateuser").attr("disabled", false);
 				
@@ -635,40 +630,79 @@ $(document).ready(function() {
 					$('#inputEmail').val(email);
 					$('#updateuserid').val(id);
 				
-				}
+				} */
+				
 				</script>
+				
+		<!--*** edit user data ***-->
+
+	<script>
+		$('body').on('click', '.edit-user', function () 
+			{
+				var userid = $(this).data("id");
+				alert(userid);
+				
+				 $.ajax(
+					{    	
+					    type: "GET",
+					    url: "/user/edit/"+userid,
+					    success: function (data) 
+					    {
+					    	  console.log(data);
+					    	  
+						      $('#user_update_modal').modal('show');
+						      $('#updateuserid').val(data.userId);
+						      $('#editusername').val(data.userName);
+						      $('#editemail').val(data.email);
+						      
+						      
+					          
+					          //location.reload();
+					  	},
+					            
+					          error: function (data) 
+					          {
+					          	console.log('Error:', data);
+					          }      
+					 });     
+			});   
+							    
+		</script>
 				
 
 <!-- //delete user  -->
 
-				<script>
-					   
-					    $('body').on('click', '.delete-user', function () {
-					        var userid = $(this).data("id");
-					        alert(userid);
-					        confirm("Are You sure want to delete !");
-					 
-					       
-					     $.ajax({
-					        	
-					            type: "GET",
-					            url: "/user/delete/"+userid,
-					            success: function (data) {
-					            	
-					                $("#list" + userid).remove();
-					                //location.reload();
-						            $('#list').modal('show');
-					                $('.result').html(data);
-					            },
-					            
-					            error: function (data) {
-					                console.log('Error:', data);
-					            } 
-					      
-					        });
-					     
-					    });   
-					    
-					 </script>
+		<script>
+			   
+			    $('body').on('click', '.delete-user', function () {
+			        var userid = $(this).data("id");
+			        alert(userid);
+			        confirm("Are You sure want to delete !");
+			 
+			       
+			     $.ajax({
+			        	
+			            type: "GET",
+			            url: "/user/delete/"+userid,
+			            success: function (data) {
+			            	
+			                $("#list" + userid).remove();
+			                //location.reload();
+				            $('#list').modal('show');
+			                $('.result').html(data);
+			            },
+			            
+			            error: function (data) {
+			                console.log('Error:', data);
+			            } 
+			      
+			        });
+			     
+			    });   
+			    
+			 </script>
+			 
+			 
+
 
 </html>

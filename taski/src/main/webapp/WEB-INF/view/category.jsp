@@ -677,36 +677,36 @@ $(document).ready(function() {
 	</script>
 
 
-	<!-- delete code  -->
-				<script>
-					   
-					    $('body').on('click', '.delete-category', function () {
-					        var categoryid = $(this).data("id");
-					        alert(categoryid);
-					        confirm("Are You sure want to delete !");
-					 
-					       
-					     $.ajax({
-					        	
-					            type: "GET",
-					            url: "/category/delete/"+categoryid,
-					            success: function (data) {
-					            	
-					                $("#list" + categoryid).remove();
-					                //location.reload();
-						            $('#list').modal('show');
-					                $('.result').html(data);
-					            },
-					            
-					            error: function (data) {
-					                console.log('Error:', data);
-					            } 
-					      
-					        });
-					     
-					    });   
-					    
-					 </script>
+	<!-- **** delete code ****  -->
+		<script>
+			   
+			    $('body').on('click', '.delete-category', function () {
+			        var categoryid = $(this).data("id");
+			        alert(categoryid);
+			        confirm("Are You sure want to delete !");
+			 
+			       
+			     $.ajax({
+			        	
+			            type: "GET",
+			            url: "/category/delete/"+categoryid,
+			            success: function (data) {
+			            	
+			                $("#list" + categoryid).remove();
+			                //location.reload();
+				            $('#list').modal('show');
+			                $('.result').html(data);
+			            },
+			            
+			            error: function (data) {
+			                console.log('Error:', data);
+			            } 
+			      
+			        });
+			     
+			    });   
+			    
+			 </script>
 
 
 					<script type="text/javascript">
@@ -714,6 +714,8 @@ $(document).ready(function() {
 						alert("do you want to delete it?");
 						}
 					</script>
+					
+
 
 
 </html>
