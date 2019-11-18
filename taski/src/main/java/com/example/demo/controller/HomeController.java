@@ -50,8 +50,11 @@ public class HomeController {
 	UserAttendanceRepo userAttendanceRepo;
 	
 	@GetMapping("/dashboard")
-	public ModelAndView dashboard(@SessionAttribute("user") User u ) 
+	public ModelAndView dashboard(HttpSession session) 
 	{
+		
+		System.out.println("----------------------");
+		User u=(User) session.getAttribute("user");
 		System.out.println("user details:"+u);
 		ModelAndView modelAndView = new ModelAndView("dashboard");
 		List<Task> task=taskrepo.findByUserAndStatus(u, "running");
@@ -71,32 +74,26 @@ public class HomeController {
 		return mv;
 		
 	}
-	@PostMapping("/login")
-	public 	String loginAccess(@RequestParam String email ,String password ,HttpSession session) 
-	{
-		System.out.println("log in page post method");
-		User user= new User();
-		user.setEmail(email);
-		user.setPassword(password);
-		
-		System.out.println("user data:"+user);
-		
-		user=userrepo.findByEmailAndPassword(email, password);
-		System.out.println("user check method:"+user);
-		
-		if (user!=null) 
-		{
-			session.setAttribute("user", user);
-			System.out.println("login granted");
-			return "redirect:/dashboard";
-		} else 
-		{
-			System.out.println("error page");
-			return "redirect:/error";
-
-		}
 	
-	}
+	/*
+	 * @PostMapping("/login") public String loginAccess(@RequestParam String email
+	 * ,String password ,HttpSession session) {
+	 * System.out.println("log in page post method"); User user= new User();
+	 * user.setEmail(email); user.setPassword(password);
+	 * 
+	 * System.out.println("user data:"+user);
+	 * 
+	 * user=userrepo.findByEmailAndPassword(email, password);
+	 * System.out.println("user check method:"+user);
+	 * 
+	 * if (user!=null) { session.setAttribute("user", user);
+	 * System.out.println("login granted"); return "redirect:/dashboard"; } else {
+	 * System.out.println("error page"); return "redirect:/error";
+	 * 
+	 * }
+	 * 
+	 * }
+	 */
 	
 	@GetMapping("/logout")
 	public ModelAndView logout() 
@@ -112,7 +109,7 @@ public class HomeController {
 	{
 		System.out.println("user type:"+u.getUserType());
 		
-		if (u.getUserType().equalsIgnoreCase("admin")) 
+		if (u.getUserType().equalsIgnoreCase("ROLE_ADMIN")) 
 		{
 			System.out.println("settinf page showd");
 			m.addAttribute("companylist", companyDetailsRepo.findAll());

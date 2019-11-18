@@ -100,7 +100,7 @@
 
 					<div class="form-group">
 						<div class="form-label-group">
-							<input type="email" id="inputEmail" name="email"
+							<input type="text" id="inputEmail" name="userName"
 								class="form-control" placeholder="Email address"
 								autofocus="autofocus">
 						</div>

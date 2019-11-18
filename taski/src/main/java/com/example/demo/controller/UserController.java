@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +22,15 @@ public class UserController {
 	@Autowired
 	UserService userserviceImpl;
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
+	
 	@PostMapping("/saveuser")
 	@ResponseBody
 	public User saveUser(@ModelAttribute User user) {
 		System.out.println("adding user in list" + user.getEmail());
-
 		System.out.println("user added in list");
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return userserviceImpl.saveUser(user);
 	}
 
@@ -34,11 +39,12 @@ public class UserController {
 		System.out.println("adding user in list");
 
 		User u = new User();
-		u.setPassword(password);
+		u.setPassword(passwordEncoder.encode(password));
 		u.setUserName(userName);
 		u.setEmail(email);
 		userserviceImpl.saveUser(u);
 		System.out.println("user added in list");
+		System.out.println("user added password:"+password);
 		return "redirect:/user";
 
 	}
