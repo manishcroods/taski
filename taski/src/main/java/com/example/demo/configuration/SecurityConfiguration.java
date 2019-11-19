@@ -20,7 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	CustomizeAuthenticationSuccessHandler customizeAuthenticationSuccessHandler;
-	
+
 	@Autowired
 	CustomizeLogOutSuccessHandler customizeLogOutSuccessHandler;
 
@@ -37,19 +37,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	}
 
-	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/", "/static/**", "/assets/**", "/global_assets/**", "/register", "/registerProcess",
-						"/login", "/login-password-recover","/dashboard")
-				.permitAll()
-				.antMatchers("/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-				.anyRequest().authenticated().and().formLogin().successHandler(customizeAuthenticationSuccessHandler)
+						"/login", "/login-password-recover", "/dashboard")
+				.permitAll().antMatchers("/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')").anyRequest()
+				.authenticated().and().formLogin().successHandler(customizeAuthenticationSuccessHandler)
 				.loginPage("/login").usernameParameter("userName").passwordParameter("password").and().logout()
-				.logoutSuccessHandler(customizeLogOutSuccessHandler).deleteCookies("JSESSIONID").invalidateHttpSession(true).and().csrf()
-				.disable();
+				.logoutSuccessHandler(customizeLogOutSuccessHandler).deleteCookies("JSESSIONID")
+				.invalidateHttpSession(true).and().csrf().disable();
 	}
-
 
 }
