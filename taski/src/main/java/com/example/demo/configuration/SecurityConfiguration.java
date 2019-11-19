@@ -20,6 +20,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	CustomizeAuthenticationSuccessHandler customizeAuthenticationSuccessHandler;
+	
+	@Autowired
+	CustomizeLogOutSuccessHandler customizeLogOutSuccessHandler;
 
 	// ***********Bean For JsonViewSupportFactoryBean********************
 
@@ -44,7 +47,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/**").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 				.anyRequest().authenticated().and().formLogin().successHandler(customizeAuthenticationSuccessHandler)
 				.loginPage("/login").usernameParameter("userName").passwordParameter("password").and().logout()
-				.logoutSuccessUrl("/login?logout").deleteCookies("JSESSIONID").invalidateHttpSession(true).and().csrf()
+				.logoutSuccessHandler(customizeLogOutSuccessHandler).deleteCookies("JSESSIONID").invalidateHttpSession(true).and().csrf()
 				.disable();
 	}
 
